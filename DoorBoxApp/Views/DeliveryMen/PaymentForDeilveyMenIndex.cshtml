@@ -1,0 +1,138 @@
+﻿@model IEnumerable<DoorBoxApp.Models.ViewModels.DeliveryManPaymentViewModel>
+
+@{
+    ViewData["Title"] = "Delivery Men";
+}
+
+@section Css {
+    @{await Html.RenderPartialAsync("_DataTableCssPartial");}
+}
+
+@section Sole {
+    <style>
+
+
+        .table tr th:last-child {
+            width: 100px;
+        }
+
+        .table tr th {
+            text-align: center;
+        }
+
+        .table tr td {
+            text-align: center;
+        }
+    </style>
+}
+
+<div class="container-fluid mt-4">
+    <div class="card animated fadeIn overflow-hidden">
+        <div class="card-header p-3">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="mb-0 skewed skewed-yellow  d-inline-block text-uppercase ls-1 text-white">Delivery Men</h3>
+                </div>
+            </div>
+        </div>
+        <div class="card-body px-0 pb-2">
+            <div class="table-responsive">
+
+                <table class="table align-items-center table-responsive-sm table-striped table-bordered" id="datatable-basic">
+                    <thead class="thead-light">
+                        <tr>
+
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Id No
+                            </th>
+                            <th>
+                                Fixed Salary
+                            </th>
+                            <th>
+                                Total Pick
+                            </th>
+                            <th>
+                                Total Drop
+                            </th>
+                            <th>
+                                Total Payable
+                            </th>
+                            <th>
+                                Total Paid
+                            </th>
+                            <th>
+                                Total Due
+                            </th>
+
+                            <th class="text-center">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>
+                                    @item.DeliveryMan.Name
+                                </td>
+                                <td>
+                                    @item.DeliveryMan.DeliveryManIdNo
+                                </td>
+                                <td>
+                                    @item.DeliveryMan.Salary
+                                </td>
+                                <td>
+                                    @item.TotalPick
+                                </td>
+
+                                <td>
+                                    @item.TotalDrop
+                                </td>
+                                <td>
+                                    @item.TotalPayable
+                                </td>
+                                <td>
+                                    @item.TotalPaid
+                                </td>
+                                <td>
+                                    @item.TotalDue
+                                </td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        @if (item.DeliveryMan.Salary > 0)
+                                        {
+                                            <a class="btn btn-success btn-sm" asp-action="PickupPaymentFixed" asp-route-id="@item.DeliveryMan.Id">Pickup Payment</a>
+                                        }
+                                        else
+                                        {
+                                            <a class="btn btn-success btn-sm" asp-action="PickupPayment" asp-route-id="@item.DeliveryMan.Id">Pickup Payment</a>
+                                        }
+
+                                        <a class="btn btn-default btn-sm" asp-action="DeliveryPayment" asp-route-id="@item.DeliveryMan.Id">Delivery Payment</a>
+
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/jquery.dataTables.min.js"></script>
+    <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

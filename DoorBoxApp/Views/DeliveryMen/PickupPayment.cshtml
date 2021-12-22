@@ -1,0 +1,215 @@
+﻿@model IEnumerable<DoorBoxApp.Models.Package>
+
+@{
+    ViewData["Title"] = "Pickup Payment";
+}
+
+@section Css {
+    @{await Html.RenderPartialAsync("_DataTableCssPartial");}
+}
+
+@section Sole {
+    <style>
+
+
+        .table tr th:last-child {
+            width: 100px;
+        }
+
+        .table tr th {
+            text-align: center;
+        }
+
+        .table tr td {
+            text-align: center;
+        }
+    </style>
+}
+
+<div class="container-fluid mt-4">
+    <div class="card animated fadeIn overflow-hidden">
+        <div class="card-header p-3">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="mb-0 skewed skewed-yellow  d-inline-block text-uppercase ls-1 text-white">Pickup Payment : @ViewBag.DeliveryMan.Name</h3>
+                </div>
+
+            </div>
+        </div>
+        <div class="card-body px-0 pb-2">
+            <div class="table-responsive">
+
+                <table class="table align-items-center table-responsive-sm table-striped table-bordered" id="datatable-basic">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>
+                                Merchant
+                            </th>
+                            <th>
+                                Tracking Id
+                            </th>
+                            <th>
+                                From
+                            </th>
+                            <th>
+                                To
+                            </th>
+                            <th>
+                                To Sub
+                            </th>
+                            <th>
+                                Pay
+                            </th>
+                            <th class="text-center">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                @if (item.PickUpRequest.Merchant != null)
+                                {
+                                    <td>
+                                        <input type="hidden" class="packageId" value="@item.Id" />
+                                        @item.PickUpRequest.Merchant.Name
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        No Data
+                                    </td>
+                                }
+                                @if (item.TrackingNumber != null)
+                                {
+                                    <td>
+                                        @item.TrackingNumber
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        No Data
+                                    </td>
+                                }
+
+                                <td>
+                                    @item.PickUpRequest.LocationFrom.Name
+                                </td>
+                                @if (item.LocationTo != null)
+                                {
+                                    <td>
+                                        @item.LocationTo.Name
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        No Data
+                                    </td>
+                                }
+
+                                @if (item.SubLocation != null)
+                                {
+                                    <td>
+                                        @item.SubLocation.Name
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        No Data
+                                    </td>
+                                }
+
+                                <td>
+                                    <input disabled class="form-control phoneNo border-0 border-radius-0 text-center text-wrap paidAmount" type="text" value="@ViewBag.DeliveryMan.PickUpRate" />
+                                </td>
+
+
+
+                                <td class="text-center">
+                                    <div class="btn-group">
+
+
+                                        <input class="btn btn-success btn-sm saveButton" type="button" value="Save" />
+
+
+
+
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/jquery.dataTables.min.js"></script>
+    <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('.saveButton').on('click', function () {
+
+                var row = $(this).closest('tr');
+                var paidAmount = row.find('.paidAmount').val();
+                var packageId = row.find('.packageId').val();
+
+                if (paidAmount == "" || paidAmount == null ) {
+
+                         $.notify({
+                             title: 'Prompt!',
+                             icon: 'fa fa-times',
+                             html: true,
+                             message: 'Fill Up Amount !!!'
+                         },
+                             {
+                                 type: 'warning',
+                                 animate: {
+                                     enter: 'animated fadeInDown'
+                                 },
+                                 placement: {
+                                     from: "top",
+                                     align: "center"
+                                 },
+                                 spacing: 10,
+                                 z_index: 1031,
+                                 delay: 1000,
+                                 template: '<div data-notify="container" class="alert alert-dismissible alert-{0} alert-notify" role="alert"><span class="alert-icon" data-notify="icon"></span> <div class="alert-text"</div> <span class="alert-title" data-notify="title">{1}</span> <span data-notify="message">{2}</span></div><button type="button" class="close" data-notify="dismiss" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
+                             });
+                 }
+                 else {
+                     var url = '@Url.Action("SavePickUpPayment", "Packages")';
+                     $.ajax({
+                         type: "POST",
+                         dataType: 'json',
+                         url: url,
+                         data: {
+                             packageId: packageId,
+                             paidAmount: paidAmount,
+                         },
+                         cache: false,
+                         success: function (result) {
+                             location.reload();
+                         }
+
+                     });
+
+                 }
+
+            });
+        });
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,353 @@
+﻿@model IEnumerable<DoorBoxApp.Models.Package>
+@{
+    ViewData["Title"] = "Delivery Packages";
+}
+@section Css {
+    @{await Html.RenderPartialAsync("_DataTableCssPartial");}
+}
+
+@section Sole {
+    <style>
+        .table tr th:last-child {
+            width: 100px;
+        }
+        .table tr th {
+            text-align: center;
+        }
+        .table tr td {
+            text-align: center;
+        }
+    </style>
+}
+<div class="container-fluid mt-4">
+    <div class="card animated fadeIn overflow-hidden">
+        <div class="card-header p-3">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="mb-0 skewed skewed-yellow text-dark d-inline-block text-uppercase text-white ls-1">Delivery Packages</h3>
+                </div>
+            </div>
+        </div>
+        <div class="card-body px-0 pb-2">
+            <div class="table-responsive">
+
+                <table class="table align-items-center table-responsive-sm table-striped table-bordered" id="datatable-basic">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>
+                                Merchant Name
+                            </th>
+                            <th>
+                                Merchant Phone
+                            </th>
+                            <th>
+                                Location
+                            </th>
+                            <th>
+                                Sub-Location
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Phone
+                            </th>
+                            <th>
+                                Address
+                            </th>
+                             <th>
+                                Price
+                            </th>
+                            <th>
+                                Tracking NO
+                            </th>
+                            <th class="text-center">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                @if (item.PickUpRequest.Merchant != null)
+                                {
+                                    <td>
+                                        @item.PickUpRequest.Merchant.Name
+
+                                    </td>
+                                    <td>
+                                        @item.PickUpRequest.Merchant.ApplicationUser.PhoneNumber
+
+                                    </td>
+
+                                }
+                                else
+                                {
+                                    <td>
+                                        N/A
+                                    </td>
+                                    <td>
+                                        N/A
+                                    </td>
+
+                                }
+
+                                @if (item.LocationTo != null)
+                                {
+                                    <td>
+                                        @item.LocationTo.Name
+
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        N/A
+                                    </td>
+                                }
+                                @if (item.SubLocation != null)
+                                {
+                                    <td>
+                                        @item.SubLocation.Name
+
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        N/A
+                                    </td>
+                                }
+                                <td>
+                                    @item.ClientName
+                                    <input type="hidden" name="name" value="@item.OTP" />
+                                </td>
+
+                                <td>
+                                    @item.PhoneNumber
+                                </td>
+                                <td class="text-wrap">
+                                    @item.Address
+                                </td>
+                                <td class="text-wrap">
+                                    @item.ProductPrice
+                                </td>
+
+                                <td>
+                                    @item.TrackingNumber
+                                </td>
+
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        @if (item.Status == 3)
+                                        {
+
+                                            <input type="hidden" name="name" class="packageId" value=" @item.Id" />
+                                            <a class="btn btn-warning btn-sm" asp-action="HoldPackage" asp-route-id="@item.Id">Hold</a>
+                                            <a class="btn btn-success btn-sm" asp-action="SendOTP" asp-route-id="@item.Id">Send OTP</a>
+                                            <input type="button" class="btn btn-success btn-sm returnButton" value="Return" />
+
+                                        }
+                                        else if (item.Status == 4)
+                                        {
+                                            <input type="button" class="btn btn-success btn-sm deliverButton" value="Deliver" />
+
+                                            <input type="hidden" name="name" class="packageId" value=" @item.Id" />
+
+                                        }
+                                        else if (item.Status == 5)
+                                        {
+                                            <a class="btn btn-success btn-sm text-white">Delivered</a>
+                                        }
+                                        else if (item.Status == 13)
+                                        {
+                                            <a class="btn btn-warning btn-sm text-white">Returned</a>
+                                        }
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/jquery.dataTables.min.js"></script>
+    <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.deliverButton').on('click', function () {
+                var row = $(this).closest('tr');
+                var packageId = row.find('.packageId').val();
+
+                $.confirm({
+                    title: 'Prompt!',
+                    theme: 'modern',
+                    animation: 'zoom',
+                    closeAnimation: 'zoom',
+                    backgroundDismiss: true,
+                    backgroundDismissAnimation: 'shake',
+                    closeIcon: true,
+                    content: '' +
+                        '<form action="" class="formName">' +
+                        '<div class="form-group">' +
+                        '<label class="text-danger">Type OTP</label>' +
+
+                        ' <input id="otp" type="text" class="form-control" placeholder="OTP" />'+
+                        '</div>' +
+                        '</form>',
+                    buttons: {
+                        formSubmit: {
+                            text: 'Submit',
+                            btnClass: 'btn-blue',
+                            action: function () {
+                                var otp = this.$content.find('#otp').val();
+                             
+                                if (packageId == 0) {
+
+                                } else
+
+                                {
+                                    var url = '@Url.Action("DelivrByDM", "Packages")';
+                                    $.ajax({
+                                        type: "POST",
+                                        dataType: 'json',
+                                        url: url,
+                                        data: {
+                                            otp: otp,
+                                            packageId: packageId,
+                                        },
+                                        cache: false,
+                                        success: function (result) {
+                                            if (result) {
+                                                location.reload();
+                                            }
+                                            else {
+                                                $.notify({
+                                                    title: 'Prompt!',
+                                                    icon: 'fa fa-times',
+                                                    html: true,
+                                                    message: 'OTP did not match !!'
+                                                },
+                                                    {
+                                                        type: 'warning',
+                                                        animate: {
+                                                            enter: 'animated fadeInDown'
+                                                        },
+                                                        placement: {
+                                                            from: "top",
+                                                            align: "center"
+                                                        },
+                                                        spacing: 10,
+                                                        z_index: 1031,
+                                                        delay: 1000,
+                                                        template: '<div data-notify="container" class="alert alert-dismissible alert-{0} alert-notify" role="alert"><span class="alert-icon" data-notify="icon"></span> <div class="alert-text"</div> <span class="alert-title" data-notify="title">{1}</span> <span data-notify="message">{2}</span></div><button type="button" class="close" data-notify="dismiss" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
+                                                    });
+                                            }
+                                        }
+                                    });
+                                }
+                            // submit
+                            }
+                        },
+                    cancel: function () {
+                        //close
+                        },
+                    },
+                    backgroundDismiss: true,
+
+                });
+
+            });
+            $('.returnButton').on('click', function () {
+                var row = $(this).closest('tr');
+                var packageId = row.find('.packageId').val();
+                $.confirm({
+                    title: 'Reason :',
+                    theme: 'modern',
+                    animation: 'zoom',
+                    closeAnimation: 'zoom',
+                    backgroundDismiss: true,
+                    backgroundDismissAnimation: 'shake',
+                    closeIcon: true,
+                    content: '' +
+                        '<form action="" class="formName">' +
+                        '<div class="form-group">' +
+                        ' <input id="reason" type="text" class="form-control" placeholder="Reason" />'+
+                        '</div>' +
+                        '</form>',
+                    buttons: {
+                        formSubmit: {
+                            text: 'Submit',
+                            btnClass: 'btn-blue',
+                            action: function () {
+                                var reason = this.$content.find('#reason').val();
+                              
+                                if (packageId == 0) {
+
+                                } else
+
+                                {
+                                    var url = '@Url.Action("ReturnedByDM", "DeliveryMen")';
+                                    $.ajax({
+                                        type: "POST",
+                                        dataType: 'json',
+                                        url: url,
+                                        data: {
+                                            reason: reason,
+                                            packageId: packageId,
+                                        },
+                                        cache: false,
+                                        success: function (result) {
+                                            if (result) {
+                                                location.reload();
+                                            }
+                                            else {
+                                                $.notify({
+                                                    title: 'Prompt!',
+                                                    icon: 'fa fa-times',
+                                                    html: true,
+                                                    message: 'OTP did not match !!'
+                                                },
+                                                    {
+                                                        type: 'warning',
+                                                        animate: {
+                                                            enter: 'animated fadeInDown'
+                                                        },
+                                                        placement: {
+                                                            from: "top",
+                                                            align: "center"
+                                                        },
+                                                        spacing: 10,
+                                                        z_index: 1031,
+                                                        delay: 1000,
+                                                        template: '<div data-notify="container" class="alert alert-dismissible alert-{0} alert-notify" role="alert"><span class="alert-icon" data-notify="icon"></span> <div class="alert-text"</div> <span class="alert-title" data-notify="title">{1}</span> <span data-notify="message">{2}</span></div><button type="button" class="close" data-notify="dismiss" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
+                                                    });
+                                            }
+                                        }
+                                    });
+                                }
+                            // submit
+                            }
+                        },
+                    cancel: function () {
+                        //close
+                        },
+                    },
+                    backgroundDismiss: true,
+
+                });
+
+            });
+        });
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

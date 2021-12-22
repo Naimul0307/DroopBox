@@ -1,0 +1,148 @@
+﻿@model IEnumerable<DoorBoxApp.Models.Merchant>
+
+@{
+    ViewData["Title"] = "Active Merchants";
+}
+
+@section Css {
+    @{await Html.RenderPartialAsync("_DataTableCssPartial");}
+}
+
+@section Sole {
+    <style>
+
+        .table tr th {
+            text-align: center;
+        } 
+        .table tr td {
+            text-align: center;
+        }
+    </style>
+}
+
+<div class="container-fluid mt-4">
+    <div class="card animated fadeIn overflow-hidden">
+        <div class="card-header p-3">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="mb-0 skewed skewed-yellow  d-inline-block text-uppercase ls-1 text-white">Active Merchants</h3>
+                </div>
+
+            </div>
+        </div>
+        <div class="card-body px-0 pb-2">
+            <div class="table-responsive">
+
+                <table class="table align-items-center  table-striped table-bordered" id="datatable-basic">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>
+                                Id No
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                User Name
+                            </th>
+                            <th>
+                                Phone No
+                            </th>
+                            <th>
+                                Email
+                            </th>
+
+                            <th>
+                                Address
+                            </th>
+                             <th>
+                                Payment Details
+                            </th>
+
+
+                            <th class="text-center">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+
+                            <td>
+                                @item.MerchantIdNo
+                            </td>
+                            <td>
+                                @item.Name
+                            </td>
+                            <td>
+                                @item.ApplicationUser.UserName
+                            </td>
+
+                            <td>
+                                @item.ApplicationUser.PhoneNumber
+                            </td>
+
+                            <td>
+                                @item.ApplicationUser.Email
+                            </td>
+
+                            <td>
+                                @item.Address
+                            </td>
+                            @if (item.ApplicationUser.PaymentMethod == "Bank")
+                            {
+                                <td class="text-wrap">
+                                    Name : @item.ApplicationUser.BankCustomerName
+                                    Bank : @item.ApplicationUser.BankName (@item.ApplicationUser.BranchName)
+                                    A/C : @item.ApplicationUser.AccountNumber
+                                </td>
+                            }
+                            else
+                            {
+                                @if (@item.ApplicationUser.PaymentMethod == null)
+                                {
+                                    <td>
+                                        N/A
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        Method : @item.ApplicationUser.PaymentMethod (@item.ApplicationUser.MobileBankingNumber)
+                                    </td>
+                                }
+
+                            }
+                            <td class="text-center">
+                                <div class="btn-group">
+
+                                    <a class="btn btn-danger btn-sm" asp-action="Disable" asp-route-id="@item.Id">Disable</a>
+                                    <a class="btn btn-success btn-sm" asp-controller="MerchantTarrifs" asp-action="Index" asp-route-merchantId="@item.Id">Tarrifs</a>
+                                    <a class="btn btn-warning btn-sm" asp-controller="Merchants" asp-action="MerchantProfile" asp-route-id="@item.Id">Profile</a>
+                                    
+
+                                </div>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/jquery.dataTables.min.js"></script>
+    <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

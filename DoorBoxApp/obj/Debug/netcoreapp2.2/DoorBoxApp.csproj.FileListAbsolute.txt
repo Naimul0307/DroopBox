@@ -1,0 +1,475 @@
+D:\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.deps.json
+D:\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.runtimeconfig.json
+D:\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.runtimeconfig.dev.json
+D:\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.dll
+D:\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.pdb
+D:\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.Views.dll
+D:\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.Views.pdb
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csprojAssemblyReference.cache
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.CoreCompileInputs.cache
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorAssemblyInfo.cache
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorAssemblyInfo.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.AssemblyInfoInputs.cache
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.AssemblyInfo.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.TagHelpers.input.cache
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.TagHelpers.output.cache
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorCoreGenerate.cache
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\Public.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\UpdatePassword.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DatatableCssPartial.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DatatableJsPartial.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DataTablesCssPartial.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DataTablesJsPartial.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_FooterPartial.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutOpen.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LeftNavigationPartial.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_SecurityPartial.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_TopNavigationPartial.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Users\Edit.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Users\EditRolesOfUser.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Users\Index.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorTargetAssemblyInfo.cache
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorTargetAssemblyInfo.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.Views.pdb
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.dll
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.pdb
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.CopyComplete
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Locations\Create.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Locations\Edit.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Locations\Index.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\AssignPackages.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\Create.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\Edit.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\Index.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\AdminIndex.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\Create.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\Edit.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\MarchantIndex.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\ActiveIndex.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\DisabledIndex.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\PendingIndex.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageCatagories\Create.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageCatagories\Edit.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageCatagories\Index.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\AdminActivePackageIndex.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\AdminAllPackageIndex.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\GeneratedBill.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\MerchantActivePackageIndex.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\MerchantAllPackageIndex.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\CreatePackages.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Tarrifs\Create.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Tarrifs\Edit.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Tarrifs\Index.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Tarrifs\MarchentTarrifIndex.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\test.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\DeliveryManIndex.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\MatchPackages.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DeliveryPackages.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\MerchantTarrifs\Create.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\MerchantTarrifs\Edit.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\MerchantTarrifs\Index.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\MerchantTarrifs\MarchentTarrifIndex.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\SubLocations\Create.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\SubLocations\Edit.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\SubLocations\Index.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageTypes\Create.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageTypes\Edit.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageTypes\Index.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PaymentForDeilveyMenIndex.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PickupPayment.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DeliveryPayment.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\PackagePayment.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\MerchantProfile.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PickUpReport.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DMAdminIndex.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DeliveryReport.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PendingReport.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\ReturnReport.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\AssignedPackagesVendor.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\Create.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\Edit.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\Index.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\AssignPackagesToVendor.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DeliveryReportDM.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PendingReportDM.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\ReturnReportDM.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PickUpReportDM.g.cshtml.cs
+D:\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\MerchantProfileMerchant.g.cshtml.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.AssemblyReference.cache
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.AssemblyInfoInputs.cache
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.AssemblyInfo.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.CoreCompileInputs.cache
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorAssemblyInfo.cache
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorAssemblyInfo.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.TagHelpers.input.cache
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.TagHelpers.output.cache
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.dll
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.pdb
+C:\My Projects\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\My Projects\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\appsettings.json
+C:\My Projects\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.deps.json
+C:\My Projects\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.runtimeconfig.json
+C:\My Projects\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.runtimeconfig.dev.json
+C:\My Projects\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.dll
+C:\My Projects\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.pdb
+C:\My Projects\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.Views.dll
+C:\My Projects\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.Views.pdb
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorCoreGenerate.cache
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\Public.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\UpdatePassword.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\AssignPackages.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\Create.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DeliveryPackages.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DeliveryPayment.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DeliveryReport.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DeliveryReportDM.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DMAdminIndex.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\Edit.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\Index.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PaymentForDeilveyMenIndex.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PendingReport.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PendingReportDM.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PickupPayment.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PickUpReport.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PickUpReportDM.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\ReturnReport.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\ReturnReportDM.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Locations\Create.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Locations\Edit.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Locations\Index.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\ActiveIndex.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\DisabledIndex.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\MerchantProfile.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\MerchantProfileMerchant.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\PackagePayment.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\PendingIndex.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\MerchantTarrifs\Create.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\MerchantTarrifs\Edit.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\MerchantTarrifs\Index.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\MerchantTarrifs\MarchentTarrifIndex.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageCatagories\Create.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageCatagories\Edit.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageCatagories\Index.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\AdminActivePackageIndex.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\AdminAllPackageIndex.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\GeneratedBill.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\MerchantActivePackageIndex.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\MerchantAllPackageIndex.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageTypes\Create.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageTypes\Edit.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageTypes\Index.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\AdminIndex.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\Create.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\CreatePackages.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\DeliveryManIndex.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\Edit.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\MarchantIndex.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\MatchPackages.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\test.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DatatableCssPartial.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DatatableJsPartial.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DataTablesCssPartial.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DataTablesJsPartial.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_FooterPartial.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutOpen.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LeftNavigationPartial.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_SecurityPartial.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_TopNavigationPartial.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\SubLocations\Create.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\SubLocations\Edit.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\SubLocations\Index.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Tarrifs\Create.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Tarrifs\Edit.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Tarrifs\Index.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Tarrifs\MarchentTarrifIndex.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Users\Edit.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Users\EditRolesOfUser.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Users\Index.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\AssignedPackagesVendor.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\AssignPackagesToVendor.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\Create.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\Edit.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\Index.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorTargetAssemblyInfo.cache
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorTargetAssemblyInfo.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.Views.pdb
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.genruntimeconfig.cache
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.CopyComplete
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\Edit.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PickupPaymentFixed.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DirectPickUp.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DirectDelivery.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\PackagePaymentMerchant.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\AdminIndexReport.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DmPickDropReport.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\AdminMerchantReport.cshtml.g.cs
+C:\My Projects\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\AdminMerchantReportIndex.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\appsettings.Development.json
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\appsettings.json
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.deps.json
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.runtimeconfig.json
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.runtimeconfig.dev.json
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.dll
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.pdb
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.Views.dll
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.Views.pdb
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.AssemblyReference.cache
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.GeneratedMSBuildEditorConfig.editorconfig
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.AssemblyInfoInputs.cache
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.AssemblyInfo.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.CoreCompileInputs.cache
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorAssemblyInfo.cache
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorAssemblyInfo.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.TagHelpers.input.cache
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.TagHelpers.output.cache
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorCoreGenerate.cache
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\Public.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\UpdatePassword.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\AdminIndexReport.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\AssignPackages.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\Create.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DeliveryPackages.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DeliveryPayment.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DeliveryReport.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DeliveryReportDM.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DirectDelivery.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DirectPickUp.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DMAdminIndex.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DmPickDropReport.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\Edit.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\Index.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PaymentForDeilveyMenIndex.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PendingReport.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PendingReportDM.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PickupPayment.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PickupPaymentFixed.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PickUpReport.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PickUpReportDM.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\ReturnReport.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\ReturnReportDM.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Locations\Create.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Locations\Edit.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Locations\Index.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\ActiveIndex.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\AdminMerchantReport.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\AdminMerchantReportIndex.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\DisabledIndex.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\Edit.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\MerchantProfile.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\MerchantProfileMerchant.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\PackagePayment.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\PackagePaymentMerchant.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\PendingIndex.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\MerchantTarrifs\Create.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\MerchantTarrifs\Edit.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\MerchantTarrifs\Index.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\MerchantTarrifs\MarchentTarrifIndex.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageCatagories\Create.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageCatagories\Edit.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageCatagories\Index.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\AdminActivePackageIndex.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\AdminAllPackageIndex.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\GeneratedBill.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\MerchantActivePackageIndex.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\MerchantAllPackageIndex.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageTypes\Create.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageTypes\Edit.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageTypes\Index.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\AdminIndex.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\Create.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\CreatePackages.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\DeliveryManIndex.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\Edit.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\MarchantIndex.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\MatchPackages.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\test.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DatatableCssPartial.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DatatableJsPartial.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DataTablesCssPartial.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DataTablesJsPartial.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_FooterPartial.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutOpen.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LeftNavigationPartial.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_SecurityPartial.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_TopNavigationPartial.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\SubLocations\Create.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\SubLocations\Edit.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\SubLocations\Index.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Tarrifs\Create.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Tarrifs\Edit.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Tarrifs\Index.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Tarrifs\MarchentTarrifIndex.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Users\Edit.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Users\EditRolesOfUser.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Users\Index.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\AssignedPackagesVendor.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\AssignPackagesToVendor.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\Create.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\Edit.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\Index.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.cshtml.g.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorTargetAssemblyInfo.cache
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorTargetAssemblyInfo.cs
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.Views.pdb
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.dll
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.pdb
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.genruntimeconfig.cache
+E:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.CopyComplete
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\appsettings.Development.json
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\appsettings.json
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.deps.json
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.runtimeconfig.json
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.runtimeconfig.dev.json
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.dll
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.pdb
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.Views.dll
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.Views.pdb
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.AssemblyInfoInputs.cache
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.AssemblyInfo.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.CoreCompileInputs.cache
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorAssemblyInfo.cache
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorAssemblyInfo.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.TagHelpers.input.cache
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.TagHelpers.output.cache
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorCoreGenerate.cache
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\Public.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Account\UpdatePassword.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\AdminIndexReport.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\AssignPackages.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\Create.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DeliveryPackages.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DeliveryPayment.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DeliveryReport.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DeliveryReportDM.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DirectDelivery.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DirectPickUp.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DMAdminIndex.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\DmPickDropReport.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\Edit.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\Index.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PaymentForDeilveyMenIndex.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PendingReport.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PendingReportDM.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PickupPayment.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PickupPaymentFixed.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PickUpReport.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\PickUpReportDM.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\ReturnReport.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\ReturnReportDM.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Locations\Create.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Locations\Edit.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Locations\Index.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\ActiveIndex.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\AdminMerchantReport.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\AdminMerchantReportIndex.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\DisabledIndex.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\Edit.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\MerchantProfile.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\MerchantProfileMerchant.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\PackagePayment.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\PackagePaymentMerchant.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\PendingIndex.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\MerchantTarrifs\Create.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\MerchantTarrifs\Edit.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\MerchantTarrifs\Index.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\MerchantTarrifs\MarchentTarrifIndex.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageCatagories\Create.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageCatagories\Edit.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageCatagories\Index.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\AdminActivePackageIndex.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\AdminAllPackageIndex.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\GeneratedBill.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\MerchantActivePackageIndex.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages\MerchantAllPackageIndex.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageTypes\Create.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageTypes\Edit.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageTypes\Index.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\AdminIndex.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\Create.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\CreatePackages.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\DeliveryManIndex.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\Edit.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\MarchantIndex.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\MatchPackages.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\test.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DatatableCssPartial.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DatatableJsPartial.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DataTablesCssPartial.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DataTablesJsPartial.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_FooterPartial.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutOpen.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LeftNavigationPartial.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_SecurityPartial.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_TopNavigationPartial.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\SubLocations\Create.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\SubLocations\Edit.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\SubLocations\Index.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Tarrifs\Create.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Tarrifs\Edit.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Tarrifs\Index.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Tarrifs\MarchentTarrifIndex.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Users\Edit.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Users\EditRolesOfUser.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Users\Index.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\AssignedPackagesVendor.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\AssignPackagesToVendor.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\Create.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\Edit.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Vendors\Index.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorTargetAssemblyInfo.cache
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.RazorTargetAssemblyInfo.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.Views.pdb
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.dll
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.pdb
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.genruntimeconfig.cache
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.CopyComplete
+D:\Project File\DoorBoxApp\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.AssemblyReference.cache

@@ -1,0 +1,123 @@
+﻿@model IEnumerable<DoorBoxApp.Models.Package>
+
+@{
+    ViewData["Title"] = "Vendor Packages";
+}
+
+@section Css {
+    @{await Html.RenderPartialAsync("_DataTableCssPartial");}
+}
+
+@section Sole {
+    <style>
+
+
+        .table tr th:last-child {
+            width: 100px;
+        }
+
+        .table tr th {
+            text-align: center;
+        }
+
+        .table tr td {
+            text-align: center;
+        }
+    </style>
+}
+
+<div class="container-fluid mt-4">
+    <div class="card animated fadeIn overflow-hidden">
+        <div class="card-header p-3">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="mb-0 skewed skewed-yellow text-dark d-inline-block text-uppercase text-white ls-1">@ViewBag.Vendor.Name Packages</h3>
+                </div>
+
+            </div>
+        </div>
+        <div class="card-body px-0 pb-2">
+            <div class="">
+
+                <table class="table align-items-center table-responsive-sm table-striped table-bordered" id="datatable-basic">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>
+                                Merchant name
+                            </th>
+
+                            <th>
+                                Client Name
+                            </th>
+                            <th>
+                                Phone
+                            </th>
+                            <th>
+                                Address
+                            </th>
+                            <th>
+                                Tracking ID
+                            </th>
+                            <th class="text-center">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                            <tr>
+                                <td>
+                                    @item.PickUpRequest.Merchant.Name
+                                </td>
+                                <td>
+                                    @item.ClientName
+                                    <input type="hidden" name="name" value="@item.OTP" />
+                                </td>
+                                <td>
+                                    @item.PhoneNumber
+                                </td>
+                                <td class="text-wrap">
+                                    @item.Address
+                                </td>
+                                <td>
+                                    @item.TrackingNumber
+                                </td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        @if (item.Status == 4)
+                                        {
+                                            <a class="btn btn-success btn-sm" asp-action="DeleveredByVendor" asp-route-id="@item.Id" asp-route-vendorId="@item.VendorId">Deliver</a>
+                                            <a class="btn btn-danger btn-sm" asp-action="ReturnedByVendor" asp-route-id="@item.Id" asp-route-vendorId="@item.VendorId">Return</a> 
+                                        }
+                                        else
+                                        {
+                                            <a class="btn btn-warning btn-sm text-white">No Action</a>
+                                        }
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/jquery.dataTables.min.js"></script>
+    <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript">
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

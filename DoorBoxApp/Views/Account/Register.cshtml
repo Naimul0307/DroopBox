@@ -1,0 +1,196 @@
+﻿@model DoorBoxApp.Models.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_SecurityPartial.cshtml";
+}
+<link href="~/vendor/fonts/fontawesome-pro/css/pro.min.css" rel="stylesheet" />
+<style>
+    .validation-summary-errors ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .visibility {
+        right: 50px;
+        top: 30%;
+    }
+</style>
+
+<div class="wrapper fadeInDown">
+    <div class="container">
+        <div class="row">
+            <div id="formContent" class="mx-auto">
+                <div class="fadeIn first">
+                    @*<img class="cpa-login-logo my-3" src="~/asset/img/logo.png" id="icon" alt="User Icon" />*@
+                    <h1 style="margin-top:30px !important;  margin-bottom:30px!important;" class="text-dark">DOOR BOX</h1>
+                </div>
+                <form asp-action="Register" asp-controller="Account" id="register-form" method="post" autocomplete="off">
+                    <div asp-validation-summary="ModelOnly" class="text-sm small text-danger d-block"></div>
+                    <input class="fadeIn second" asp-for="FullName" placeholder="Full Name" autocorrect="off" autocapitalize="off" autocomplete="off">
+                    <span asp-validation-for="FullName" class="text-sm small text-danger d-block"></span>
+                    <input id="login" class="fadeIn second" asp-for="UserName" placeholder="User Name" autocorrect="off" autocapitalize="off" autocomplete="off">
+                    <span asp-validation-for="UserName" class="text-sm small text-danger d-block"></span>
+                    <input class="fadeIn second" asp-for="Email" placeholder="Email" autocorrect="off" autocapitalize="off" autocomplete="off">
+                    <span asp-validation-for="Email" class="text-sm small text-danger d-block"></span>
+                    <input class="fadeIn second" asp-for="PhoneNumber" id="phoneNo" placeholder="Phone Number" autocorrect="off" autocapitalize="off" autocomplete="off">
+                    <span asp-validation-for="PhoneNumber" class="text-sm small text-danger d-block"></span>
+                    <input class="fadeIn second" asp-for="Address" placeholder="Address" autocorrect="off" autocapitalize="off" autocomplete="off">
+                    <span asp-validation-for="Address" class="text-sm small text-danger d-block"></span>
+
+                    <span asp-validation-for="MobileBankingNumber" class="text-sm small text-danger d-block"></span>
+                    <div class="position-relative">
+                        <input id="password" class="fadeIn third" placeholder="Password" asp-for="Password" autocomplete="off">
+                        <i id="pass" class="fadeIn third fa fa-eye ml-2 p-2 position-absolute visibility"></i>
+                    </div>
+                    <span asp-validation-for="Password" class="text-sm small text-danger d-block"></span>
+
+                    <div class="position-relative">
+                        <input id="confirmPassword" class="fadeIn third" placeholder="Confirm Password" asp-for="ConfirmPassword" autocomplete="off">
+                        <i id="conPass" class="fadeIn third fa fa-eye ml-2 p-2 position-absolute visibility"></i>
+                    </div>
+                    <span asp-validation-for="ConfirmPassword" class="text-sm small text-danger d-block"></span>
+                    <label class="fadeIn second mt--3">Payment Method</label>
+                    <select class="fadeInDown  mt--3" id="paymentMethod" asp-for="PaymentMethod">
+                        <option value="SPayament">Select</option>
+                        <option value="Bank">Bank</option>
+                        <option value="BKash">BKash</option>
+                        <option value="Nagad">Nagad</option>
+                        <option value="Rocket">Rocket</option>
+                    </select>
+                    <span asp-validation-for="PaymentMethod" class="text-sm small text-danger d-block"></span>
+
+                    <input hidden class="fadeIn second" asp-for="MobileBankingNumber" id="paymentPhoneNo" placeholder="Mobile Banking Number" autocorrect="off" autocapitalize="off" autocomplete="off">
+                    <input  hidden class="fadeIn second bankPayment" asp-for="BankName"  placeholder="Bank Name" autocorrect="off" autocapitalize="off" autocomplete="off">
+                    <input  hidden class="fadeIn second bankPayment" asp-for="BranchName"     placeholder="Branch Name" autocorrect="off" autocapitalize="off" autocomplete="off">
+                    <input  hidden class="fadeIn second bankPayment" asp-for="AccountNumber"  placeholder="Account Number" autocorrect="off" autocapitalize="off" autocomplete="off">
+                    <input  hidden class="fadeIn second bankPayment" asp-for="RoutingNumber"  placeholder="Routing Number" autocorrect="off" autocapitalize="off" autocomplete="off">
+                    <input  hidden class="fadeIn second bankPayment" asp-for="BankCustomerName"  placeholder="Bank Customer Name" autocorrect="off" autocapitalize="off" autocomplete="off">
+
+                    <input type="button" id="registerButton" class="fadeIn fourth" value="Sign Up">
+
+                    @*<div class="col-lg-12 mb-3">
+            <a asp-controller="Account" asp-action="Register">Registration</a>
+        </div>*@
+                </form>
+                @*<div id="formFooter">
+                        <input class="custom-control-input" asp-for="RememberMe" />
+                        <label class="custom-control-label ml-3" asp-for="RememberMe">
+                            <span class="remember-me">Remember Me?</span>
+                        </label>
+                    </div>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $("#pass").on('click', function (event) {
+            event.preventDefault();
+            if ($('#password').attr("type") == "text") {
+                $('#password').attr('type', 'password');
+                $(this).removeClass("fa-eye-slash");
+                $(this).addClass("fa-eye");
+
+            } else if ($('#password').attr("type") == "password") {
+                $('#password').attr('type', 'text');
+                $(this).addClass("fa-eye-slash");
+                $(this).removeClass("fa-eye");
+            }
+        });
+
+        $("#registerButton").on('click', function (event) {
+            var phoneNo = $('#phoneNo').val();
+            var paymentMethod = $('#paymentMethod').val();
+            var phonenoReg = /(^(\88)?(01){1}[3456789]{1}(\d){8})$/
+            if (!phoneNo.match(phonenoReg)) {
+
+                $.notify({
+                    title: 'Prompt!',
+                    icon: 'fa fa-times',
+                    html: true,
+                    message: 'Invalid Phone Number'
+                },
+                    {
+                        type: 'warning',
+                        animate: {
+                            enter: 'animated fadeInDown'
+                        },
+                        placement: {
+                            from: "top",
+                            align: "center"
+                        },
+                        spacing: 10,
+                        z_index: 1031,
+                        delay: 1000,
+                        template: '<div data-notify="container" class="alert alert-dismissible alert-{0} alert-notify" role="alert"><span class="alert-icon" data-notify="icon"></span> <div class="alert-text"</div> <span class="alert-title" data-notify="title">{1}</span> <span data-notify="message">{2}</span></div><button type="button" class="close" data-notify="dismiss" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
+                    });
+            }
+            else if (paymentMethod != "Bank") {
+                var paymentPhoneNo = $('#paymentPhoneNo').val();
+                var payemntPhonenoReg = /(^(\88)?(01){1}[3456789]{1}(\d){8})$/
+                if (!paymentPhoneNo.match(payemntPhonenoReg)) {
+
+                    $.notify({
+                        title: 'Prompt!',
+                        icon: 'fa fa-times',
+                        html: true,
+                        message: 'Invalid Banking Mobile Number'
+                    },
+                        {
+                            type: 'warning',
+                            animate: {
+                                enter: 'animated fadeInDown'
+                            },
+                            placement: {
+                                from: "top",
+                                align: "center"
+                            },
+                            spacing: 10,
+                            z_index: 1031,
+                            delay: 1000,
+                            template: '<div data-notify="container" class="alert alert-dismissible alert-{0} alert-notify" role="alert"><span class="alert-icon" data-notify="icon"></span> <div class="alert-text"</div> <span class="alert-title" data-notify="title">{1}</span> <span data-notify="message">{2}</span></div><button type="button" class="close" data-notify="dismiss" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
+                        });
+                }
+                else {
+                    $("#register-form").submit();
+                }
+            }
+            else {
+                $("#register-form").submit();
+            }
+        });
+
+        $("#paymentMethod").on('change', function (event) {
+            var paymentMethod = $('#paymentMethod').val();
+            if (paymentMethod == "SPayament" ) {
+                $('#paymentPhoneNo').attr("hidden", true);
+            }
+            else if (paymentMethod == "Bank") {
+                $('.bankPayment').attr("hidden", false);
+                $('#paymentPhoneNo').attr("hidden", true);
+            }
+            else {
+                $('#paymentPhoneNo').attr("hidden", false);
+                $('.bankPayment').attr("hidden", true);
+            }
+        });
+
+
+
+        $("#conPass").on('click', function (event) {
+            event.preventDefault();
+            if ($('#confirmPassword').attr("type") == "text") {
+                $('#confirmPassword').attr('type', 'password');
+                $(this).removeClass("fa-eye-slash");
+                $(this).addClass("fa-eye");
+
+            } else if ($('#confirmPassword').attr("type") == "password") {
+                $('#confirmPassword').attr('type', 'text');
+                $(this).addClass("fa-eye-slash");
+                $(this).removeClass("fa-eye");
+            }
+        });
+    </script>
+}

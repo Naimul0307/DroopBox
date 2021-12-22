@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "e8c8343b-0375-45a2-b012-d1226862ec9f": {
+      "ProjectGuid": "e8c8343b-0375-45a2-b012-d1226862ec9f",
+      "DisplayName": "DoorBoxApp",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

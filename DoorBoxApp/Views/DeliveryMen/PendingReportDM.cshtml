@@ -1,0 +1,279 @@
+﻿@model DoorBoxApp.Models.ViewModels.FromDateToDateViewModel
+
+@{
+    ViewData["Title"] = "All Packages";
+}
+
+@section Css {
+    @{await Html.RenderPartialAsync("_DataTableCssPartial");}
+}
+
+@section Sole {
+    <style>
+
+
+        .table tr th:last-child {
+            width: 160px;
+        }
+
+        .table tr th {
+            text-align: center;
+        }
+
+        .table tr td {
+            text-align: center;
+            text-wrap: initial;
+        }
+    </style>
+}
+
+<div class="container-fluid mt-4">
+    <div class="card animated fadeIn overflow-hidden">
+
+        <form asp-action="PickUpReport">
+            <div class="card-header ">
+                <div class="row">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="Id" class="form-control" hidden value="@ViewBag.DeliveryMan.Id" />
+                    <label class=" form-control shadow-none--hover skewed skewed-yellow hover btn btn-greenyellow text-center col-lg-2">From</label>
+                    <input name="FromDate" readonly class="form-control form-control-sm mr-2 datepicker text-center col-lg-3" value="@String.Format("{0:yyyy-MM-dd}", ViewBag.FromDate)" placeholder="From" />
+                    <label class="form-control shadow-none--hover hover  skewed skewed-yellow  btn btn-greenyellow text-center col-lg-2">To</label>
+                    <input name="ToDate" readonly class="form-control form-control-sm mr-2 datepicker text-center col-lg-3" value="@String.Format("{0:yyyy-MM-dd}", ViewBag.ToDate)" placeholder="To" />
+
+                    <button type="submit" class="form-control btn btn-primary btn-sm col-lg-1">Search<i class="fa fa-search ml-1"></i></button>
+                </div>
+            </div>
+        </form>
+        <div class="card-body px-0 pb-2">
+            <div class="table-responsive">
+
+                <table class="table align-items-center  table-striped table-bordered" id="datatable-basic">
+                    <thead class="thead-light">
+                        <tr>
+
+                            <th>
+                                Catagory
+                            </th>
+                            <th>
+                                Merchant Name
+                            </th>
+                            <th>
+                                Merchant ID
+                            </th>
+                            <th>
+                                From
+                            </th>
+                            <th>
+                                To
+                            </th>
+
+                            <th>
+                                Sub(To)
+                            </th>
+                            
+                            <th>
+                               Tracking No
+                            </th>
+
+                            <th>
+                                Client
+                            </th>
+                            <th>
+                                Phone
+                            </th>
+                            <th>
+                                Address
+                            </th>
+
+
+                            <th>
+                                Weight
+                            </th>
+
+                            <th>
+                                Product Price
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewBag.Packages)
+                        {
+                        <tr>
+
+                            <td>
+                                @item.PackageCatagory.Name
+                            </td>
+                            <td>
+                                @item.PickUpRequest.Merchant.Name
+                            </td>
+                            <td>
+                                @item.PickUpRequest.Merchant.MerchantIdNo
+                            </td>
+
+
+                            <td>
+                                @item.PickUpRequest.LocationFrom.Name
+                            </td>
+                            @if (item.LocationTo != null)
+                            {
+                                <td>
+                                    @item.LocationTo.Name
+                                </td>
+                            }
+                            else
+                            {
+                                <td>N/A</td>
+                            }
+
+                            @if (item.SubLocation != null)
+                            {
+
+                                <td>
+                                    @item.SubLocation.Name
+                                </td>
+                            }
+                            else
+                            {
+                                <td>N/A</td>
+                            }
+
+                            @if (item.TrackingNumber != null)
+                            {
+
+                                <td>
+                                    @item.TrackingNumber
+                                </td>
+                            }
+                            else
+                            {
+                                <td>N/A</td>
+                            }
+
+                            <td>
+                                @item.ClientName
+                            </td>
+
+                            <td>
+                                @item.PhoneNumber
+                            </td>
+                            <td>
+                                @item.Address
+                            </td>
+
+
+
+                            @if (item.Weight != null)
+                            {
+                                <td>@item.Weight</td>
+                            }
+                            else
+                            {
+                                <td>N/A</td>
+                            }
+
+
+
+                            @if (item.ProductPrice != null)
+                            {
+                                <td>@item.ProductPrice</td>
+                            }
+                            else
+                            {
+                                <td>N/A</td>
+                            }
+
+
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/jquery.dataTables.min.js"></script>
+    <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        $('.paymentButton').on('click', function () {
+            var row = $(this).closest('tr');
+            var packageId = row.find('.packageId').val();
+            var dueAmount = row.find('.dueAmount').val();
+            var payAmount = row.find('.paymentNew').val();
+
+            if (eval(dueAmount) < eval(payAmount)) {
+                $.notify({
+                    title: 'Prompt!',
+                    icon: 'fa fa-times',
+                    html: true,
+                    message: 'Paid amount can not be more than due amount'
+                },
+                    {
+                        type: 'warning',
+                        animate: {
+                            enter: 'animated fadeInDown'
+                        },
+                        placement: {
+                            from: "top",
+                            align: "center"
+                        },
+                        spacing: 10,
+                        z_index: 1031,
+                        delay: 1000,
+                        template: '<div data-notify="container" class="alert alert-dismissible alert-{0} alert-notify" role="alert"><span class="alert-icon" data-notify="icon"></span> <div class="alert-text"</div> <span class="alert-title" data-notify="title">{1}</span> <span data-notify="message">{2}</span></div><button type="button" class="close" data-notify="dismiss" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
+                    });
+            }
+            else {
+                 var url = '@Url.Action("AddPayment", "Packages")';
+                     $.ajax({
+                         type: "POST",
+                         dataType: 'json',
+                         url: url,
+                         data: {
+                             packageId: packageId,
+                             payAmount: payAmount,
+
+                         },
+                         cache: false,
+                         success: function (result) {
+                             if (result) {
+                                 location.reload();
+                             }
+                             else {
+                                 $.notify({
+                                     title: 'Prompt!',
+                                     icon: 'fa fa-times',
+                                     html: true,
+                                     message: 'Something went wrong !!!'
+                                 },
+                                     {
+                                         type: 'warning',
+                                         animate: {
+                                             enter: 'animated fadeInDown'
+                                         },
+                                         placement: {
+                                             from: "top",
+                                             align: "center"
+                                         },
+                                         spacing: 10,
+                                         z_index: 1031,
+                                         delay: 1000,
+                                         template: '<div data-notify="container" class="alert alert-dismissible alert-{0} alert-notify" role="alert"><span class="alert-icon" data-notify="icon"></span> <div class="alert-text"</div> <span class="alert-title" data-notify="title">{1}</span> <span data-notify="message">{2}</span></div><button type="button" class="close" data-notify="dismiss" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
+                                     });
+                             }
+                         }
+
+                     });
+            }
+
+        });
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
