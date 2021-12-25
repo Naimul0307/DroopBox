@@ -136,6 +136,24 @@ namespace DoorBoxApp.Controllers
 
         }
 
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> AdminPackagePayment()
+        {
+            var packagers = await _context.Packages.Where(m => m.Status == 5 || m.Status == 13 || m.Status == 14)
+                .Include(m => m.SubLocation)
+                .Include(m => m.LocationTo)
+                .Include(m => m.PickUpRequest)
+                .Include(m => m.PickUpRequest.Merchant)
+                .Include(m => m.PickUpRequest.LocationFrom)
+                .Include(m => m.PickUpRequest.PickUpDeliveryMan)
+                .OrderByDescending(m => m.Id)
+                .OrderBy(m => m.Id)
+                .ToListAsync();
+
+
+            return View(packagers);
+        }
+
         [Authorize(Roles = "Finance")]
         public async Task<IActionResult> PackagePayment()
         {

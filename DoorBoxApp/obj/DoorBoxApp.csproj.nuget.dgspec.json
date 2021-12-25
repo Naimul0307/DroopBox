@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project File\\DoorBoxApp\\DoorBoxApp\\DoorBoxApp\\DoorBoxApp.csproj": {}
+    "D:\\Project File\\DoorBoxApp\\DoorBoxApp\\DoorBoxApp.csproj": {}
   },
   "projects": {
-    "D:\\Project File\\DoorBoxApp\\DoorBoxApp\\DoorBoxApp\\DoorBoxApp.csproj": {
+    "D:\\Project File\\DoorBoxApp\\DoorBoxApp\\DoorBoxApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project File\\DoorBoxApp\\DoorBoxApp\\DoorBoxApp\\DoorBoxApp.csproj",
+        "projectUniqueName": "D:\\Project File\\DoorBoxApp\\DoorBoxApp\\DoorBoxApp.csproj",
         "projectName": "DoorBoxApp",
-        "projectPath": "D:\\Project File\\DoorBoxApp\\DoorBoxApp\\DoorBoxApp\\DoorBoxApp.csproj",
+        "projectPath": "D:\\Project File\\DoorBoxApp\\DoorBoxApp\\DoorBoxApp.csproj",
         "packagesPath": "C:\\Users\\Diviya & Naimul\\.nuget\\packages\\",
-        "outputPath": "D:\\Project File\\DoorBoxApp\\DoorBoxApp\\DoorBoxApp\\obj\\",
+        "outputPath": "D:\\Project File\\DoorBoxApp\\DoorBoxApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

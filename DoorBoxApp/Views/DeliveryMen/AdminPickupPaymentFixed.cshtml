@@ -1,0 +1,107 @@
+﻿@model IEnumerable<DoorBoxApp.Models.PickUpRequest>
+
+@{
+    ViewData["Title"] = "Pickup Payment";
+}
+
+@section Css {
+    @{await Html.RenderPartialAsync("_DataTableCssPartial");}
+}
+
+@section Sole {
+    <style>
+
+
+        .table tr th:last-child {
+            width: 100px;
+        }
+
+        .table tr th {
+            text-align: center;
+        }
+
+        .table tr td {
+            text-align: center;
+        }
+    </style>
+}
+
+<div class="container-fluid mt-4">
+    <div class="card animated fadeIn overflow-hidden">
+        <div class="card-header p-3">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="mb-0 skewed skewed-yellow  d-inline-block text-uppercase ls-1 text-white">Pickup Payment : @ViewBag.DeliveryMan.Name</h3>
+                </div>
+
+            </div>
+        </div>
+        <div class="card-body px-0 pb-2">
+            <div class="table-responsive">
+
+                <table class="table align-items-center table-responsive-sm table-striped table-bordered" id="datatable-basic">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>
+                                Merchant
+                            </th>
+
+                            <th>
+                                From
+                            </th>
+                            <th>
+                                Address
+                            </th>
+
+                            <th>
+                                Pay
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                @if (item.Merchant != null)
+                                {
+                                    <td>
+                                        <input type="hidden" class="pickupRequestId" value="@item.Id" />
+                                        @item.Merchant.Name
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        No Data
+                                    </td>
+                                }
+
+                                <td>
+                                    @item.LocationFrom.Name
+                                </td>
+
+                                <td>
+                                    @item.PickupAddress
+                                </td>
+
+                                <td>
+                                    <input disabled class="form-control phoneNo border-0 border-radius-0 text-center text-wrap paidAmount" type="text" value="10" />
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/jquery.dataTables.min.js"></script>
+    <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/dataTables.bootstrap4.min.js"></script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,221 @@
+﻿
+@model IEnumerable<DoorBoxApp.Models.Package>
+
+@{
+    ViewData["Title"] = "Package Payment";
+}
+
+@section Css {
+    @{await Html.RenderPartialAsync("_DataTableCssPartial");}
+}
+
+@section Sole {
+    <style>
+
+
+        .table tr th:last-child {
+            width: 100px;
+        }
+
+        .table tr th {
+            text-align: center;
+        }
+
+        .table tr td {
+            text-align: center;
+        }
+    </style>
+}
+
+<div class="container-fluid mt-4">
+    <div class="card animated fadeIn overflow-hidden">
+        <div class="card-header p-3">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="mb-0 skewed skewed-yellow  d-inline-block text-uppercase ls-1 text-white">Package Payment</h3>
+                </div>
+
+            </div>
+        </div>
+        <div class="card-body px-0 pb-2">
+            <div class="table-responsive">
+
+                <table class="table align-items-center table-responsive-sm table-striped table-bordered" id="datatable-basic">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>
+                                Merchant
+                            </th>
+                            <th>
+                                From
+                            </th>
+                            <th>
+                                To
+                            </th>
+                            <th>
+                                To Sub
+                            </th>
+                            <th>
+                                Product Price
+                            </th>
+                            <th>
+                                Delivery Charge
+                            </th>
+
+                            <th>
+                                Payable
+                            </th>
+
+                            <th>
+                                Paid
+                            </th>
+                            <th>
+                                Due
+                            </th>
+                            <th>
+                                Pay to Merchant
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            double payable = 0;
+                            <tr>
+                                @if (item.PickUpRequest.Merchant != null)
+                                {
+                                    <td>
+                                        <input type="hidden" class="packageId" value="@item.Id" />
+                                        <a asp-action="PackagePaymentMerchant" asp-controller="Merchants" asp-route-merchantId="@item.PickUpRequest.MerchantId">  @item.PickUpRequest.Merchant.Name</a>
+
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        No Data
+                                    </td>
+                                }
+                                <td>
+                                    @item.PickUpRequest.LocationFrom.Name
+                                </td>
+                                @if (item.LocationTo != null)
+                                {
+                                    <td>
+                                        @item.LocationTo.Name
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        No Data
+                                    </td>
+                                }
+
+                                @if (item.SubLocation != null)
+                                {
+                                    <td>
+                                        @item.SubLocation.Name
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        No Data
+                                    </td>
+                                }
+                                @if (item.ProductPrice != null)
+                                {
+
+                                    <td>
+                                        @item.ProductPrice
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        0
+                                    </td>
+                                }
+
+
+                                @if (item.Price != null)
+                                {
+
+                                    <td>
+                                        @item.Price
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        0
+                                    </td>
+                                }
+                                @if (item.ProductPrice != null)
+                                {
+                                    payable = (double)(item.ProductPrice - item.Price);
+                                    <td>
+                                        @payable
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        0
+                                    </td>
+                                }
+
+                                @if (item.PaidAmount != null)
+                                {
+                                    <td>
+                                        @item.PaidAmount
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        0
+                                    </td>
+                                }
+                                @if (item.MerchantPaid)
+                                {
+                                    <td>
+                                        No Due
+                                    </td>
+                                    <td>
+                                        Paid
+                                    </td>
+                                }
+                                else if (item.PaidAmount == 0 || item.PaidAmount == null)
+                                {
+
+                                    <td>
+                                        @payable
+                                        <input disabled type="hidden" class="dueAmount" name="name" value="@payable" />
+                                    </td>
+                                    <td>
+                                        <input disabled class="form-control phoneNo border-0 border-radius-0 text-center text-wrap paidAmount" type="text" value="@payable" />
+                                    </td>
+                                }
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/jquery.dataTables.min.js"></script>
+    <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript">
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

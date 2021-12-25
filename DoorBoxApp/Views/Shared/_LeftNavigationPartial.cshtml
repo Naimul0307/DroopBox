@@ -108,27 +108,26 @@
                         </li>
 
                         <li class="nav-item nav_level0">
-
-                            <a class="nav-link position-relative" asp-controller="DeliveryMen" asp-action="PaymentForDeilveyMenIndex">
-                                <i class="far fa-dollar-sign text-gray"></i>
-                                <span class="nav-link-text text-nowrap text-dark">Rider Payment</span>
-                            </a>
-                        </li>
-                        <li class="nav-item nav_level0">
-
-                            <a class="nav-link position-relative" asp-controller="Merchants" asp-action="PackagePayment">
-                                <i class="far fa-coins text-gray"></i>
-                                <span class="nav-link-text text-nowrap text-dark">Merchant Payment</span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item nav_level0">
                             <a class="nav-link position-relative" asp-controller="Merchants" asp-action="AdminMerchantReportIndex" asp-route-userId="">
                                 <i class="far fa-list text-gray"></i>
                                 <span class="nav-link-text text-nowrap text-dark">Merchant Report</span>
                             </a>
                         </li>
 
+                        <li class="nav-item nav_level0">
+
+                            <a class="nav-link position-relative" asp-controller="DeliveryMen" asp-action="AdminPaymentForDeilveyMenIndex">
+                                <i class="far fa-dollar-sign text-gray"></i>
+                                <span class="nav-link-text text-nowrap text-dark">Rider Payment</span>
+                            </a>
+                        </li>
+                        <li class="nav-item nav_level0">
+
+                            <a class="nav-link position-relative" asp-controller="Merchants" asp-action="AdminPackagePayment">
+                                <i class="far fa-coins text-gray"></i>
+                                <span class="nav-link-text text-nowrap text-dark">Merchant Payment</span>
+                            </a>
+                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="#super-admin-option3" data-toggle="collapse" role="button"
@@ -181,9 +180,6 @@
                         <li class="nav-item">
                             <a asp-controller="Packages" asp-action="AdminAllPackageIndex" class="nav-link text-nowrap">All Packages</a>
                         </li>
-
-
-
 
                     </ul>
                 </div>
@@ -372,8 +368,6 @@
                                 <span class="nav-link-text text-nowrap text-dark">Merchant Payment</span>
                             </a>
                         </li>
-
-
 
                     }
 

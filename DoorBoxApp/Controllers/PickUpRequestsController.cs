@@ -63,13 +63,14 @@ namespace DoorBoxApp.Controllers
         }
 
 
-
         public async Task<IActionResult> AdminIndex()
         {
-            var applicationDbContext = _context.PickUpRequests.Include(p => p.LocationFrom).Include(p => p.Merchant).Include(p => p.PickUpDeliveryMan).Where(m => m.Status > 1).OrderByDescending(m=>m.Id);
+            var applicationDbContext = _context.PickUpRequests
+                .Include(p => p.LocationFrom).Include(p => p.Merchant)
+                .Include(p => p.PickUpDeliveryMan).Where(m => m.Status > 1)
+                .OrderByDescending(m=>m.Id);
             return View(await applicationDbContext.ToListAsync());
         }
-
 
 
 
@@ -98,6 +99,7 @@ namespace DoorBoxApp.Controllers
                 await _context.SaveChangesAsync();
 
                 pickUpRequest.RequestId = "Req000" + pickUpRequest.Id.ToString();
+                pickUpRequest.RequestDate = pickUpRequest.RequestDate;
                 _context.Update(pickUpRequest);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(MarchantIndex));

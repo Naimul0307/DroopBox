@@ -23,7 +23,7 @@ namespace DoorBoxApp.Controllers
         {
             _context = context;
             _userManager = userManager;
-        }   
+        }
 
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
@@ -31,8 +31,41 @@ namespace DoorBoxApp.Controllers
             return View(await _context.DeliveryMans.ToListAsync());
         }
 
-        [Authorize(Roles = "Finance")]
 
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> AdminPaymentForDeilveyMenIndex()
+        {
+            var deliveryMen = await _context.DeliveryMans.Where(m => m.Status == 1).ToListAsync();
+            List<DeliveryManPaymentViewModel> deliverymanList = new List<DeliveryManPaymentViewModel>();
+            foreach (var dm in deliveryMen)
+            {
+                DeliveryManPaymentViewModel dMan = new DeliveryManPaymentViewModel();
+                dMan.DeliveryMan = dm;
+                dMan.DeliveryManId = dm.Id;
+
+                dMan.TotalDrop = await _context.Packages.Where(m => m.DeliveryManId == dm.Id && m.Status == 5).CountAsync();
+                if (dm.Salary == 0)
+                {
+                    dMan.TotalPick = await _context.Packages.Where(m => m.PickUpRequest.PickUpDeliveryManId == dm.Id).CountAsync();
+                    dMan.TotalPayable = (dMan.TotalPick * dm.PickUpRate) + (dMan.TotalDrop * dm.DeliveryRate);
+                    dMan.TotalPaid = (double)await _context.Packages.Where(m => m.PickUpRequest.PickUpDeliveryManId == dm.Id && m.PickUpDeliveryManPaid).SumAsync(m => m.PaidForPickUp) + (double)await _context.Packages.Where(m => m.DeliveryManId == dm.Id && m.DeliveryDeliveryManPaid).SumAsync(m => m.PaidForDelivery);
+                }
+                else
+                {
+                    dMan.TotalPick = await _context.PickUpRequests.Where(m => m.PickUpDeliveryManId == dm.Id).CountAsync();
+                    dMan.TotalPayable = (dMan.TotalPick * dm.PickUpRate) + (dMan.TotalDrop * dm.DeliveryRate);
+                    dMan.TotalPaid = (double)await _context.PickUpRequests.Where(m => m.PickUpDeliveryManId == dm.Id && m.PickupDeliveryManPaid).SumAsync(m => m.PaidForPickUp) + (double)await _context.Packages.Where(m => m.DeliveryManId == dm.Id && m.DeliveryDeliveryManPaid).SumAsync(m => m.PaidForDelivery);
+                }
+
+                dMan.TotalDue = dMan.TotalPayable - dMan.TotalPaid;
+                deliverymanList.Add(dMan);
+            }
+
+
+            return View(deliverymanList);
+        }
+
+        [Authorize(Roles = "Finance")]
         public async Task<IActionResult> PaymentForDeilveyMenIndex()
         {
             var deliveryMen = await _context.DeliveryMans.Where(m => m.Status == 1).ToListAsync();
@@ -42,13 +75,13 @@ namespace DoorBoxApp.Controllers
                 DeliveryManPaymentViewModel dMan = new DeliveryManPaymentViewModel();
                 dMan.DeliveryMan = dm;
                 dMan.DeliveryManId = dm.Id;
-              
-                  dMan.TotalDrop = await _context.Packages.Where(m => m.DeliveryManId == dm.Id && m.Status == 5).CountAsync();
-                if (dm.Salary==0)
+
+                dMan.TotalDrop = await _context.Packages.Where(m => m.DeliveryManId == dm.Id && m.Status == 5).CountAsync();
+                if (dm.Salary == 0)
                 {
                     dMan.TotalPick = await _context.Packages.Where(m => m.PickUpRequest.PickUpDeliveryManId == dm.Id).CountAsync();
                     dMan.TotalPayable = (dMan.TotalPick * dm.PickUpRate) + (dMan.TotalDrop * dm.DeliveryRate);
-                    dMan.TotalPaid = (double)await _context.Packages.Where(m => m.PickUpRequest.PickUpDeliveryManId == dm.Id && m.PickUpDeliveryManPaid).SumAsync(m=>m.PaidForPickUp)+(double) await _context.Packages.Where(m=>m.DeliveryManId==dm.Id && m.DeliveryDeliveryManPaid).SumAsync(m=>m.PaidForDelivery);
+                    dMan.TotalPaid = (double)await _context.Packages.Where(m => m.PickUpRequest.PickUpDeliveryManId == dm.Id && m.PickUpDeliveryManPaid).SumAsync(m => m.PaidForPickUp) + (double)await _context.Packages.Where(m => m.DeliveryManId == dm.Id && m.DeliveryDeliveryManPaid).SumAsync(m => m.PaidForDelivery);
                 }
                 else
                 {
@@ -56,7 +89,7 @@ namespace DoorBoxApp.Controllers
                     dMan.TotalPayable = (dMan.TotalPick * dm.PickUpRate) + (dMan.TotalDrop * dm.DeliveryRate);
                     dMan.TotalPaid = (double)await _context.PickUpRequests.Where(m => m.PickUpDeliveryManId == dm.Id && m.PickupDeliveryManPaid).SumAsync(m => m.PaidForPickUp) + (double)await _context.Packages.Where(m => m.DeliveryManId == dm.Id && m.DeliveryDeliveryManPaid).SumAsync(m => m.PaidForDelivery);
                 }
-               
+
                 dMan.TotalDue = dMan.TotalPayable - dMan.TotalPaid;
                 deliverymanList.Add(dMan);
             }
@@ -86,10 +119,10 @@ namespace DoorBoxApp.Controllers
                 dMan.TotalPick = await _context.Packages
                .Where(m => m.PickUpRequest.PickUpDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate && m.PickUpRequest.PickUpDeliveryManId == dm.Id).OrderBy(m => m.PickUpRequest.PickUpDate).CountAsync();
                 dMan.TotalDrop = await _context.Packages
-               .Where(m => m.Status != 0 && m.DeliveryDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate && m.Status == 5 && m.DeliveryManId == dm.Id).OrderBy(m => m.DeliveryDate).CountAsync(); 
+               .Where(m => m.Status != 0 && m.DeliveryDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate && m.Status == 5 && m.DeliveryManId == dm.Id).OrderBy(m => m.DeliveryDate).CountAsync();
                 dMan.TotalCancel = await _context.Packages
               .Where(m => m.Status != 0 && m.DeliveryDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate && (m.Status == 13 || m.Status == 14) && m.DeliveryManId == dm.Id).OrderBy(m => m.DeliveryDate).CountAsync();
-               
+
                 if (dm.Salary == 0)
                 {
                     dMan.TotalPaid = (double)await _context.Packages.Where(m => m.PickUpRequest.PickUpDeliveryManId == dm.Id && m.PickUpDeliveryManPaid).SumAsync(m => m.PaidForPickUp) + (double)await _context.Packages.Where(m => m.DeliveryManId == dm.Id && m.DeliveryDeliveryManPaid).SumAsync(m => m.PaidForDelivery);
@@ -130,7 +163,7 @@ namespace DoorBoxApp.Controllers
 
             ViewData["DeliveryManId"] = new SelectList(deliveryMen, "Id", "Name");
 
-            ViewData["PickUpRequests"] = await _context.PickUpRequests.Include(m=>m.Merchant).Include(m=>m.Merchant.ApplicationUser).Where(m => (m.Status == 3) && m.PickUpDeliveryManId == null).ToListAsync();
+            ViewData["PickUpRequests"] = await _context.PickUpRequests.Include(m => m.Merchant).Include(m => m.Merchant.ApplicationUser).Where(m => (m.Status == 3) && m.PickUpDeliveryManId == null).ToListAsync();
             return View();
         }
 
@@ -146,11 +179,11 @@ namespace DoorBoxApp.Controllers
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Index", "Home");
         }
 
 
-         [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DirectDelivery()
         {
             var deliveryMen = await _context.DeliveryMans.Where(m => m.Status == 1).ToListAsync();
@@ -175,7 +208,7 @@ namespace DoorBoxApp.Controllers
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Index", "Home");
         }
 
 
@@ -184,52 +217,49 @@ namespace DoorBoxApp.Controllers
         [Authorize(Roles = "Finance")]
         public async Task<IActionResult> PickupPayment(int id)
         {
-            var packagers = await _context.Packages.Where(m => m.PickUpRequest.PickUpDeliveryManId == id && !m.PickUpDeliveryManPaid && m.Status>1)
-                .Include(m=>m.SubLocation)
-                .Include(m=>m.LocationTo)
-                .Include(m=>m.PickUpRequest)
-                .Include(m=>m.PickUpRequest.Merchant)
-                .Include(m=>m.PickUpRequest.LocationFrom)
-                .Include(m=>m.PickUpRequest.PickUpDeliveryMan)
-                
-                
+            var packagers = await _context.Packages.Where(m => m.PickUpRequest.PickUpDeliveryManId == id && !m.PickUpDeliveryManPaid && m.Status > 1)
+                .Include(m => m.SubLocation)
+                .Include(m => m.LocationTo)
+                .Include(m => m.PickUpRequest)
+                .Include(m => m.PickUpRequest.Merchant)
+                .Include(m => m.PickUpRequest.LocationFrom)
+                .Include(m => m.PickUpRequest.PickUpDeliveryMan)
+
+
                 .ToListAsync();
 
             ViewData["DeliveryMan"] = await _context.DeliveryMans.Where(m => m.Id == id).FirstOrDefaultAsync();
 
             return View(packagers);
         }
-        
-        
         [Authorize(Roles = "Finance")]
-
         public async Task<IActionResult> PickupPaymentFixed(int id)
         {
-            var pickUpRequests = await _context.PickUpRequests.Where(m => m.PickUpDeliveryManId == id && !m.PickupDeliveryManPaid && m.Status>1)
-                .Include(m=>m.Merchant)
-                .Include(m=>m.LocationFrom)
-                .Include(m=>m.PickUpDeliveryMan)
-                
-                
+            var pickUpRequests = await _context.PickUpRequests.Where(m => m.PickUpDeliveryManId == id && !m.PickupDeliveryManPaid && m.Status > 1)
+                .Include(m => m.Merchant)
+                .Include(m => m.LocationFrom)
+                .Include(m => m.PickUpDeliveryMan)
+
+
                 .ToListAsync();
 
             ViewData["DeliveryMan"] = await _context.DeliveryMans.Where(m => m.Id == id).FirstOrDefaultAsync();
 
             return View(pickUpRequests);
         }
-                                                                         
-         [Authorize(Roles = "Finance")]
+
+        [Authorize(Roles = "Finance")]
         public async Task<IActionResult> DeliveryPayment(int id)
         {
-            var packagers = await _context.Packages.Where(m => m.PickUpRequest.PickUpDeliveryManId == id && !m.DeliveryDeliveryManPaid && m.Status>1)
-                .Include(m=>m.SubLocation)
-                .Include(m=>m.LocationTo)
-                .Include(m=>m.PickUpRequest)
-                .Include(m=>m.PickUpRequest.Merchant)
-                .Include(m=>m.PickUpRequest.LocationFrom)
-                .Include(m=>m.PickUpRequest.PickUpDeliveryMan)
-                
-                
+            var packagers = await _context.Packages.Where(m => m.PickUpRequest.PickUpDeliveryManId == id && !m.DeliveryDeliveryManPaid && m.Status > 1)
+                .Include(m => m.SubLocation)
+                .Include(m => m.LocationTo)
+                .Include(m => m.PickUpRequest)
+                .Include(m => m.PickUpRequest.Merchant)
+                .Include(m => m.PickUpRequest.LocationFrom)
+                .Include(m => m.PickUpRequest.PickUpDeliveryMan)
+
+
                 .ToListAsync();
 
             ViewData["DeliveryMan"] = await _context.DeliveryMans.Where(m => m.Id == id).FirstOrDefaultAsync();
@@ -261,7 +291,7 @@ namespace DoorBoxApp.Controllers
                 await _context.SaveChangesAsync();
 
                 deliveryMan.DeliveryManIdNo = "DM000" + deliveryMan.Id.ToString();
-                var checkDelivery =await _context.Users.Where(m => m.UserName == deliveryMan.DeliveryManIdNo).FirstOrDefaultAsync();
+                var checkDelivery = await _context.Users.Where(m => m.UserName == deliveryMan.DeliveryManIdNo).FirstOrDefaultAsync();
 
                 if (checkDelivery != null)
                 {
@@ -434,7 +464,7 @@ namespace DoorBoxApp.Controllers
                 return Json(false);
             }
         }
-       
+
 
         [HttpPost]
         public async Task<JsonResult> GetDelivaryMen()
@@ -460,7 +490,7 @@ namespace DoorBoxApp.Controllers
             deliveryMan1.Id = deliveryMan.Id;
             deliveryMan1.Name = deliveryMan.Name;
 
-            ViewData["Packages"] =await _context.Packages.Where(m => (m.Status == 2||m.Status==15) && m.DeliveryManId == null && m.VendorId == null).ToListAsync();
+            ViewData["Packages"] = await _context.Packages.Where(m => (m.Status == 2 || m.Status == 15) && m.DeliveryManId == null && m.VendorId == null).ToListAsync();
             return View(deliveryMan1);
         }
         [HttpPost]
@@ -508,7 +538,7 @@ namespace DoorBoxApp.Controllers
                 .Include(p => p.SubLocation)
                 .Include(p => p.DeliveryMan)
                 .Include(p => p.PackageCatagory)
-                .Where(m => m.DeliveryManId == deliveryMan.Id && (m.Status == 3 || m.Status==4|| m.Status==5 || m.Status==13)).ToListAsync();
+                .Where(m => m.DeliveryManId == deliveryMan.Id && (m.Status == 3 || m.Status == 4 || m.Status == 5 || m.Status == 13)).ToListAsync();
             if (todaysPackages == null)
             {
                 return NotFound();
@@ -526,7 +556,7 @@ namespace DoorBoxApp.Controllers
             }
 
             var package = await _context.Packages
-                .FirstOrDefaultAsync(m => m.Id == id && m.Status==3);
+                .FirstOrDefaultAsync(m => m.Id == id && m.Status == 3);
             if (package == null)
             {
                 return NotFound();
@@ -537,7 +567,7 @@ namespace DoorBoxApp.Controllers
                 using (var client = new HttpClient())
                 {
                     client.BaseAddress = new Uri("https://api.mobireach.com.bd/");
-                    var responseTask = client.GetAsync("SendTextMessage?Username=Doorbox&Password=Rabbi@123&From=8801842871143&To="+package.PhoneNumber+ "&Message=Dear Customer, Your parcel is delivered successfully. Please share this code "+package.OTP+" with the agent for confirmation only after receiving the parcel - Doorbox");
+                    var responseTask = client.GetAsync("SendTextMessage?Username=Doorbox&Password=Rabbi@123&From=8801842871143&To=" + package.PhoneNumber + "&Message=Dear Customer, Your parcel is delivered successfully. Please share this code " + package.OTP + " with the agent for confirmation only after receiving the parcel - Doorbox");
                     responseTask.Wait();
 
                     var result = responseTask.Result;
@@ -588,12 +618,12 @@ namespace DoorBoxApp.Controllers
             }
 
             var package = await _context.Packages
-                .Include(m=>m.DeliveryMan)
-                .Include(m=>m.DeliveryMan.ApplicationUser)
-                .Include(m=>m.PickUpRequest)
-                .Include(m=>m.PickUpRequest.Merchant)
-                .Include(m=>m.LocationTo)
-                .Include(m=>m.PickUpRequest.Merchant.ApplicationUser)
+                .Include(m => m.DeliveryMan)
+                .Include(m => m.DeliveryMan.ApplicationUser)
+                .Include(m => m.PickUpRequest)
+                .Include(m => m.PickUpRequest.Merchant)
+                .Include(m => m.LocationTo)
+                .Include(m => m.PickUpRequest.Merchant.ApplicationUser)
                 .FirstOrDefaultAsync(m => m.Id == packageId);
             if (package == null)
             {
@@ -603,10 +633,10 @@ namespace DoorBoxApp.Controllers
             {
                 using (var client = new HttpClient())
                 {
-                    string message = "Dear Merchant, the parcel tracking id of "+package.TrackingNumber+", "+package.ClientName+" and "+package.ProductPrice+" is being returned after 3 attempts by "+package.DeliveryMan.Name+"("+package.DeliveryMan.DeliveryManIdNo+")"+" ("+package.DeliveryMan.ApplicationUser.PhoneNumber+").Reason: "+reason+".Please share this OTP - "+package.OTP+" with agent if the reason is correct.";
+                    string message = "Dear Merchant, the parcel tracking id of " + package.TrackingNumber + ", " + package.ClientName + " and " + package.ProductPrice + " is being returned after 3 attempts by " + package.DeliveryMan.Name + "(" + package.DeliveryMan.DeliveryManIdNo + ")" + " (" + package.DeliveryMan.ApplicationUser.PhoneNumber + ").Reason: " + reason + ".Please share this OTP - " + package.OTP + " with agent if the reason is correct.";
 
                     client.BaseAddress = new Uri("https://api.mobireach.com.bd/");
-                    var responseTask = client.GetAsync("SendTextMessage?Username=Doorbox&Password=Rabbi@123&From=8801842871143&To="+package.PickUpRequest.Merchant.ApplicationUser.PhoneNumber+"&Message="+message);
+                    var responseTask = client.GetAsync("SendTextMessage?Username=Doorbox&Password=Rabbi@123&From=8801842871143&To=" + package.PickUpRequest.Merchant.ApplicationUser.PhoneNumber + "&Message=" + message);
                     responseTask.Wait();
 
                     var result = responseTask.Result;
@@ -616,7 +646,7 @@ namespace DoorBoxApp.Controllers
                 {
                     package.Price = package.Price + (package.Price / 2);
                 }
-              
+
                 package.Status = 13;
                 package.DeliveryDate = DateTime.Now;
                 _context.Update(package);
@@ -628,7 +658,7 @@ namespace DoorBoxApp.Controllers
         }
 
 
-        public async Task<IActionResult> PickUpReport(int id ,DateTime fromDate, DateTime toDate)
+        public async Task<IActionResult> PickUpReport(int id, DateTime fromDate, DateTime toDate)
         {
             if (fromDate == default(DateTime))
             {
@@ -642,7 +672,7 @@ namespace DoorBoxApp.Controllers
             var deliveryMan = await _context.DeliveryMans.Where(m => m.Id == id).FirstOrDefaultAsync();
 
             var packages = await _context.Packages
-                .Include(p => p.PickUpRequest)
+                 .Include(p => p.PickUpRequest)
                 .Include(p => p.PickUpRequest.PickUpDeliveryMan)
                 .Include(p => p.PickUpRequest.Merchant)
                 .Include(p => p.PickUpRequest.LocationFrom)
@@ -651,7 +681,7 @@ namespace DoorBoxApp.Controllers
                 .Include(p => p.PackageType)
                 .Include(p => p.DeliveryMan)
                 .Include(p => p.PackageCatagory)
-                .Where(m => m.Status != 0 && m.PickUpRequest.PickUpDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate&& m.PickUpRequest.PickUpDeliveryManId==id ).OrderBy(m => m.PickUpRequest.PickUpDate).ToListAsync();
+                .Where(m => m.Status != 0 && m.PickUpRequest.PickUpDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate && m.PickUpRequest.PickUpDeliveryManId == id).OrderBy(m => m.PickUpRequest.PickUpDate).ToListAsync();
             ViewData["DeliveryMan"] = deliveryMan;
             ViewData["Packages"] = packages;
             ViewData["FromDate"] = fromDate.Date;
@@ -665,7 +695,7 @@ namespace DoorBoxApp.Controllers
 
         }
 
-        public async Task<IActionResult> DeliveryReport(int id ,DateTime fromDate, DateTime toDate)
+        public async Task<IActionResult> DeliveryReport(int id, DateTime fromDate, DateTime toDate)
         {
             if (fromDate == default(DateTime))
             {
@@ -688,7 +718,7 @@ namespace DoorBoxApp.Controllers
                 .Include(p => p.PackageType)
                 .Include(p => p.DeliveryMan)
                 .Include(p => p.PackageCatagory)
-                .Where(m => m.Status != 0 && m.DeliveryDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate && m.Status==5 && m.DeliveryManId == id).OrderBy(m => m.DeliveryDate).ToListAsync();
+                .Where(m => m.Status != 0 && m.DeliveryDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate && m.Status == 5 && m.DeliveryManId == id).OrderBy(m => m.DeliveryDate).ToListAsync();
             ViewData["DeliveryMan"] = deliveryMan;
             ViewData["Packages"] = packages;
             ViewData["FromDate"] = fromDate.Date;
@@ -701,7 +731,7 @@ namespace DoorBoxApp.Controllers
             return RedirectToAction("DeliveryReport", new { id = datesVM.Id, fromDate = datesVM.FromDate, toDate = datesVM.ToDate });
 
         }
-        public async Task<IActionResult> PendingReport(int id ,DateTime fromDate, DateTime toDate)
+        public async Task<IActionResult> PendingReport(int id, DateTime fromDate, DateTime toDate)
         {
             if (fromDate == default(DateTime))
             {
@@ -724,7 +754,7 @@ namespace DoorBoxApp.Controllers
                 .Include(p => p.PackageType)
                 .Include(p => p.DeliveryMan)
                 .Include(p => p.PackageCatagory)
-                .Where(m => m.Status != 0 && m.DeliveryDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate && (m.Status==3|| m.Status == 4) && m.DeliveryManId == id).OrderBy(m => m.DeliveryDate).ToListAsync();
+                .Where(m => m.Status != 0 && m.DeliveryDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate && (m.Status == 3 || m.Status == 4) && m.DeliveryManId == id).OrderBy(m => m.DeliveryDate).ToListAsync();
             ViewData["DeliveryMan"] = deliveryMan;
             ViewData["Packages"] = packages;
             ViewData["FromDate"] = fromDate.Date;
@@ -737,7 +767,7 @@ namespace DoorBoxApp.Controllers
             return RedirectToAction("PendingReport", new { id = datesVM.Id, fromDate = datesVM.FromDate, toDate = datesVM.ToDate });
 
         }
-        public async Task<IActionResult> ReturnReport(int id ,DateTime fromDate, DateTime toDate)
+        public async Task<IActionResult> ReturnReport(int id, DateTime fromDate, DateTime toDate)
         {
             if (fromDate == default(DateTime))
             {
@@ -760,7 +790,7 @@ namespace DoorBoxApp.Controllers
                 .Include(p => p.PackageType)
                 .Include(p => p.DeliveryMan)
                 .Include(p => p.PackageCatagory)
-                .Where(m => m.Status != 0 && m.DeliveryDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate && (m.Status==13|| m.Status == 14) && m.DeliveryManId == id).OrderBy(m => m.DeliveryDate).ToListAsync();
+                .Where(m => m.Status != 0 && m.DeliveryDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate && (m.Status == 13 || m.Status == 14) && m.DeliveryManId == id).OrderBy(m => m.DeliveryDate).ToListAsync();
             ViewData["DeliveryMan"] = deliveryMan;
             ViewData["Packages"] = packages;
             ViewData["FromDate"] = fromDate.Date;
@@ -799,7 +829,7 @@ namespace DoorBoxApp.Controllers
                 .Include(p => p.PackageType)
                 .Include(p => p.DeliveryMan)
                 .Include(p => p.PackageCatagory)
-                .Where(m => m.Status != 0 && m.PickUpRequest.PickUpDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate&& m.PickUpRequest.PickUpDeliveryManId== deliveryMan.Id).OrderBy(m => m.PickUpRequest.PickUpDate).ToListAsync();
+                .Where(m => m.Status != 0 && m.PickUpRequest.PickUpDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate && m.PickUpRequest.PickUpDeliveryManId == deliveryMan.Id).OrderBy(m => m.PickUpRequest.PickUpDate).ToListAsync();
             ViewData["DeliveryMan"] = deliveryMan;
             ViewData["Packages"] = packages;
             ViewData["FromDate"] = fromDate.Date;
@@ -809,7 +839,7 @@ namespace DoorBoxApp.Controllers
         [HttpPost]
         public IActionResult PickUpReportDM(FromDateToDateViewModel datesVM)
         {
-            return RedirectToAction("PickUpReportDM", new {fromDate = datesVM.FromDate, toDate = datesVM.ToDate });
+            return RedirectToAction("PickUpReportDM", new { fromDate = datesVM.FromDate, toDate = datesVM.ToDate });
 
         }
 
@@ -837,7 +867,7 @@ namespace DoorBoxApp.Controllers
                 .Include(p => p.PackageType)
                 .Include(p => p.DeliveryMan)
                 .Include(p => p.PackageCatagory)
-                .Where(m => m.Status != 0 && m.DeliveryDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate && m.Status==5 && m.DeliveryManId == deliveryMan.Id).OrderBy(m => m.DeliveryDate).ToListAsync();
+                .Where(m => m.Status != 0 && m.DeliveryDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate && m.Status == 5 && m.DeliveryManId == deliveryMan.Id).OrderBy(m => m.DeliveryDate).ToListAsync();
             ViewData["DeliveryMan"] = deliveryMan;
             ViewData["Packages"] = packages;
             ViewData["FromDate"] = fromDate.Date;
@@ -874,7 +904,7 @@ namespace DoorBoxApp.Controllers
                 .Include(p => p.PackageType)
                 .Include(p => p.DeliveryMan)
                 .Include(p => p.PackageCatagory)
-                .Where(m => m.Status != 0 && m.DeliveryDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate && (m.Status==3|| m.Status == 4) && m.DeliveryManId == deliveryMan.Id).OrderBy(m => m.DeliveryDate).ToListAsync();
+                .Where(m => m.Status != 0 && m.DeliveryDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate && (m.Status == 3 || m.Status == 4) && m.DeliveryManId == deliveryMan.Id).OrderBy(m => m.DeliveryDate).ToListAsync();
             ViewData["DeliveryMan"] = deliveryMan;
             ViewData["Packages"] = packages;
             ViewData["FromDate"] = fromDate.Date;
@@ -911,7 +941,7 @@ namespace DoorBoxApp.Controllers
                 .Include(p => p.PackageType)
                 .Include(p => p.DeliveryMan)
                 .Include(p => p.PackageCatagory)
-                .Where(m => m.Status != 0 && m.DeliveryDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate && (m.Status==13|| m.Status == 14) && m.DeliveryManId == deliveryMan.Id).OrderBy(m => m.DeliveryDate).ToListAsync();
+                .Where(m => m.Status != 0 && m.DeliveryDate >= fromDate && m.PickUpRequest.PickUpDate <= toDate && (m.Status == 13 || m.Status == 14) && m.DeliveryManId == deliveryMan.Id).OrderBy(m => m.DeliveryDate).ToListAsync();
             ViewData["DeliveryMan"] = deliveryMan;
             ViewData["Packages"] = packages;
             ViewData["FromDate"] = fromDate.Date;
@@ -924,9 +954,6 @@ namespace DoorBoxApp.Controllers
             return RedirectToAction("ReturnReportDM", new { fromDate = datesVM.FromDate, toDate = datesVM.ToDate });
 
         }
-
-
-
 
     }
 }

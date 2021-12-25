@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jSy84nLMCQqroX/kt1mlMnuPLPbjxWx08j84MrSfKimHtvhg4Fr7Ah9kg96znofFQBNba/xNmwTRmSGeC/+1BQ==",
+  "dgSpecHash": "aPtfOur2a7dngWLLc5mRre7pcfRnOcZTb42uxUzvydbQ9tOgsI5tY9pVHe6N844HNTkJGiwJ0Ap9IIBSoaHqpQ==",
   "success": true,
-  "projectFilePath": "D:\\Project File\\DoorBoxApp\\DoorBoxApp\\DoorBoxApp\\DoorBoxApp.csproj",
+  "projectFilePath": "D:\\Project File\\DoorBoxApp\\DoorBoxApp\\DoorBoxApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Diviya & Naimul\\.nuget\\packages\\exceldatareader\\3.6.0\\exceldatareader.3.6.0.nupkg.sha512",
     "C:\\Users\\Diviya & Naimul\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
