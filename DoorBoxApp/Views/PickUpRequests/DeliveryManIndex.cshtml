@@ -10,8 +10,6 @@
 
 @section Sole {
     <style>
-
-
         .table tr th:last-child {
             width: 160px;
         }
@@ -46,20 +44,20 @@
                             <th>
                                 Marchant Name
                             </th>
-                             <th>
+                            <th>
                                 Marchant Phone
                             </th>
                             <th>
                                 Marchant Address
                             </th>
-                           
+
                             <th>
-                               Pickup Address Address
+                                Pickup Address Address
                             </th>
-                             <th>
+                            <th>
                                 Number of Packages
                             </th>
-                            
+
                             <th class="text-center">
                                 Action
                             </th>
@@ -75,21 +73,21 @@
                                     <td class="text-wrap">@item.Merchant.Name</td>
                                     <td class="text-wrap">@item.Merchant.ApplicationUser.PhoneNumber</td>
                                     <td class="text-wrap">@item.Merchant.Address</td>
-                                   
+
                                 }
                                 else
                                 {
                                     <td>N/A</td>
-                                  
+
                                 }
                                 <td class="text-wrap">
                                     @item.PickupAddress
                                 </td>
-                             
+
                                 <td>
                                     @item.TotalPackageNumber
                                 </td>
-                             
+
                                 <td class="text-center">
                                     <div class="btn-group">
                                         <input type="hidden" class="id" name="name" value=" @item.Id" />
@@ -101,7 +99,7 @@
 
                                         else if (item.Status == 4)
                                         {
-                                            <a class="btn btn-success btn-sm text-white" >Picked Up</a>
+                                            <a class="btn btn-success btn-sm text-white">Picked Up</a>
                                         }
 
 
@@ -129,7 +127,6 @@
              $('.pickupButton').on('click', function () {
                 var row = $(this).closest('tr');
                 var id = row.find('.id').val();
-
                 var totalPacks = 0;
                 var url = '@Url.Action("GetPackageDetails", "Packages")';
                 $.when(
@@ -143,7 +140,6 @@
                     cache: false,
                     success: function (objects) {
                         $.each(objects, function (index, object) {
-
                             if (objects != false && objects != null) {
                                 totalPacks = objects.totalPackageNumber
                             }
@@ -151,7 +147,6 @@
                     }
                 }),
                 ).then(function () {
-
                 $.confirm({
                     title: 'Pick up Packages!',
                     theme: 'modern',
@@ -175,9 +170,7 @@
                             action: function () {
                                 var pickedUpPackageNumber = this.$content.find('#pickedUpPackageNumber').val();
                                 if (pickedUpPackageNumber == 0 && pickedUpPackageNumber > totalPacks) {
-
                                 } else
-
                                 {
                                     var url = '@Url.Action("AddDeliveryManPickUp", "Packages")';
                                     $.ajax({
@@ -193,7 +186,6 @@
                                             if (result) {
                                                 location.reload();
                                             }
-
                                         }
                                     });
                                 }
@@ -205,9 +197,7 @@
                         },
                     },
                     backgroundDismiss: true,
-
                 });
-
                     });
             });
         });

@@ -11,7 +11,7 @@
         <div class="card-header p-3">
             <div class="row align-items-center">
                 <div class="col">
-                    <h3 class="mb-0 skewed skewed-yellow text-white d-inline-block text-uppercase ls-1">Create Request</h3>                                                                   
+                    <h3 class="mb-0 skewed skewed-yellow text-white d-inline-block text-uppercase ls-1">Create Request</h3>
                 </div>
                 <div class="col text-right">
                     <a asp-action="Index" class="btn btn-back">Back</a>
@@ -29,29 +29,21 @@
                             <select asp-for="LocationFromId" class="form-control" data-toggle="select" asp-items="ViewBag.LocationFromId"></select>
                         </div>
                     </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-control-label text-dark ls-1 text-uppercase">Date</label>
-                            <input asp-for="RequestDate" class="form-control"  type="date" asp-items="ViewBag.RequestDate" />
-                        </div>
-                    </div>
-
                     @*<div class="col-md-6">
-            <div class="form-group">
-                <label class="form-control-label text-dark ls-1 text-uppercase">Request Details</label>
-                <input asp-for="Details" class="form-control">
-                <span asp-validation-for="Details" class="text-danger"></span>
-            </div>
-        </div>*@
+                            <div class="form-group">
+                                <label class="form-control-label text-dark ls-1 text-uppercase">Request Details</label>
+                                <input asp-for="Details" class="form-control">
+                                <span asp-validation-for="Details" class="text-danger"></span>
+                            </div>
+                        </div>*@
 
                     @*<div class="col-md-12">
-            <div class="form-group">
-                <label class="form-control-label text-dark ls-1 text-uppercase">Pickup Address</label>
-                <textarea asp-for="PickupAddress" class="form-control" rows="2"></textarea>
-                <span asp-validation-for="PickupAddress" class="text-danger"></span>
-            </div>
-        </div>*@
+                            <div class="form-group">
+                                <label class="form-control-label text-dark ls-1 text-uppercase">Pickup Address</label>
+                                <textarea asp-for="PickupAddress" class="form-control" rows="2"></textarea>
+                                <span asp-validation-for="PickupAddress" class="text-danger"></span>
+                            </div>
+                        </div>*@
 
 
 

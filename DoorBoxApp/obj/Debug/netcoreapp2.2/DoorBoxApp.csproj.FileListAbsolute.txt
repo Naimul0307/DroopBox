@@ -598,3 +598,4 @@ D:\Project File\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.
 D:\Project File\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Merchants\AdminPackagePayment.cshtml.g.cs
 D:\Project File\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\AdminPickupPaymentFixed.cshtml.g.cs
 D:\Project File\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\AdminPaymentForDeilveyMenIndex.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\RecentRequest.cshtml.g.cs

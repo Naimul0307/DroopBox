@@ -511,11 +511,6 @@ namespace DoorBoxApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
-
-
-
-
         [Authorize(Roles = "DeliveryMan")]
         public async Task<IActionResult> DeliveryPackages()
         {
@@ -538,7 +533,7 @@ namespace DoorBoxApp.Controllers
                 .Include(p => p.SubLocation)
                 .Include(p => p.DeliveryMan)
                 .Include(p => p.PackageCatagory)
-                .Where(m => m.DeliveryManId == deliveryMan.Id && (m.Status == 3 || m.Status == 4 || m.Status == 5 || m.Status == 13)).ToListAsync();
+                .Where(m => m.DeliveryManId == deliveryMan.Id && (m.Status == 3 || m.Status == 4 || m.Status == 5 ||  m.Status == 13)).ToListAsync();
             if (todaysPackages == null)
             {
                 return NotFound();

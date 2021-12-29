@@ -183,7 +183,7 @@ namespace DoorBoxApp.Controllers
 
 
         [HttpPost]
-        public async Task<JsonResult> AddPackage(int catagoryId, int locationToId,int subLocationToId, int packageTypeId, string clientName, string address, string phoneNo, string details, double weight, double productPrice, double delivaryPrice, string remarks, double sellingPrice, int pickUpRequestId)
+        public async Task<JsonResult> AddPackage(int catagoryId, int locationToId, int subLocationToId, int packageTypeId, string clientName, string address, string phoneNo, string details, double weight, double productPrice, double delivaryPrice, string remarks, double sellingPrice, int pickUpRequestId)
 
         {
             var locationTo = await _context.Locations.FirstOrDefaultAsync(m => m.Id == locationToId);
@@ -192,7 +192,7 @@ namespace DoorBoxApp.Controllers
             package.PackageCatagoryId = catagoryId;
             package.LocationToId = locationToId;
 
-            if (subLocationToId!=0)
+            if (subLocationToId != 0)
             {
                 package.SubLocationId = subLocationToId;
             }
@@ -201,13 +201,13 @@ namespace DoorBoxApp.Controllers
                 package.PackageTypeId = packageTypeId;
             }
 
-          
+
             package.ClientName = clientName;
             package.Address = address;
             package.PhoneNumber = phoneNo;
             package.Details = details;
             package.Weight = weight;
-            if (locationTo.IsOutOfTown && productPrice!=0)
+            if (locationTo.IsOutOfTown && productPrice != 0)
             {
                 productPrice = productPrice + (productPrice * .01);
             }
@@ -235,11 +235,11 @@ namespace DoorBoxApp.Controllers
         public async Task<JsonResult> FinalizeRequest(int pickUpRequestId)
         {
             var request = await _context.PickUpRequests.Include(m => m.Packages).Where(m => m.Id == pickUpRequestId).FirstOrDefaultAsync();
-           
+
 
             if (request != null)
             {
-                if (request.Status==0)
+                if (request.Status == 0)
                 {
                     if (request.Packages.Count != 0)
                     {
@@ -276,11 +276,11 @@ namespace DoorBoxApp.Controllers
         public async Task<JsonResult> ReceiveFinalize(int pickUpRequestId)
         {
             var request = await _context.PickUpRequests.Include(m => m.Packages).Where(m => m.Id == pickUpRequestId).FirstOrDefaultAsync();
-           
+
 
             if (request != null)
             {
-                if (request.Status==4)
+                if (request.Status == 4)
                 {
                     if (request.Packages.Count != 0)
                     {
@@ -342,7 +342,7 @@ namespace DoorBoxApp.Controllers
             }
 
         }
-        
+
 
         public async Task<IActionResult> PartiallyDeleveredByAdmin(int? id)
         {
@@ -369,7 +369,7 @@ namespace DoorBoxApp.Controllers
 
         }
 
-        
+
 
         private bool PackageExists(int id)
         {
@@ -430,7 +430,8 @@ namespace DoorBoxApp.Controllers
                     publicViewModel.Status = package.Status;
                     publicViewModel.Merchant = package.PickUpRequest.Merchant.Name;
                     publicViewModel.Client = package.ClientName;
-                    publicViewModel.Price =(double) package.ProductPrice;
+                    publicViewModel.Address = package.Address;
+                    publicViewModel.Price = (double)package.ProductPrice;
                     return Json(publicViewModel);
                 }
                 else
@@ -454,7 +455,7 @@ namespace DoorBoxApp.Controllers
             }
         }
 
-       
+
 
 
 
@@ -522,7 +523,7 @@ namespace DoorBoxApp.Controllers
                 return Json(false);
             }
         }
-         [HttpPost]
+        [HttpPost]
         public async Task<JsonResult> GetPackageType(int packageTypeId)
         {
             var packageType = await _context.PackageTypes.Where(m => m.Id == packageTypeId).FirstOrDefaultAsync();
@@ -538,12 +539,12 @@ namespace DoorBoxApp.Controllers
 
 
         [HttpPost]
-        public async Task<JsonResult> UpdateEmptyPackage(int catagoryId, int locationToId, int subLocationToId, int packageTypeId, double weight,double sellingPrice, int packageId)
+        public async Task<JsonResult> UpdateEmptyPackage(int catagoryId, int locationToId, int subLocationToId, int packageTypeId, double weight, double sellingPrice, int packageId)
 
         {
-            
 
-            Package package = await _context.Packages.Include(m=>m.PickUpRequest).Where(m => m.Id == packageId).FirstOrDefaultAsync();
+
+            Package package = await _context.Packages.Include(m => m.PickUpRequest).Where(m => m.Id == packageId).FirstOrDefaultAsync();
             package.PackageCatagoryId = catagoryId;
             package.LocationToId = locationToId;
             if (subLocationToId != 0)
@@ -559,10 +560,10 @@ namespace DoorBoxApp.Controllers
             package.Status = 1;
 
 
-            if (catagoryId != 0 &&  locationToId != 0 && weight != 0)
+            if (catagoryId != 0 && locationToId != 0 && weight != 0)
             {
-                TarrifPriceViewModel tarrifPriceViewModel = Tarrif.GetDesiredTarrif(package.PickUpRequest.MerchantId,catagoryId, package.PickUpRequest.LocationFromId, locationToId, weight, _context);
-                if (tarrifPriceViewModel!=null)
+                TarrifPriceViewModel tarrifPriceViewModel = Tarrif.GetDesiredTarrif(package.PickUpRequest.MerchantId, catagoryId, package.PickUpRequest.LocationFromId, locationToId, weight, _context);
+                if (tarrifPriceViewModel != null)
                 {
                     package.Price = tarrifPriceViewModel.TotalPrice;
                 }
@@ -570,11 +571,11 @@ namespace DoorBoxApp.Controllers
                 {
                     package.Price = 0;
                 }
-              
+
 
 
             }
-            
+
             _context.Update(package);
             int res = await _context.SaveChangesAsync();
             if (res == 1)
@@ -589,12 +590,12 @@ namespace DoorBoxApp.Controllers
 
         }
         [HttpPost]
-        public async Task<JsonResult> UpdateWithDeliveryPrice(int catagoryId, int locationToId, int subLocationToId, int packageTypeId, double weight, int packageId,double delivaryPrice)
+        public async Task<JsonResult> UpdateWithDeliveryPrice(int catagoryId, int locationToId, int subLocationToId, int packageTypeId, double weight, int packageId, double delivaryPrice)
 
         {
 
 
-            Package package = await _context.Packages.Include(m=>m.PickUpRequest).Where(m => m.Id == packageId).FirstOrDefaultAsync();
+            Package package = await _context.Packages.Include(m => m.PickUpRequest).Where(m => m.Id == packageId).FirstOrDefaultAsync();
             package.PackageCatagoryId = catagoryId;
             package.LocationToId = locationToId;
             package.Weight = weight;
@@ -627,7 +628,7 @@ namespace DoorBoxApp.Controllers
 
         {
             Package package = await _context.Packages.Where(m => m.Id == packageId).FirstOrDefaultAsync();
-            if (package== null)
+            if (package == null)
             {
                 return Json(false);
             }
@@ -647,7 +648,7 @@ namespace DoorBoxApp.Controllers
 
 
 
-        
+
 
 
         [HttpPost]
@@ -671,7 +672,7 @@ namespace DoorBoxApp.Controllers
                 {
                     return Json(false);
                 }
-                
+
             }
             else
             {
@@ -679,7 +680,7 @@ namespace DoorBoxApp.Controllers
             }
         }
 
-          [HttpPost]
+        [HttpPost]
         public async Task<JsonResult> SavePickUpPayment(int packageId, double paidAmount)
         {
             var package = await _context.Packages.Where(m => m.Id == packageId).FirstOrDefaultAsync();
@@ -700,7 +701,7 @@ namespace DoorBoxApp.Controllers
                 {
                     return Json(false);
                 }
-                
+
             }
             else
             {
@@ -730,7 +731,7 @@ namespace DoorBoxApp.Controllers
                 {
                     return Json(false);
                 }
-                
+
             }
             else
             {
@@ -745,7 +746,7 @@ namespace DoorBoxApp.Controllers
             {
                 double totalPaid = 0;
 
-                if (package.PaidAmount!=null)
+                if (package.PaidAmount != null)
                 {
                     totalPaid = (double)(package.PaidAmount) + paidAmount;
                 }
@@ -754,15 +755,15 @@ namespace DoorBoxApp.Controllers
                     totalPaid = paidAmount;
                 }
 
-                if (totalPaid>=package.ProductPrice-package.Price)
+                if (totalPaid >= package.ProductPrice - package.Price)
                 {
                     package.MerchantPaid = true;
                 }
-                if (totalPaid==0 && package.ProductPrice==package.Price)
+                if (totalPaid == 0 && package.ProductPrice == package.Price)
                 {
                     package.MerchantPaid = true;
                 }
-                
+
                 package.PaidAmount = totalPaid;
                 _context.Update(package);
                 int res = await _context.SaveChangesAsync();
@@ -775,7 +776,7 @@ namespace DoorBoxApp.Controllers
                 {
                     return Json(false);
                 }
-                
+
             }
             else
             {
@@ -789,13 +790,13 @@ namespace DoorBoxApp.Controllers
             if (package != null)
             {
 
-                if (package.OTP== otp)
+                if (package.OTP == otp)
                 {
                     package.Status = 5;
                     package.DeliveryDate = DateTime.Now;
                     _context.Update(package);
                     int res1 = await _context.SaveChangesAsync();
-                   
+
                     if (res1 == 1)
                     {
 
@@ -810,7 +811,7 @@ namespace DoorBoxApp.Controllers
                 {
                     return Json(false);
                 }
-              
+
             }
             else
             {
@@ -866,7 +867,7 @@ namespace DoorBoxApp.Controllers
                 return Json(false);
             }
         }
-            [HttpPost]
+        [HttpPost]
         public async Task<JsonResult> GetCatagoryByType(int catagoryTypeId)
         {
             var catagories = await _context.PackageCatagories.Where(m => m.CatagoryTypeId == catagoryTypeId).ToListAsync();
@@ -879,7 +880,6 @@ namespace DoorBoxApp.Controllers
                 return Json(false);
             }
         }
-
-
     }
 }
+

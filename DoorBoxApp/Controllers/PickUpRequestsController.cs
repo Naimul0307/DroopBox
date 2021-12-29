@@ -67,8 +67,17 @@ namespace DoorBoxApp.Controllers
         {
             var applicationDbContext = _context.PickUpRequests
                 .Include(p => p.LocationFrom).Include(p => p.Merchant)
-                .Include(p => p.PickUpDeliveryMan).Where(m => m.Status > 1)
-                .OrderByDescending(m=>m.Id);
+                .Include(p => p.PickUpDeliveryMan).Where(m => m.Status >= 5)
+                .OrderByDescending(m => m.Id);
+            return View(await applicationDbContext.ToListAsync());
+        }
+
+        public async Task<IActionResult> RecentRequest()
+        {
+            var applicationDbContext = _context.PickUpRequests
+                .Include(p => p.LocationFrom).Include(p => p.Merchant)
+                .Include(p => p.PickUpDeliveryMan).Where(m => m.Status <= 4)
+                .OrderByDescending(m => m.Id);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -93,6 +102,7 @@ namespace DoorBoxApp.Controllers
 
             pickUpRequest.Status = 0;
             pickUpRequest.MerchantId = merchant.Id;
+            pickUpRequest.RequestDate = DateTime.Now;
             if (ModelState.IsValid)
             {
                 _context.Add(pickUpRequest);
@@ -131,7 +141,7 @@ namespace DoorBoxApp.Controllers
                 return NotFound();
             }
 
-            var pickUpRequest = await _context.PickUpRequests.Include(m => m.Packages).Where(m=>m.Id==id).FirstOrDefaultAsync();
+            var pickUpRequest = await _context.PickUpRequests.Include(m => m.Packages).Where(m => m.Id == id).FirstOrDefaultAsync();
             if (pickUpRequest == null)
             {
                 return NotFound();
@@ -253,7 +263,7 @@ namespace DoorBoxApp.Controllers
                 _context.Update(pickUpRequest);
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction(nameof(AdminIndex));
+                return RedirectToAction(nameof(RecentRequest));
             }
 
         }
@@ -277,7 +287,7 @@ namespace DoorBoxApp.Controllers
                 _context.Update(pickUpRequest);
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction(nameof(AdminIndex));
+                return RedirectToAction(nameof(RecentRequest));
             }
 
         }
@@ -432,7 +442,7 @@ namespace DoorBoxApp.Controllers
                             package.SubLocationId = subLocationTo.Id;
                         }
 
-                         if (productType != null)
+                        if (productType != null)
                         {
                             package.PackageTypeId = productType.Id;
                         }
@@ -451,8 +461,8 @@ namespace DoorBoxApp.Controllers
                         package.Details = reader.GetValue(7).ToString(); ;
                         package.Weight = (double)reader.GetValue(8);
                         package.ProductPrice = (double)reader.GetValue(9);
-                        package.Remarks =reader.GetValue(10).ToString();
-                        package.SellingPrice =(double)reader.GetValue(11);
+                        package.Remarks = reader.GetValue(10).ToString();
+                        package.SellingPrice = (double)reader.GetValue(11);
                         // package.Price = delivaryPrice;
 
                         package.Status = 0;
@@ -478,3 +488,4 @@ namespace DoorBoxApp.Controllers
 
     }
 }
+

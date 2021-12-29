@@ -32,12 +32,21 @@
                                 <span class="nav-link-text text-nowrap text-dark">Dashboard</span>
                             </a>
                         </li>
+
                         <li class="nav-item nav_level0">
                             <a class="nav-link position-relative" asp-controller="PickUpRequests" asp-action="AdminIndex">
                                 <i class="fa fa-boxes text-gray"></i>
                                 <span class="nav-link-text text-nowrap text-dark">Pickup Reqs</span>
                             </a>
                         </li>
+
+                        <li class="nav-item nav_level0">
+                            <a class="nav-link position-relative" asp-controller="PickUpRequests" asp-action="RecentRequest">
+                                <i class="fa fa-boxes text-gray"></i>
+                                <span class="nav-link-text text-nowrap text-dark">Recent Request</span>
+                            </a>
+                        </li>
+
                         <li class="nav-item nav_level0">
                             <a class="nav-link position-relative" asp-controller="Locations" asp-action="Index">
                                 <i class="far fa-map-marked-alt text-gray"></i>
@@ -273,8 +282,6 @@
                         <li class="nav-item">
                             <a asp-controller="Packages" asp-action="MerchantAllPackageIndex" class="nav-link text-nowrap">All Packages</a>
                         </li>
-
-
 
                     </ul>
                 </div>

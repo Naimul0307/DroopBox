@@ -35,27 +35,20 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="form-control-label text-dark ls-1 text-uppercase">Date</label>
-                            <input asp-for="RequestDate" class="form-control" type="date" asp-items="ViewBag.RequestDate" />
-                        </div>
-                    </div>
-
                     @*<div class="col-md-6">
-            <div class="form-group">
-                <label class="form-control-label text-dark ls-1 text-uppercase">Request Details</label>
-                <input asp-for="Details" class="form-control">
-                <span asp-validation-for="Details" class="text-danger"></span>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div class="form-group">
-                <label class="form-control-label text-dark ls-1 text-uppercase">Pickup Address</label>
-                <textarea asp-for="PickupAddress" class="form-control" rows="2"></textarea>
-                <span asp-validation-for="PickupAddress" class="text-danger"></span>
-            </div>
-        </div>*@
+                            <div class="form-group">
+                                <label class="form-control-label text-dark ls-1 text-uppercase">Request Details</label>
+                                <input asp-for="Details" class="form-control">
+                                <span asp-validation-for="Details" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="form-control-label text-dark ls-1 text-uppercase">Pickup Address</label>
+                                <textarea asp-for="PickupAddress" class="form-control" rows="2"></textarea>
+                                <span asp-validation-for="PickupAddress" class="text-danger"></span>
+                            </div>
+                        </div>*@
 
                     <div class="col-lg-12">
                         <div class="form-group mb-0">
@@ -71,4 +64,3 @@
     <script asp-append-version="true" type="text/javascript" src="~/vendor/select2/select2.min.js"></script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
-

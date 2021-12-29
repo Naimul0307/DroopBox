@@ -157,15 +157,15 @@ namespace DoorBoxApp.Controllers
         [Authorize(Roles = "Finance")]
         public async Task<IActionResult> PackagePayment()
         {
-            var packagers = await _context.Packages.Where(m => m.Status == 5 || m.Status == 13 || m.Status == 14 )
+            var packagers = await _context.Packages.Where(m => m.Status == 5 || m.Status == 13 || m.Status == 14)
                 .Include(m => m.SubLocation)
                 .Include(m => m.LocationTo)
                 .Include(m => m.PickUpRequest)
                 .Include(m => m.PickUpRequest.Merchant)
                 .Include(m => m.PickUpRequest.LocationFrom)
                 .Include(m => m.PickUpRequest.PickUpDeliveryMan)
-                .OrderByDescending(m=>m.Id)
-                .OrderBy(m=>m.Id)
+                .OrderByDescending(m => m.Id)
+                .OrderBy(m => m.Id)
                 .ToListAsync();
 
 
@@ -181,8 +181,8 @@ namespace DoorBoxApp.Controllers
                 .Include(m => m.PickUpRequest.Merchant)
                 .Include(m => m.PickUpRequest.LocationFrom)
                 .Include(m => m.PickUpRequest.PickUpDeliveryMan)
-                .OrderByDescending(m=>m.Id)
-                .Where(m=>m.PickUpRequest.MerchantId== merchantId)
+                .OrderByDescending(m => m.Id)
+                .Where(m => m.PickUpRequest.MerchantId == merchantId)
                 .ToListAsync();
 
 
@@ -274,7 +274,7 @@ namespace DoorBoxApp.Controllers
             var applicationDbContext = _context.Merchants.Include(m => m.ApplicationUser).Where(m => m.ApplicationUser.Status == 1).OrderBy(m => m.Name);
             return View(await applicationDbContext.ToListAsync());
         }
-        public async Task<IActionResult> AdminMerchantReport(string userId,DateTime fromDate, DateTime toDate)
+        public async Task<IActionResult> AdminMerchantReport(string userId, DateTime fromDate, DateTime toDate)
         {
             if (fromDate == default(DateTime))
             {
@@ -287,7 +287,7 @@ namespace DoorBoxApp.Controllers
             }
             var loggedInUser = await _userManager.FindByNameAsync(HttpContext.User.Identity.Name);
             var deliveryMan = await _context.DeliveryMans.Where(m => m.ApplicationUserId == loggedInUser.Id).FirstOrDefaultAsync();
-            if (userId=="" || userId==null)
+            if (userId == "" || userId == null)
             {
                 var packages = await _context.Packages
                 .Include(p => p.PickUpRequest)
@@ -299,7 +299,7 @@ namespace DoorBoxApp.Controllers
                .Include(p => p.PackageType)
                .Include(p => p.DeliveryMan)
                .Include(p => p.PackageCatagory)
-               .Where(m => m.Status != 0 && m.AssignDate >= fromDate && m.AssignDate <= toDate && m.Status !=0).OrderBy(m => m.DeliveryDate).ToListAsync();
+               .Where(m => m.Status != 0 && m.AssignDate >= fromDate && m.AssignDate <= toDate && m.Status != 0).OrderBy(m => m.DeliveryDate).ToListAsync();
                 ViewData["Packages"] = packages;
             }
             else
@@ -314,7 +314,7 @@ namespace DoorBoxApp.Controllers
                 .Include(p => p.PackageType)
                 .Include(p => p.DeliveryMan)
                 .Include(p => p.PackageCatagory)
-                .Where(m => m.PickUpRequest.Merchant.ApplicationUserId==userId&& m.Status != 0 && m.AssignDate >= fromDate && m.AssignDate <= toDate && m.Status != 0).OrderBy(m => m.DeliveryDate).ToListAsync();
+                .Where(m => m.PickUpRequest.Merchant.ApplicationUserId == userId && m.Status != 0 && m.AssignDate >= fromDate && m.AssignDate <= toDate && m.Status != 0).OrderBy(m => m.DeliveryDate).ToListAsync();
                 ViewData["Packages"] = packages;
 
                 ViewData["Packages"] = packages;
@@ -328,8 +328,9 @@ namespace DoorBoxApp.Controllers
         [HttpPost]
         public IActionResult AdminMerchantReport(FromDateToDateViewModel datesVM)
         {
-            return RedirectToAction("AdminMerchantReport", new { userId=datesVM.UserId, fromDate = datesVM.FromDate, toDate = datesVM.ToDate });
+            return RedirectToAction("AdminMerchantReport", new { userId = datesVM.UserId, fromDate = datesVM.FromDate, toDate = datesVM.ToDate });
 
         }
     }
 }
+
