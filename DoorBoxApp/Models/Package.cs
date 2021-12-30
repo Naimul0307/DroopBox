@@ -23,7 +23,7 @@ namespace DoorBoxApp.Models
         public int? SubLocationId { get; set; }
         public SubLocation SubLocation { get; set; }
 
-         public int? PackageTypeId { get; set; }
+        public int? PackageTypeId { get; set; }
         public PackageType PackageType { get; set; }
 
 

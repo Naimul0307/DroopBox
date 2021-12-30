@@ -121,8 +121,6 @@ namespace DoorBoxApp.Controllers
 
         }
 
-
-
         public async Task<IActionResult> AdminActivePackageIndex()
         {
             var applicationDbContext = _context.Packages
@@ -410,6 +408,7 @@ namespace DoorBoxApp.Controllers
             }
 
         }
+
         [HttpPost]
         public async Task<JsonResult> GetPackageByTrackingNumber(string trackingNumber)
         {
@@ -427,10 +426,12 @@ namespace DoorBoxApp.Controllers
                 if (package != null)
                 {
                     PublicViewModel publicViewModel = new PublicViewModel();
+                    publicViewModel.Message = package.Message;
                     publicViewModel.Status = package.Status;
+                    publicViewModel.Address = package.Address;
                     publicViewModel.Merchant = package.PickUpRequest.Merchant.Name;
                     publicViewModel.Client = package.ClientName;
-                    publicViewModel.Address = package.Address;
+                    publicViewModel.Details = package.Details;
                     publicViewModel.Price = (double)package.ProductPrice;
                     return Json(publicViewModel);
                 }
@@ -454,10 +455,6 @@ namespace DoorBoxApp.Controllers
                 return Json(false);
             }
         }
-
-
-
-
 
         [HttpPost]
         public async Task<JsonResult> GetPackageDetails(int id)

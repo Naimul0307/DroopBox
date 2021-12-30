@@ -26,10 +26,6 @@ namespace DoorBoxApp.Controllers
         public async Task<IActionResult> Index()
         {
           
-
-
-
-
             return View(await _context.Vendors.ToListAsync());
         }
 
@@ -180,6 +176,7 @@ namespace DoorBoxApp.Controllers
             ViewData["Packages"] = await _context.Packages.Where(m => (m.Status == 2 || m.Status == 15) && m.DeliveryManId == null && m.VendorId == null).ToListAsync();
             return View(deliveryMan1);
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AssignPackagesToVendor(AssignDMViewModel deliveryMan)
@@ -214,6 +211,7 @@ namespace DoorBoxApp.Controllers
             ViewData["Vendor"] = await _context.Vendors.Where(m => m.Id == id).FirstOrDefaultAsync();
             return View(packages);
         }
+
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleveredByVendor(int? id,int vendorId)
         {
@@ -231,6 +229,32 @@ namespace DoorBoxApp.Controllers
             else
             {
                 package.Status = 5;
+                package.DeliveryDate = DateTime.Now;
+                _context.Update(package);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction("AssignedPackagesVendor", new { id = vendorId });
+            }
+
+        }
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> MessageByVendor(int? id, int vendorId, string message = null)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var package = await _context.Packages
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (package == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                package.Message = message;
                 package.DeliveryDate = DateTime.Now;
                 _context.Update(package);
                 await _context.SaveChangesAsync();

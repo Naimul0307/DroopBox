@@ -482,7 +482,6 @@ D:\Project File\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.dll
 D:\Project File\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.pdb
 D:\Project File\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.Views.dll
 D:\Project File\DoorBoxApp\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.Views.pdb
-D:\Project File\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.AssemblyReference.cache
 D:\Project File\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.GeneratedMSBuildEditorConfig.editorconfig
 D:\Project File\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.AssemblyInfoInputs.cache
 D:\Project File\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.AssemblyInfo.cs
@@ -599,3 +598,4 @@ D:\Project File\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Mercha
 D:\Project File\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\AdminPickupPaymentFixed.cshtml.g.cs
 D:\Project File\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\DeliveryMen\AdminPaymentForDeilveyMenIndex.cshtml.g.cs
 D:\Project File\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\RecentRequest.cshtml.g.cs
+D:\Project File\DoorBoxApp\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.AssemblyReference.cache

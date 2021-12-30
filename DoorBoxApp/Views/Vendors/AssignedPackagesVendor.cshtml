@@ -58,6 +58,9 @@
                             <th>
                                 Tracking ID
                             </th>
+                            <th>
+                                Message
+                            </th>
                             <th class="text-center">
                                 Action
                             </th>
@@ -68,39 +71,52 @@
                         @foreach (var item in Model)
                         {
 
-                            <tr>
-                                <td>
-                                    @item.PickUpRequest.Merchant.Name
-                                </td>
-                                <td>
-                                    @item.ClientName
-                                    <input type="hidden" name="name" value="@item.OTP" />
-                                </td>
-                                <td>
-                                    @item.PhoneNumber
-                                </td>
-                                <td class="text-wrap">
-                                    @item.Address
-                                </td>
-                                <td>
-                                    @item.TrackingNumber
-                                </td>
-                                <td class="text-center">
-                                    <div class="btn-group">
-                                        @if (item.Status == 4)
-                                        {
-                                            <a class="btn btn-success btn-sm" asp-action="DeleveredByVendor" asp-route-id="@item.Id" asp-route-vendorId="@item.VendorId">Deliver</a>
-                                            <a class="btn btn-danger btn-sm" asp-action="ReturnedByVendor" asp-route-id="@item.Id" asp-route-vendorId="@item.VendorId">Return</a> 
-                                        }
-                                        else
-                                        {
-                                            <a class="btn btn-warning btn-sm text-white">No Action</a>
-                                        }
-                                    </div>
+                        <tr>
+                            <td>
+                                @item.PickUpRequest.Merchant.Name
+                            </td>
+                            <td>
+                                @item.ClientName
+                                <input type="hidden" name="name" value="@item.OTP" />
+                            </td>
+                            <td>
+                                @item.PhoneNumber
+                            </td>
+                            <td class="text-wrap">
+                                @item.Address
+                            </td>
+                            <td>
+                                @item.TrackingNumber
+                            </td>
+                            <td class="text-wrap">
+                                @item.Message
+                            </td>
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    @if (item.Status == 4)
+                                    {
+                                        <a class="btn btn-success btn-sm" asp-action="DeleveredByVendor" asp-route-id="@item.Id" asp-route-vendorId="@item.VendorId">Deliver</a>
+                                        <a class="btn btn-danger btn-sm" asp-action="ReturnedByVendor" asp-route-id="@item.Id" asp-route-vendorId="@item.VendorId">Return</a>
+                                        <a class="btn btn-danger  btn-sm" onclick="showDiv()">Message</a>
+                                        @*<a class="btn btn-danger  btn-sm" asp-action="MessageByVendor" asp-route-id="@item.Id" asp-route-vendorId="@item.VendorId">Message</a>*@
+                                        <div id="msgBox" style="display:none">
+                                            @*<form asp-action="Register" asp-controller="Account" id="register-form" method="post" autocomplete="off">*@
+                                            <form asp-controller="Vendors" asp-action="MessageByVendor" asp-route-id="@item.Id" asp-route-vendorId="@item.VendorId" method="post">
+                                                <input type="text" name="message" class="form-control" />
+                                                <input type="submit" class="btn btn-secondary" value="Send">
+                                            </form>
 
-                                </td>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <a class="btn btn-warning btn-sm text-white">No Action</a>
+                                    }
+                                </div>
 
-                            </tr>
+                            </td>
+
+                        </tr>
 
                         }
                     </tbody>
@@ -118,6 +134,14 @@
     <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/jquery.dataTables.min.js"></script>
     <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/dataTables.bootstrap4.min.js"></script>
     <script type="text/javascript">
+        function showDiv() {
+            var x = document.getElementById("msgBox");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
     </script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
