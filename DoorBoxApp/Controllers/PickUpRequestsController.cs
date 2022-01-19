@@ -67,7 +67,15 @@ namespace DoorBoxApp.Controllers
         {
             var applicationDbContext = _context.PickUpRequests
                 .Include(p => p.LocationFrom).Include(p => p.Merchant)
-                .Include(p => p.PickUpDeliveryMan).Where(m => m.Status >= 5)
+                .Include(p => p.PickUpDeliveryMan).Where(m => m.Status >= 6 )
+                .OrderByDescending(m => m.Id);
+            return View(await applicationDbContext.ToListAsync());
+        }
+        public async Task<IActionResult> AsingnDelever()
+        {
+            var applicationDbContext = _context.PickUpRequests
+                .Include(p => p.LocationFrom).Include(p => p.Merchant)
+                .Include(p => p.PickUpDeliveryMan).Where(m => m.Status >= 4)
                 .OrderByDescending(m => m.Id);
             return View(await applicationDbContext.ToListAsync());
         }

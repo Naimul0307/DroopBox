@@ -3,11 +3,10 @@
     "tfm": "netcoreapp2.2",
     "framework": {
       "name": "Microsoft.AspNetCore.App",
-      "version": "2.2.0"
+      "version": "2.2.8"
     },
     "configProperties": {
       "System.GC.Server": true,
-      "System.Reflection.Metadata.MetadataUpdater.IsSupported": false,
       "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": false
     }
   }

@@ -34,20 +34,16 @@
 
     <div class="main-content" id="panel">
 
-        
-
         <main role="main">
 
             <partial name="_TopNavigationPartial" />
 
             @RenderBody()
-
+            <partial name="_Messanger" />
             <partial name="_FooterPartial" />
-
         </main>
 
     </div>
-
 
     <script asp-append-version="true" type="text/javascript" src="~/vendor/jquery/dist/jquery.min.js"></script>
     <script asp-append-version="true" type="text/javascript" src="~/vendor/bootstrap/bootstrap.bundle.min.js"></script>

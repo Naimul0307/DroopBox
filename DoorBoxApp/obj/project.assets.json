@@ -11131,6 +11131,7 @@
       "path": "system.runtime/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -13229,11 +13230,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project File\\DoorBoxApp\\DoorBoxApp\\DoorBoxApp.csproj",
+      "projectUniqueName": "D:\\Project File\\DroopBox\\DoorBoxApp\\DoorBoxApp.csproj",
       "projectName": "DoorBoxApp",
-      "projectPath": "D:\\Project File\\DoorBoxApp\\DoorBoxApp\\DoorBoxApp.csproj",
+      "projectPath": "D:\\Project File\\DroopBox\\DoorBoxApp\\DoorBoxApp.csproj",
       "packagesPath": "C:\\Users\\Diviya & Naimul\\.nuget\\packages\\",
-      "outputPath": "D:\\Project File\\DoorBoxApp\\DoorBoxApp\\obj\\",
+      "outputPath": "D:\\Project File\\DroopBox\\DoorBoxApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
