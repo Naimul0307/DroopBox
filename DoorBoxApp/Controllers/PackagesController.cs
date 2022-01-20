@@ -297,8 +297,6 @@ namespace DoorBoxApp.Controllers
                         request.Status = 5;
                         _context.Update(request);
                         await _context.SaveChangesAsync();
-
-
                     }
 
                     return Json(true);

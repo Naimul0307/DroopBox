@@ -608,7 +608,6 @@ D:\Project File\DroopBox\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.dll
 D:\Project File\DroopBox\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.pdb
 D:\Project File\DroopBox\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.Views.dll
 D:\Project File\DroopBox\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.Views.pdb
-D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.AssemblyReference.cache
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.GeneratedMSBuildEditorConfig.editorconfig
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.AssemblyInfoInputs.cache
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.AssemblyInfo.cs
@@ -678,9 +677,10 @@ D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Packages
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageTypes\Create.cshtml.g.cs
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageTypes\Edit.cshtml.g.cs
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PackageTypes\Index.cshtml.g.cs
-D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\AdminIndex.cshtml.g.cs
+D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\AsingnDelever.cshtml.g.cs
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\Create.cshtml.g.cs
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\CreatePackages.cshtml.g.cs
+D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\DeliveredPackeg.cshtml.g.cs
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\DeliveryManIndex.cshtml.g.cs
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\Edit.cshtml.g.cs
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\MarchantIndex.cshtml.g.cs
@@ -698,6 +698,7 @@ D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutOpen.cshtml.g.cs
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LeftNavigationPartial.cshtml.g.cs
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Messanger.cshtml.g.cs
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_SecurityPartial.cshtml.g.cs
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_TopNavigationPartial.cshtml.g.cs
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -725,5 +726,4 @@ D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.dll
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.pdb
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.genruntimeconfig.cache
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.CopyComplete
-D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Messanger.cshtml.g.cs
-D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\Razor\Views\PickUpRequests\AsingnDelever.cshtml.g.cs
+D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.AssemblyReference.cache

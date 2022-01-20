@@ -1,19 +1,16 @@
-﻿@model IEnumerable<DoorBoxApp.Models.PickUpRequest>
-
+﻿
+@model IEnumerable<DoorBoxApp.Models.Package>
 @{
-    ViewData["Title"] = "Requests";
+    ViewData["Title"] = "Asing Delevery";
 }
-
 @section Css {
     @{await Html.RenderPartialAsync("_DataTableCssPartial");}
 }
 
 @section Sole {
     <style>
-
-
         .table tr th:last-child {
-            width: 160px;
+            width: 100px;
         }
 
         .table tr th {
@@ -25,51 +22,53 @@
         }
     </style>
 }
-
 <div class="container-fluid mt-4">
     <div class="card animated fadeIn overflow-hidden">
         <div class="card-header p-3">
             <div class="row align-items-center">
                 <div class="col">
-                    <h3 class="mb-0 skewed skewed-yellow d-inline-block text-uppercase ls-1 text-white">Delivered</h3>
+                    <h3 class="mb-0 skewed skewed-yellow text-dark d-inline-block text-uppercase text-white ls-1">Delivery Packages</h3>
                 </div>
-
             </div>
         </div>
         <div class="card-body px-0 pb-2">
             <div class="table-responsive">
 
-                <table class="table align-items-center  table-striped table-bordered" id="datatable-basic">
+                <table class="table align-items-center table-responsive-sm table-striped table-bordered" id="datatable-basic">
                     <thead class="thead-light">
                         <tr>
-
                             <th>
-                                Marchant Name
+                                Merchant Name
                             </th>
                             <th>
-                                Marchant Id
-                            </th>
-
-                            <th>
-                                From
+                                Merchant Phone
                             </th>
                             <th>
-                                Details
+                                Client  Name
                             </th>
                             <th>
-                                Request Date
+                                Client  Phone
                             </th>
                             <th>
-                                Pickup Date
-                            </th>
-
-                            <th>
-                                Delivary Man Name
+                                Address
                             </th>
                             <th>
-                                Delivary Man Id
+                                Location
+                            </th>
+                            <th>
+                                Sub-Location
                             </th>
 
+                            <th>
+                                Price
+                            </th>
+
+                            <th>
+                                Tracking NO
+                            </th>
+                            <th class="text-center">
+                                Status
+                            </th>
                             <th class="text-center">
                                 Action
                             </th>
@@ -78,201 +77,110 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            <tr>
-                                <input type="hidden" class="id" name="name" value=" @item.Id" />
-                                @if (item.Merchant != null)
-                                {
-                                    <td>@item.Merchant.Name</td>
-                                    <td>@item.Merchant.MerchantIdNo</td>
-                                }
-                                else
-                                {
-                                    <td>N/A</td>
-                                    <td>N/A</td>
-                                }
-
+                        <tr>
+                            @if (item.PickUpRequest.Merchant != null)
+                            {
                                 <td>
-                                    @item.LocationFrom.Name
+                                    @item.PickUpRequest.Merchant.Name
+
                                 </td>
                                 <td>
-                                    @item.Details
+                                    @item.PickUpRequest.Merchant.ApplicationUser.PhoneNumber
+
                                 </td>
-                                @if (item.RequestDate == default(DateTime))
-                                {
-                                    <td>
-                                        N/A
-                                    </td>
-                                }
-                                else
-                                {
-                                    <td>
-                                        @String.Format("{0:dd-MM-yyyy}", item.RequestDate)
-                                    </td>
-                                }
-                                @if (item.PickUpDate == default(DateTime))
-                                {
-                                    <td>
-                                        N/A
-                                    </td>
-                                }
-                                else
-                                {
-                                    <td>
-                                        @String.Format("{0:dd-MM-yyyy}", item.PickUpDate)
-                                    </td>
-                                }
 
-                                @if (item.PickUpDeliveryMan != null)
-                                {
-                                    <td>@item.PickUpDeliveryMan.Name</td>
-                                    <td>@item.PickUpDeliveryMan.DeliveryManIdNo</td>
-                                }
-                                else
-                                {
-                                    <td>N/A</td>
-                                    <td>N/A</td>
-                                }
-
-                                <td class="text-center">
-                                    <div class="btn-group">
-                                        @if (item.Status == 2)
-                                        {
-                                            <a class="btn btn-success btn-sm" asp-action="ApproveByAdmin" asp-route-id="@item.Id">Accept</a>
-                                            <a class="btn btn-danger btn-sm" asp-action="DeclineByAdmin" asp-route-id="@item.Id">Decline</a>
-
-                                        }
-
-                                        else if (item.Status == 3)
-                                        {
-                                            <input type="button" class="btn btn-success btn-sm pickupButton" value="PickUp" />
-                                            <a class="btn btn-success btn-sm" asp-controller="PickUpRequests" asp-action="CreatePackages" asp-route-id="@item.Id">See Packages</a>
-                                        }
-
-
-                                        else if (item.Status == 4)
-                                        {
-                                            <a class="btn btn-primary btn-sm" asp-controller="PickUpRequests" asp-action="MatchPackages" asp-route-id="@item.Id">Match</a>
-                                            <a class="btn btn-success btn-sm" asp-controller="PickUpRequests" asp-action="CreatePackages" asp-route-id="@item.Id">Packages</a>
-
-                                        }
-
-                                        else if (item.Status == 5)
-                                        {
-                                            <a class="btn btn-primary btn-sm" asp-controller="PickUpRequests" asp-action="MatchPackages" asp-route-id="@item.Id">Packages</a>
-                                        }
-                                        else if (item.Status == 404)
-                                        {
-                                            <input type="button" class="btn btn-danger" value="Decliend">
-                                        }
-
-
-
-                                    </div>
+                            }
+                            else
+                            {
+                                <td>
+                                    N/A
                                 </td>
-                            </tr>
+                                <td>
+                                    N/A
+                                </td>
+
+                            }
+
+                            <td>
+                                @item.ClientName
+                                <input type="hidden" name="name" value="@item.OTP" />
+                            </td>
+
+                            <td>
+                                @item.PhoneNumber
+                            </td>
+                            <td class="text-wrap">
+                                @item.Address
+                            </td>
+
+                            @if (item.LocationTo != null)
+                            {
+                                <td>
+                                    @item.LocationTo.Name
+
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    N/A
+                                </td>
+                            }
+                            @if (item.SubLocation != null)
+                            {
+                                <td>
+                                    @item.SubLocation.Name
+
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    N/A
+                                </td>
+                            }
+
+                            <td class="text-wrap">
+                                @item.ProductPrice
+                            </td>
+
+                            <td>
+                                @item.TrackingNumber
+                            </td>
+
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    @if (item.Status == 2)
+                                    {
+                                        <a class="btn btn-success btn-sm text-white">Match</a>
+                                    }
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    @if (item.Status == 2)
+                                    {
+                                        <a class="btn btn-primary btn-sm" asp-controller="DeliveryMen" asp-action="Index">
+                                            <span class="nav-link-text text-nowrap text-dark">Delivery Men</span>
+                                        </a>
+                                        <a class="btn btn-primary btn-sm" asp-controller="Vendors" asp-action="Index">
+                                            <span class="nav-link-text text-nowrap text-dark">Vendors</span>
+                                        </a>
+                                    }
+                                </div>
+                            </td>
+                        </tr>
                         }
                     </tbody>
+
                 </table>
-
-
-
             </div>
         </div>
     </div>
 </div>
 
-
 @section Scripts {
     <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/jquery.dataTables.min.js"></script>
     <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/dataTables.bootstrap4.min.js"></script>
-    <script type="text/javascript">
-         $(document).ready(function () {
-            $('.pickupButton').on('click', function () {
-                var row = $(this).closest('tr');
-                var id = row.find('.id').val();
-                var dmData = '';
-                var url = '@Url.Action("GetDelivaryMen", "DeliveryMen")';
-                dmData += '<option selected value="0">Delivary Man</option>';
-                $.when(
-
-                $.ajax({
-                    type: "POST",
-                    dataType: 'json',
-                    url: url,
-                    data: {
-
-                    },
-                    cache: false,
-                    success: function (objects) {
-                        $.each(objects, function (index, object) {
-
-                            if (objects != null) {
-                                dmData += '<option value="' + object.id + '">' + object.name + ' </option>';
-                            }
-                        });
-                    }
-                }),
-                ).then(function () {
-
-                $.confirm({
-                    title: 'Prompt!',
-                    theme: 'modern',
-                    animation: 'zoom',
-                    closeAnimation: 'zoom',
-                    backgroundDismiss: true,
-                    backgroundDismissAnimation: 'shake',
-                    closeIcon: true,
-                    content: '' +
-                        '<form action="" class="formName">' +
-                        '<div class="form-group">' +
-                        '<label class="text-danger">Please select a Delivary Man</label>' +
-
-                        '<select id = "delivaryManId" class="form-control sectionId js-single">' + dmData + '</select>'+
-                        '</div>' +
-                        '</form>',
-                    buttons: {
-                        formSubmit: {
-                            text: 'Submit',
-                            btnClass: 'btn-blue',
-                            action: function () {
-                                var delivaryManId = this.$content.find('#delivaryManId').val();
-                                if ( delivaryManId == 0) {
-
-                                } else
-
-                                {
-                                    var url = '@Url.Action("AddPickupDelivaryMan", "DeliveryMen")';
-                                    $.ajax({
-                                        type: "POST",
-                                        dataType: 'json',
-                                        url: url,
-                                        data: {
-                                            id: id,
-                                            delivaryManId: delivaryManId,
-                                        },
-                                        cache: false,
-                                        success: function (result) {
-                                            if (result) {
-                                                location.href = '/PickUpRequests/PickedUpByAdmin/'+id;
-                                            }
-
-                                        }
-                                    });
-                                }
-                            // submit
-                            }
-                        },
-                    cancel: function () {
-                        //close
-                        },
-                    },
-                    backgroundDismiss: true,
-
-                });
-
-                    });
-            });
-        });
-    </script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

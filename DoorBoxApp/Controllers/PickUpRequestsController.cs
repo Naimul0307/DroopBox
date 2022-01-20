@@ -63,23 +63,26 @@ namespace DoorBoxApp.Controllers
         }
 
 
-        public async Task<IActionResult> AdminIndex()
+        public async Task<IActionResult> DeliveredPackeg()
         {
-            var applicationDbContext = _context.PickUpRequests
-                .Include(p => p.LocationFrom).Include(p => p.Merchant)
-                .Include(p => p.PickUpDeliveryMan).Where(m => m.Status >= 6 )
-                .OrderByDescending(m => m.Id);
-            return View(await applicationDbContext.ToListAsync());
-        }
-        public async Task<IActionResult> AsingnDelever()
-        {
-            var applicationDbContext = _context.PickUpRequests
-                .Include(p => p.LocationFrom).Include(p => p.Merchant)
-                .Include(p => p.PickUpDeliveryMan).Where(m => m.Status >= 4)
-                .OrderByDescending(m => m.Id);
-            return View(await applicationDbContext.ToListAsync());
+            var deliverdPackages = await _context.Packages
+                .Include(p => p.PickUpRequest.Merchant.ApplicationUser)
+                .Include(p => p.LocationTo)
+                .Include(p => p.SubLocation)
+                .Where(m => m.Status >= 3).ToListAsync();
+            return View(deliverdPackages);
         }
 
+        public async Task<IActionResult> AsingnDelever()
+        {
+            var asingnDelever = await _context.Packages
+                .Include(p => p.PickUpRequest.Merchant.ApplicationUser)
+                .Include(p => p.LocationTo)
+                .Include(p => p.SubLocation)
+                .Where(m => m.Status == 2 ).ToListAsync();
+            return View(asingnDelever);
+        }
+       
         public async Task<IActionResult> RecentRequest()
         {
             var applicationDbContext = _context.PickUpRequests
@@ -318,7 +321,7 @@ namespace DoorBoxApp.Controllers
                 _context.Update(pickUpRequest);
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction(nameof(AdminIndex));
+                return RedirectToAction(nameof(DeliveredPackeg));
             }
 
         }

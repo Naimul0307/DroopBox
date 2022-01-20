@@ -4,13 +4,14 @@
     "\\DoorBoxApp",
     "\\DoorBoxApp\\Controllers",
     "\\DoorBoxApp\\Models",
+    "\\DoorBoxApp\\Models\\Common",
+    "\\DoorBoxApp\\Models\\Common\\Authentication",
     "\\DoorBoxApp\\Views",
-    "\\DoorBoxApp\\Views\\Home",
-    "\\DoorBoxApp\\Views\\Packages",
+    "\\DoorBoxApp\\Views\\DeliveryMen",
     "\\DoorBoxApp\\Views\\PickUpRequests",
     "\\DoorBoxApp\\Views\\Shared",
     "\\DoorBoxApp\\Views\\Vendors"
   ],
-  "SelectedNode": "\\DoorBoxApp\\Controllers\\PickUpRequestsController.cs",
+  "SelectedNode": "\\DoorBoxApp\\Controllers\\AccountController.cs",
   "PreviewInSolutionExplorer": false
 }

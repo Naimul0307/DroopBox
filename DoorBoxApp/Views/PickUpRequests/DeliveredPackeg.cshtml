@@ -1,0 +1,180 @@
+﻿
+@model IEnumerable<DoorBoxApp.Models.Package>
+@{
+    ViewData["Title"] = "Delivery Packages";
+}
+@section Css {
+    @{await Html.RenderPartialAsync("_DataTableCssPartial");}
+}
+
+@section Sole {
+    <style>
+        .table tr th:last-child {
+            width: 100px;
+        }
+
+        .table tr th {
+            text-align: center;
+        }
+
+        .table tr td {
+            text-align: center;
+        }
+    </style>
+}
+<div class="container-fluid mt-4">
+    <div class="card animated fadeIn overflow-hidden">
+        <div class="card-header p-3">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="mb-0 skewed skewed-yellow text-dark d-inline-block text-uppercase text-white ls-1">Delivery Packages</h3>
+                </div>
+            </div>
+        </div>
+        <div class="card-body px-0 pb-2">
+            <div class="table-responsive">
+
+                <table class="table align-items-center table-responsive-sm table-striped table-bordered" id="datatable-basic">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>
+                                Merchant Name
+                            </th>
+                            <th>
+                                Merchant Phone
+                            </th>
+                            <th>
+                                Client  Name
+                            </th>
+                            <th>
+                                Client  Phone
+                            </th>
+                            <th>
+                                Address
+                            </th>
+                            <th>
+                                Location
+                            </th>
+                            <th>
+                                Sub-Location
+                            </th>
+
+                            <th>
+                                Price
+                            </th>
+
+                            <th>
+                                Tracking NO
+                            </th>
+                            <th class="text-center">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                @if (item.PickUpRequest.Merchant != null)
+                                {
+                                    <td>
+                                        @item.PickUpRequest.Merchant.Name
+
+                                    </td>
+                                    <td>
+                                        @item.PickUpRequest.Merchant.ApplicationUser.PhoneNumber
+
+                                    </td>
+
+                                }
+                                else
+                                {
+                                    <td>
+                                        N/A
+                                    </td>
+                                    <td>
+                                        N/A
+                                    </td>
+
+                                }
+
+                                <td>
+                                    @item.ClientName
+                                    <input type="hidden" name="name" value="@item.OTP" />
+                                </td>
+
+                                <td>
+                                    @item.PhoneNumber
+                                </td>
+                                <td class="text-wrap">
+                                    @item.Address
+                                </td>
+
+                                @if (item.LocationTo != null)
+                                {
+                                    <td>
+                                        @item.LocationTo.Name
+
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        N/A
+                                    </td>
+                                }
+                                @if (item.SubLocation != null)
+                                {
+                                    <td>
+                                        @item.SubLocation.Name
+
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        N/A
+                                    </td>
+                                }
+
+                                <td class="text-wrap">
+                                    @item.ProductPrice
+                                </td>
+
+                                <td>
+                                    @item.TrackingNumber
+                                </td>
+
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        @if (item.Status == 3)
+                                        {
+                                            <a class="btn btn-success btn-sm text-white">Delivere Men Assign</a>
+                                        }
+
+                                        else if (item.Status == 4)
+                                        {
+                                            <a class="btn btn-success btn-sm text-white">OTP Sent To Client</a>
+                                        }
+                                        else if (item.Status == 5)
+                                        {
+                                            <a class="btn btn-success btn-sm text-white">Delivered</a>
+                                        }
+
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+  
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/jquery.dataTables.min.js"></script>
+    <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/dataTables.bootstrap4.min.js"></script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

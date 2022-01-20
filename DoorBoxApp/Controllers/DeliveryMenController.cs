@@ -454,6 +454,7 @@ namespace DoorBoxApp.Controllers
             if (pickUpRequest != null)
             {
                 pickUpRequest.PickUpDeliveryManId = delivaryManId;
+
                 _context.Update(pickUpRequest);
                 await _context.SaveChangesAsync();
 
@@ -533,7 +534,7 @@ namespace DoorBoxApp.Controllers
                 .Include(p => p.SubLocation)
                 .Include(p => p.DeliveryMan)
                 .Include(p => p.PackageCatagory)
-                .Where(m => m.DeliveryManId == deliveryMan.Id && (m.Status == 3 || m.Status == 4 || m.Status == 5 ||  m.Status == 13)).ToListAsync();
+                .Where(m => m.DeliveryManId == deliveryMan.Id && (m.Status == 3 || m.Status == 4 || m.Status == 5  ||  m.Status == 13)).ToListAsync();
             if (todaysPackages == null)
             {
                 return NotFound();
@@ -568,7 +569,6 @@ namespace DoorBoxApp.Controllers
                     var result = responseTask.Result;
 
                 }
-
                 package.Status = 4;
                 _context.Update(package);
                 await _context.SaveChangesAsync();
