@@ -1,7 +1,7 @@
 ﻿
 @model IEnumerable<DoorBoxApp.Models.Package>
 @{
-    ViewData["Title"] = "Asing Delevery";
+    ViewData["Title"] = "Asingn Delevery";
 }
 @section Css {
     @{await Html.RenderPartialAsync("_DataTableCssPartial");}
@@ -27,7 +27,7 @@
         <div class="card-header p-3">
             <div class="row align-items-center">
                 <div class="col">
-                    <h3 class="mb-0 skewed skewed-yellow text-dark d-inline-block text-uppercase text-white ls-1">Delivery Packages</h3>
+                    <h3 class="mb-0 skewed skewed-yellow text-dark d-inline-block text-uppercase text-white ls-1">Asingn Delevery</h3>
                 </div>
             </div>
         </div>
@@ -40,9 +40,9 @@
                             <th>
                                 Merchant Name
                             </th>
-                            <th>
+                            @*<th>
                                 Merchant Phone
-                            </th>
+                            </th>*@
                             <th>
                                 Client  Name
                             </th>
@@ -67,9 +67,6 @@
                                 Tracking NO
                             </th>
                             <th class="text-center">
-                                Status
-                            </th>
-                            <th class="text-center">
                                 Action
                             </th>
                         </tr>
@@ -77,99 +74,87 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                        <tr>
-                            @if (item.PickUpRequest.Merchant != null)
-                            {
+                            <tr>
+                                @if (item.PickUpRequest.Merchant != null)
+                                {
+                                    <td>
+                                        @item.PickUpRequest.Merchant.Name
+
+                                    </td>
+                                    @*<td>
+                                        @item.PickUpRequest.Merchant.ApplicationUser.PhoneNumber
+
+                                    </td>*@
+
+                                }
+                                else
+                                {
+                                    <td>
+                                        N/A
+                                    </td>
+                                    <td>
+                                        N/A
+                                    </td>
+
+                                }
+
                                 <td>
-                                    @item.PickUpRequest.Merchant.Name
-
+                                    @item.ClientName
+                                    <input type="hidden" name="name" value="@item.OTP" />
                                 </td>
+
                                 <td>
-                                    @item.PickUpRequest.Merchant.ApplicationUser.PhoneNumber
-
+                                    @item.PhoneNumber
+                                </td>
+                                <td class="text-wrap">
+                                    @item.Address
                                 </td>
 
-                            }
-                            else
-                            {
+                                @if (item.LocationTo != null)
+                                {
+                                    <td>
+                                        @item.LocationTo.Name
+
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        N/A
+                                    </td>
+                                }
+                                @if (item.SubLocation != null)
+                                {
+                                    <td>
+                                        @item.SubLocation.Name
+
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        N/A
+                                    </td>
+                                }
+
+                                <td class="text-wrap">
+                                    @item.ProductPrice
+                                </td>
+
                                 <td>
-                                    N/A
-                                </td>
-                                <td>
-                                    N/A
+                                    @item.TrackingNumber
                                 </td>
 
-                            }
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        @if (item.Status == 2)
+                                        {
+                                            <a class="btn btn-default btn-sm text-white">Assign</a>
+                                        }
 
-                            <td>
-                                @item.ClientName
-                                <input type="hidden" name="name" value="@item.OTP" />
-                            </td>
-
-                            <td>
-                                @item.PhoneNumber
-                            </td>
-                            <td class="text-wrap">
-                                @item.Address
-                            </td>
-
-                            @if (item.LocationTo != null)
-                            {
-                                <td>
-                                    @item.LocationTo.Name
-
+                                    </div>
                                 </td>
-                            }
-                            else
-                            {
-                                <td>
-                                    N/A
-                                </td>
-                            }
-                            @if (item.SubLocation != null)
-                            {
-                                <td>
-                                    @item.SubLocation.Name
-
-                                </td>
-                            }
-                            else
-                            {
-                                <td>
-                                    N/A
-                                </td>
-                            }
-
-                            <td class="text-wrap">
-                                @item.ProductPrice
-                            </td>
-
-                            <td>
-                                @item.TrackingNumber
-                            </td>
-
-                            <td class="text-center">
-                                <div class="btn-group">
-                                    @if (item.Status == 2)
-                                    {
-                                        <a class="btn btn-success btn-sm text-white">Match</a>
-                                    }
-                                </div>
-                            </td>
-                            <td class="text-center">
-                                <div class="btn-group">
-                                    @if (item.Status == 2)
-                                    {
-                                        <a class="btn btn-primary btn-sm" asp-controller="DeliveryMen" asp-action="Index">
-                                            <span class="nav-link-text text-nowrap text-dark">Delivery Men</span>
-                                        </a>
-                                        <a class="btn btn-primary btn-sm" asp-controller="Vendors" asp-action="Index">
-                                            <span class="nav-link-text text-nowrap text-dark">Vendors</span>
-                                        </a>
-                                    }
-                                </div>
-                            </td>
-                        </tr>
+                            </tr>
                         }
                     </tbody>
 
