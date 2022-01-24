@@ -152,7 +152,7 @@
                             <th class="text-center">Details</th>
                             <th class="text-center">Weight</th>
                             <th class="text-center">Price</th>
-                            <th class="text-center">Delivary Price</th>
+                            <th class="text-center">Delivary Charge With Cod</th>
                             <th class="text-center">Selling Price</th>
                             <th class="text-center">Remarks</th>
                             <th class="text-center">Action</th>
@@ -163,13 +163,13 @@
                         @if (Model.Packages.Count != 0)
                         {
                             double productPriceTotal = 0;
-                            double deliveryChargeTotal = 0;
+                            double delCodChargeTotal = 0;
                             double weightTotal = 0;
                             int count = 0;
                             @foreach (var package in Model.Packages)
                             {
                                 productPriceTotal += (double)package.ProductPrice;
-                                deliveryChargeTotal += (double)package.Price;
+                                delCodChargeTotal += (double)package.DeliveryCodCharge;
                                 weightTotal += (double)package.Weight;
                                 count++;
                                 <tr>
@@ -373,7 +373,7 @@
                                     </td>
 
                                     <td class="p-0">
-                                        <input class="form-control delivaryPrice border-0 border-radius-0 text-center" type="text" value="@package.Price" />
+                                        <input class="form-control delivaryPrice border-0 border-radius-0 text-center" type="text" value="@package.DeliveryCodCharge" />
                                     </td>
 
 
@@ -424,7 +424,7 @@
                                 <td class="text-center font-weight-800" colspan="2">Total :</td>
                                 <td class="text-center font-weight-800">@weightTotal KG</td>
                                 <td class="text-center font-weight-800">@productPriceTotal TK</td>
-                                <td class="text-center font-weight-800">@deliveryChargeTotal TK</td>
+                                <td class="text-center font-weight-800">@delCodChargeTotal TK</td>
                                 <td class="text-center font-weight-800" colspan="3"></td>
                             </tr>
                         }
@@ -470,7 +470,7 @@
                             <th class="text-center">Details</th>
                             <th class="text-center">Weight</th>
                             <th class="text-center">Price</th>
-                            <th class="text-center">Delivary Price</th>
+                            <th class="text-center">Delivary Price With Cod</th>
                             <th class="text-center">Selling Price</th>
                             <th class="text-center">Remarks</th>
                             <th class="text-center">Status</th>
@@ -481,13 +481,13 @@
                         @if (Model.Packages.Count != 0)
                         {
                             double productPriceTotal = 0;
-                            double deliveryChargeTotal = 0;
+                            double delCodChargeTotal = 0;
                             double weightTotal = 0;
                             int count = 0;
                             @foreach (var package in Model.Packages)
                             {
                                 productPriceTotal += (double)package.ProductPrice;
-                                deliveryChargeTotal += (double)package.Price;
+                                delCodChargeTotal += (double)package.DeliveryCodCharge;
                                 weightTotal += (double)package.Weight;
                                 count++;
                                 <tr>
@@ -581,7 +581,7 @@
 
                                     }
                                     <td class="text-center font-weight-800 text-wrap">@package.ProductPrice TK</td>
-                                    <td class="text-center font-weight-800 text-wrap">@package.Price TK</td>
+                                    <td class="text-center font-weight-800 text-wrap">@package.DeliveryCodCharge TK</td>
                                     <td class="text-center font-weight-800 text-wrap">@package.SellingPrice TK</td>
                                     <td class="text-center font-weight-800 text-wrap">@package.Remarks TK</td>
                                     @if (package.Status == 1)
@@ -629,9 +629,9 @@
                                 <td class="text-center font-weight-800" colspan="2">Total :</td>
                                 <td class="text-center font-weight-800">@weightTotal KG</td>
                                 <td class="text-center font-weight-800">@productPriceTotal TK</td>
-                                <td class="text-center font-weight-800">@deliveryChargeTotal TK</td>
+                                <td class="text-center font-weight-800">@delCodChargeTotal TK</td>
                                 @{
-                                    double totalTk = productPriceTotal + deliveryChargeTotal;
+                                    double totalTk = productPriceTotal + delCodChargeTotal;
                                 }
                                 <td class="text-center font-weight-800" colspan="3"></td>
                             </tr>

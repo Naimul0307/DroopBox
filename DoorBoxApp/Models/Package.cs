@@ -47,6 +47,8 @@ namespace DoorBoxApp.Models
          public int? VendorId { get; set; }
         public Vendor Vendor { get; set; }
         public double? SellingPrice { get; set; }
+        public double? CodCharge { get; set; }
+        public double? DeliveryCodCharge { get; set; }
         public double? PaidForPickUp { get; set; }
         public double? PaidForDelivery { get; set; }
         public bool MerchantPaid { get; set; }

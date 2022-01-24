@@ -181,7 +181,7 @@ namespace DoorBoxApp.Controllers
 
 
         [HttpPost]
-        public async Task<JsonResult> AddPackage(int catagoryId, int locationToId, int subLocationToId, int packageTypeId, string clientName, string address, string phoneNo, string details, double weight, double productPrice, double delivaryPrice, string remarks, double sellingPrice, int pickUpRequestId)
+        public async Task<JsonResult> AddPackage(int catagoryId, int locationToId, int subLocationToId, int packageTypeId, string clientName, string address, string phoneNo, string details, double weight, double productPrice, double delivaryPrice, string remarks, double sellingPrice, int pickUpRequestId, double codcharge)
 
         {
             var locationTo = await _context.Locations.FirstOrDefaultAsync(m => m.Id == locationToId);
@@ -198,18 +198,29 @@ namespace DoorBoxApp.Controllers
             {
                 package.PackageTypeId = packageTypeId;
             }
-
-
             package.ClientName = clientName;
             package.Address = address;
             package.PhoneNumber = phoneNo;
             package.Details = details;
             package.Weight = weight;
-            if (locationTo.IsOutOfTown && productPrice != 0)
-            {
-                productPrice = productPrice + (productPrice * .01);
-            }
+            //package.CodCharge = 0;
             package.ProductPrice = productPrice;
+            //if (locationTo.IsOutOfTown && delivaryPrice!= 0)
+            //{
+            //    package.CodCharge = delivaryPrice + (productPrice * .01);
+            //}
+            package.CodCharge = codcharge;
+
+            if(locationTo.IsOutOfTown && delivaryPrice != 0)
+            {
+                package.DeliveryCodCharge = codcharge + delivaryPrice;
+            }
+            else
+            {
+                package.DeliveryCodCharge = delivaryPrice;
+                package.CodCharge = 0;
+            }
+
             package.Price = delivaryPrice;
             package.Remarks = remarks;
             package.SellingPrice = sellingPrice;
@@ -253,8 +264,6 @@ namespace DoorBoxApp.Controllers
                         request.TotalPackageNumber = request.Packages.Count;
                         _context.Update(request);
                         await _context.SaveChangesAsync();
-
-
                     }
 
                     return Json(true);
