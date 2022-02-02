@@ -296,7 +296,8 @@ namespace DoorBoxApp.Controllers
         [HttpPost]
         public async Task<JsonResult> GetVendor()
         {
-            var vendor = await _context.Vendors.Where(m => m.Status == 1).ToListAsync();
+            //var vendor = await _context.Vendors.Where(m => m.Status == 1).ToListAsync();
+            var vendor = await _context.Vendors.ToListAsync();
             return Json(vendor);
 
         }

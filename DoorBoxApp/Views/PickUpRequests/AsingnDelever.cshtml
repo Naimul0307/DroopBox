@@ -149,14 +149,8 @@
                                     <div class="btn-group">
                                         @if (item.Status == 2)
                                         {
-                                        <div>
-                                            <input type="button" class="btn btn-default btn-sm DeliveryMan" value="Delivery Man" />
-                                        </div>
-                                        <br />
-                                        <br />
-                                         <div>
-                                           <input type="button" class="btn btn-default btn-sm  Vendor" value="Vendor" />
-                                         </div>  
+                                           <input type="button" class="btn btn-info  btn-sm DeliveryMan" value="Delivery Man" />
+                                           <input type="button" class="btn btn-default btn-sm  Vendor" value="Vendor" />  
                                         }
 
                                     </div>
@@ -222,7 +216,7 @@
                 ).then(function () {
 
                 $.confirm({
-                    title: 'Prompt!',
+                    title: 'Assign Delivey Man !',
                     theme: 'modern',
                     animation: 'zoom',
                     closeAnimation: 'zoom',
@@ -333,7 +327,7 @@
                 ).then(function () {
 
                 $.confirm({
-                    title: 'Prompt!',
+                    title: 'Assign Vendor !',
                     theme: 'modern',
                     animation: 'zoom',
                     closeAnimation: 'zoom',
@@ -344,7 +338,7 @@
 
                         '<form action="" class="formName">' +
                         '<div class="form-group">' +
-                        '<label class="text-danger">Please select a Delivary Man</label>' +
+                        '<label class="text-danger">Please select a Vendors </label>' +
                         '<select id = "vendorsId" class="form-control sectionId js-single">' + vnData + '</select>'+
                         '</div>' +
                         '<div class="form-group">' +

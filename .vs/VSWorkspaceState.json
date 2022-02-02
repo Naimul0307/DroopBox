@@ -2,7 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\DoorBoxApp",
-    "\\DoorBoxApp\\Controllers",
+    "\\DoorBoxApp\\Migrations",
     "\\DoorBoxApp\\Models",
     "\\DoorBoxApp\\Models\\Common",
     "\\DoorBoxApp\\Models\\Common\\Authentication",
@@ -12,6 +12,6 @@
     "\\DoorBoxApp\\Views\\Shared",
     "\\DoorBoxApp\\Views\\Vendors"
   ],
-  "SelectedNode": "\\DoorBoxApp\\Controllers\\PackagesController.cs",
+  "SelectedNode": "\\DoorBoxApp\\Views\\PickUpRequests\\AsingnDelever.cshtml",
   "PreviewInSolutionExplorer": false
 }
