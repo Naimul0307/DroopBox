@@ -149,7 +149,14 @@
                                     <div class="btn-group">
                                         @if (item.Status == 2)
                                         {
-                                            <input type="button" class="btn btn-default btn-sm pickupButton"  value="Delivery Man" />
+                                        <div>
+                                            <input type="button" class="btn btn-default btn-sm DeliveryMan" value="Delivery Man" />
+                                        </div>
+                                        <br />
+                                        <br />
+                                         <div>
+                                           <input type="button" class="btn btn-default btn-sm  Vendor" value="Vendor" />
+                                         </div>  
                                         }
 
                                     </div>
@@ -171,9 +178,9 @@
     <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/dataTables.bootstrap4.min.js"></script>
     <script type="text/javascript">
          $(document).ready(function () {
-            $('.pickupButton').on('click', function () {
+             $('.DeliveryMan').on('click', function () {
                 var row = $(this).closest('tr');
-                var id = row.find('.id').val();
+                /*var id = row.find('.id').val();*/
                 var dmData = '';
                 var pmData = '';
                 var url = '@Url.Action("GetDelivaryMen", "DeliveryMen")';
@@ -238,7 +245,7 @@
                     buttons: {
                         formSubmit: {
                             text: 'Submit',
-                            btnClass: 'btn-secondary',
+                            btnClass: 'btn-blue',
                             action: function () {
                                 var delivaryManId = this.$content.find('#delivaryManId').val();
                                 var packagesId = this.$content.find('#packagesId').val();
@@ -252,17 +259,124 @@
                                         dataType: 'json',
                                         url: url,
                                         data: {
-                                            id: id,
                                             delivaryManId: delivaryManId,
                                             packagesId: packagesId,
                                         },
                                         cache: false,
                                         success: function (result) {
                                             if (result) {
-                                                /*location.href = '/PickUpRequests/PickedUpByAdmin/'+id;*/
-                                                <div class="alert alert-primary" role="alert">
-                                                    Assigne Successfull !
-                                                </div>
+                                                location.href = '/PickUpRequests/AsingnDelever';
+                                            }
+
+                                        }
+                                    });
+                                }
+                            // submit
+                            }
+                        },
+                    cancel: function () {
+                        //close
+                        },
+                    },
+                    backgroundDismiss: true,
+
+                });
+
+                });
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+         $(document).ready(function () {
+             $('.Vendor').on('click', function () {
+               var row = $(this).closest('tr');
+              /*  var id = row.find('.id').val();*/
+                var vnData = '';
+                var pmData = '';
+                var url = '@Url.Action("GetVendor", "Vendors")';
+                var urls = '@Url.Action("GetPackages", "Packages")';
+                vnData += '<option selected value="0"> Vendors </option>';
+                pmData += '<option selected value="0"> Packages </option>';
+                $.when(
+                $.ajax({
+                    type: "POST",
+                    dataType: 'json',
+                    url: url,
+                    data: {
+                    },
+                    cache: false,
+                    success: function (objects) {
+                        $.each(objects, function (index, object) {
+
+                            if (objects != null) {
+                                vnData += '<option value="' + object.id + '">' + object.name + ' </option>';
+                            }
+                        });
+                    }
+                }),
+                $.ajax({
+                        type: "POST",
+                        dataType: 'json',
+                        url: urls,
+                        data: {
+                        },
+                        cache: false,
+                        success: function (objects) {
+                            $.each(objects, function (index, object) {
+                                if (objects != null) {
+                                    pmData += '<option value="' + object.id + '">' + object.clientName + ' </option>';
+                                }
+                            });
+                        }
+                }),
+                ).then(function () {
+
+                $.confirm({
+                    title: 'Prompt!',
+                    theme: 'modern',
+                    animation: 'zoom',
+                    closeAnimation: 'zoom',
+                    backgroundDismiss: true,
+                    backgroundDismissAnimation: 'shake',
+                    closeIcon: true,
+                    content: '' +
+
+                        '<form action="" class="formName">' +
+                        '<div class="form-group">' +
+                        '<label class="text-danger">Please select a Delivary Man</label>' +
+                        '<select id = "vendorsId" class="form-control sectionId js-single">' + vnData + '</select>'+
+                        '</div>' +
+                        '<div class="form-group">' +
+                        '<label class="text-danger">Please select a Packeges </label>' +
+                        '<select id = "packagesId" class="form-control sectionId js-single">' + pmData + '</select>' +
+                        '</div>' +
+                        '</form>',
+
+                    buttons: {
+                        formSubmit: {
+                            text: 'Submit',
+                            btnClass: 'btn-blue',
+                            action: function () {
+                                var vendorsId = this.$content.find('#vendorsId').val();
+                                var packagesId = this.$content.find('#packagesId').val();
+                                if (vendorsId == 0 && packagesId == 0) {
+
+                                } else
+                                {
+                                    var url = '@Url.Action("AssignVendor", "Vendors")';
+                                    $.ajax({
+                                        type: "POST",
+                                        dataType: 'json',
+                                        url: url,
+                                        data: {
+                                            vendorsId: vendorsId,
+                                            packagesId: packagesId,
+                                        },
+                                        cache: false,
+                                        success: function (result) {
+                                            if (result) {
+                                                location.href = '/PickUpRequests/AsingnDelever';
                                             }
 
                                         }

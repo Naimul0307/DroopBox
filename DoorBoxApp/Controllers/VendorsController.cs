@@ -292,26 +292,29 @@ namespace DoorBoxApp.Controllers
 
         }
 
+
         [HttpPost]
         public async Task<JsonResult> GetVendor()
         {
-            var vendor = await _context.DeliveryMans/*.Where(m => m.Status == 1)*/.ToListAsync();
+            var vendor = await _context.Vendors.Where(m => m.Status == 1).ToListAsync();
             return Json(vendor);
 
         }
 
         [HttpPost]
-        public async Task<JsonResult> AssignVendor(int vendorId, int packegsId)
+        public async Task<JsonResult> AssignVendor(int vendorsId, int packagesId)
         {
-            var packegs = await _context.Packages.Where(m => m.Id == packegsId).FirstOrDefaultAsync();
-            packegs.VendorId = vendorId;
+            var packegs = await _context.Packages.Where(m => m.Id == packagesId).FirstOrDefaultAsync();
+            if(packegs.VendorId == null)
+            {
+                packegs.VendorId = vendorsId;
+            }
             packegs.AssignDate = DateTime.Now;
             packegs.Status = 3;
             packegs.DeliveryManId = null;
             _context.Update(packegs);
             await _context.SaveChangesAsync();
-
-            return ViewBag("AsignDelever");
+            return Json(true);
         }
 
     }
