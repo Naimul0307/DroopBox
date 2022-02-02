@@ -12,6 +12,6 @@
     "\\DoorBoxApp\\Views\\Shared",
     "\\DoorBoxApp\\Views\\Vendors"
   ],
-  "SelectedNode": "\\DoorBoxApp\\Controllers\\AccountController.cs",
+  "SelectedNode": "\\DoorBoxApp\\Controllers\\PackagesController.cs",
   "PreviewInSolutionExplorer": false
 }

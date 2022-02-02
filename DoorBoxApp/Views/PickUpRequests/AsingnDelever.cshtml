@@ -41,8 +41,8 @@
                                 Merchant Name
                             </th>
                             @*<th>
-                                Merchant Phone
-                            </th>*@
+                                    Merchant Phone
+                                </th>*@
                             <th>
                                 Client  Name
                             </th>
@@ -82,9 +82,9 @@
 
                                     </td>
                                     @*<td>
-                                        @item.PickUpRequest.Merchant.ApplicationUser.PhoneNumber
+                                            @item.PickUpRequest.Merchant.ApplicationUser.PhoneNumber
 
-                                    </td>*@
+                                        </td>*@
 
                                 }
                                 else
@@ -149,7 +149,7 @@
                                     <div class="btn-group">
                                         @if (item.Status == 2)
                                         {
-                                            <a class="btn btn-default btn-sm text-white">Assign</a>
+                                            <input type="button" class="btn btn-default btn-sm pickupButton"  value="Delivery Man" />
                                         }
 
                                     </div>
@@ -164,8 +164,125 @@
     </div>
 </div>
 
+
 @section Scripts {
+
     <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/jquery.dataTables.min.js"></script>
     <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript">
+         $(document).ready(function () {
+            $('.pickupButton').on('click', function () {
+                var row = $(this).closest('tr');
+                var id = row.find('.id').val();
+                var dmData = '';
+                var pmData = '';
+                var url = '@Url.Action("GetDelivaryMen", "DeliveryMen")';
+                var urls = '@Url.Action("GetPackages", "Packages")';
+                dmData += '<option selected value="0">Delivary Man</option>';
+                pmData += '<option selected value="0"> Packages </option>';
+                $.when(
+                $.ajax({
+                    type: "POST",
+                    dataType: 'json',
+                    url: url,
+                    data: {
+                    },
+                    cache: false,
+                    success: function (objects) {
+                        $.each(objects, function (index, object) {
+
+                            if (objects != null) {
+                                dmData += '<option value="' + object.id + '">' + object.name + ' </option>';
+                            }
+                        });
+                    }
+                }),
+                $.ajax({
+                        type: "POST",
+                        dataType: 'json',
+                        url: urls,
+                        data: {
+                        },
+                        cache: false,
+                        success: function (objects) {
+                            $.each(objects, function (index, object) {
+                                if (objects != null) {
+                                    pmData += '<option value="' + object.id + '">' + object.clientName + ' </option>';
+                                }
+                            });
+                        }
+                }),
+                ).then(function () {
+
+                $.confirm({
+                    title: 'Prompt!',
+                    theme: 'modern',
+                    animation: 'zoom',
+                    closeAnimation: 'zoom',
+                    backgroundDismiss: true,
+                    backgroundDismissAnimation: 'shake',
+                    closeIcon: true,
+                    content: '' +
+
+                        '<form action="" class="formName">' +
+                        '<div class="form-group">' +
+                        '<label class="text-danger">Please select a Delivary Man</label>' +
+                        '<select id = "delivaryManId" class="form-control sectionId js-single">' + dmData + '</select>'+
+                        '</div>' +
+                        '<div class="form-group">' +
+                        '<label class="text-danger">Please select a Packeges </label>' +
+                        '<select id = "packagesId" class="form-control sectionId js-single">' + pmData + '</select>' +
+                        '</div>' +
+                        '</form>',
+
+                    buttons: {
+                        formSubmit: {
+                            text: 'Submit',
+                            btnClass: 'btn-secondary',
+                            action: function () {
+                                var delivaryManId = this.$content.find('#delivaryManId').val();
+                                var packagesId = this.$content.find('#packagesId').val();
+                                if (delivaryManId == 0 && packagesId == 0) {
+
+                                } else
+                                {
+                                    var url = '@Url.Action("AddDeleverDelivaryMan", "DeliveryMen")';
+                                    $.ajax({
+                                        type: "POST",
+                                        dataType: 'json',
+                                        url: url,
+                                        data: {
+                                            id: id,
+                                            delivaryManId: delivaryManId,
+                                            packagesId: packagesId,
+                                        },
+                                        cache: false,
+                                        success: function (result) {
+                                            if (result) {
+                                                /*location.href = '/PickUpRequests/PickedUpByAdmin/'+id;*/
+                                                <div class="alert alert-primary" role="alert">
+                                                    Assigne Successfull !
+                                                </div>
+                                            }
+
+                                        }
+                                    });
+                                }
+                            // submit
+                            }
+                        },
+                    cancel: function () {
+                        //close
+                        },
+                    },
+                    backgroundDismiss: true,
+
+                });
+
+                });
+            });
+        });
+    </script>
+
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

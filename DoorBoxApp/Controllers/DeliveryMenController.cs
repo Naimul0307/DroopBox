@@ -445,6 +445,7 @@ namespace DoorBoxApp.Controllers
             }
 
         }
+
         [HttpPost]
         public async Task<JsonResult> AddPickupDelivaryMan(int id, int delivaryManId)
         {
@@ -466,14 +467,6 @@ namespace DoorBoxApp.Controllers
             }
         }
 
-
-        [HttpPost]
-        public async Task<JsonResult> GetDelivaryMen()
-        {
-            var deliveryMen = await _context.DeliveryMans.Where(m => m.Status == 1).ToListAsync();
-            return Json(deliveryMen);
-
-        }
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AssignPackages(int? id)
         {
@@ -494,6 +487,7 @@ namespace DoorBoxApp.Controllers
             ViewData["Packages"] = await _context.Packages.Where(m => (m.Status == 2 || m.Status == 15) && m.DeliveryManId == null && m.VendorId == null).ToListAsync();
             return View(deliveryMan1);
         }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AssignPackages(AssignDMViewModel deliveryMan)
@@ -517,7 +511,6 @@ namespace DoorBoxApp.Controllers
         {
             var loggedInUser = await _userManager.FindByNameAsync(HttpContext.User.Identity.Name);
             var deliveryMan = await _context.DeliveryMans.Where(m => m.ApplicationUserId == loggedInUser.Id).FirstOrDefaultAsync();
-
 
             if (deliveryMan == null)
             {
@@ -906,12 +899,14 @@ namespace DoorBoxApp.Controllers
             ViewData["ToDate"] = toDate.Date;
             return View();
         }
+
         [HttpPost]
         public IActionResult PendingReportDM(FromDateToDateViewModel datesVM)
         {
             return RedirectToAction("PendingReportDM", new { fromDate = datesVM.FromDate, toDate = datesVM.ToDate });
 
         }
+
         public async Task<IActionResult> ReturnReportDM(DateTime fromDate, DateTime toDate)
         {
             if (fromDate == default(DateTime))
@@ -943,6 +938,7 @@ namespace DoorBoxApp.Controllers
             ViewData["ToDate"] = toDate.Date;
             return View();
         }
+
         [HttpPost]
         public IActionResult ReturnReportDM(FromDateToDateViewModel datesVM)
         {
@@ -950,5 +946,28 @@ namespace DoorBoxApp.Controllers
 
         }
 
+        [HttpPost]
+        public async Task<JsonResult> GetDelivaryMen()
+        {
+            var deliveryMen = await _context.DeliveryMans.Where(m => m.Status == 1).ToListAsync();
+            return Json(deliveryMen);
+
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> AddDeleverDelivaryMan(int delivaryManId, int packagesId)
+        {
+            var packegs = await _context.Packages.Where(m => m.Id == packagesId).FirstOrDefaultAsync();
+            if(packegs.DeliveryManId == null)
+            {
+                packegs.DeliveryManId = delivaryManId;
+            }
+            packegs.AssignDate = DateTime.Now;
+            packegs.Status = 3;
+            packegs.VendorId = null;
+            _context.Update(packegs);
+            await _context.SaveChangesAsync();
+            return Json(true);
+        }
     }
 }

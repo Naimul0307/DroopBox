@@ -100,9 +100,6 @@
                                 <a class="form-control btn btn-success  text-center" href="~/files/Sample.xlsx" download="">Download</a>
                             </div>
                         </div>
-
-
-
                     </div>
                 </form>
             </div>
@@ -396,7 +393,6 @@
                 <table class="table align-items-center table-hover table-striped table-bordered" id="main_table">
                     <thead class="thead-light">
                         <tr>
-
                             <th class="text-center">Catagory Type</th>
                             <th class="text-center">Catagory</th>
                             <th class="text-center">Location(To)</th>
@@ -421,16 +417,16 @@
                         @if (Model.Packages.Count != 0)
                         {
                             double productPriceTotal = 0;
-                            double deliveryChargeTotal = 0;
                             double weightTotal = 0;
+                            double deliveryChargeTotal = 0;
                             double codchargeTotal = 0;
                             double deliCodChargeTotal = 0;
                             int count = 0;
                             @foreach (var package in Model.Packages)
                             {
                                 productPriceTotal += (double)package.ProductPrice;
-                                deliveryChargeTotal += (double)package.Price;
                                 weightTotal += (double)package.Weight;
+                                deliveryChargeTotal += (double)package.Price;
                                 codchargeTotal += (double)package.CodCharge;
                                 deliCodChargeTotal += (double)package.DeliveryCodCharge;
                                 count++;
@@ -688,8 +684,8 @@
                         <td class="text-center font-weight-800" colspan="2">Total :</td>
                         <td class="text-center font-weight-800">@weightTotal KG</td>
                         <td class="text-center font-weight-800">@productPriceTotal TK</td>
-                        <td class="text-center font-weight-800">@codchargeTotal TK</td>
                         <td class="text-center font-weight-800">@deliveryChargeTotal TK</td>
+                        <td class="text-center font-weight-800">@codchargeTotal TK</td>
                         <td class="text-center font-weight-800">@deliCodChargeTotal TK</td>
                         @{
                             double totalTk = productPriceTotal;
@@ -721,7 +717,6 @@
 
                         <h3 class="mb-0 skewed skewed-yellow text-white d-inline-block text-uppercase ls-1">All Packages</h3>
 
-
                     </div>
 
                 </div>
@@ -742,8 +737,8 @@
                             <th class="text-center">Details</th>
                             <th class="text-center">Weight</th>
                             <th class="text-center">Price</th>
-                            <th class="text-center">Cod Charge</th>
                             <th class="text-center">Delivary Charge</th>
+                            <th class="text-center">Cod Charge</th>
                             <th class="text-center">Delivary Charge With Cod</th>
                             <th class="text-center">Selling Price</th>
                             <th class="text-center">Remarks</th>
@@ -857,11 +852,10 @@
 
                             }
                             <td class="text-center font-weight-800 text-wrap">@package.ProductPrice TK</td>
-                            <td class="text-center font-weight-800 text-wrap">@package.CodCharge TK</td>
                             <td class="text-center font-weight-800 text-wrap">@package.Price TK</td>
+                            <td class="text-center font-weight-800 text-wrap">@package.CodCharge TK</td>
                             <td class="text-center font-weight-800 text-wrap">@package.DeliveryCodCharge TK</td>
                             <td class="text-center font-weight-800 text-wrap">@package.SellingPrice TK</td>
-
 
                             <td class="text-center font-weight-800 text-wrap">@package.Remarks</td>
                             @if (package.Status == 1)
@@ -906,8 +900,8 @@
                         <td class="text-center font-weight-800" colspan="2">Total :</td>
                         <td class="text-center font-weight-800">@weightTotal KG</td>
                         <td class="text-center font-weight-800">@productPriceTotal TK</td>
-                        <td class="text-center font-weight-800">@codchargeTotal TK</td>
                         <td class="text-center font-weight-800">@deliveryChargeTotal TK</td>
+                        <td class="text-center font-weight-800">@codchargeTotal TK</td>
                         <td class="text-center font-weight-800">@deliCodChargeTotal TK</td>
                         <td colspan="3" class="text-center font-weight-800"></td>
                     </tr>
@@ -934,6 +928,7 @@
             });
         });
     </script>
+
     <script>
         $(document).ready(function () {
             $("#catagoryId").on('change', function () {
@@ -1389,6 +1384,7 @@
                             catagoryId: catagoryId,
                             locationFromId: locationFromId,
                             locationToId: locationToId,
+                            productPrice: productPrice,
                             weight: weight,
                         },
                         cache: false,

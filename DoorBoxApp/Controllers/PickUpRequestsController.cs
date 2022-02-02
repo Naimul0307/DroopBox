@@ -93,7 +93,6 @@ namespace DoorBoxApp.Controllers
         }
 
 
-
         //GET: PickUpRequests/Create
         public IActionResult Create()
         {
@@ -302,6 +301,31 @@ namespace DoorBoxApp.Controllers
             }
 
         }
+
+        public async Task<IActionResult> DeleverByAdmin(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var pickUpRequest = await _context.PickUpRequests
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (pickUpRequest == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                pickUpRequest.Status = 3;
+                pickUpRequest.PickUpDate = DateTime.Now;
+                _context.Update(pickUpRequest);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(RecentRequest));
+            }
+
+        }
         public async Task<IActionResult> DeclineByAdmin(int? id)
         {
             if (id == null)
@@ -342,8 +366,6 @@ namespace DoorBoxApp.Controllers
                 .ThenInclude(m => m.PackageCatagory)
                 .Include(m => m.Packages)
                 .ThenInclude(m => m.PackageCatagory.CatagoryType)
-
-
                 .Include(m => m.Packages)
                 .ThenInclude(m => m.PackageType)
                 .Where(m => m.Id == id).FirstOrDefaultAsync();
@@ -463,9 +485,6 @@ namespace DoorBoxApp.Controllers
                         {
                             package.PackageCatagoryId = productSubCatagory.Id;
                         }
-
-
-
                         package.ClientName = reader.GetValue(4).ToString();
                         package.Address = reader.GetValue(5).ToString(); ;
                         package.PhoneNumber = reader.GetValue(6).ToString(); ;
@@ -497,6 +516,7 @@ namespace DoorBoxApp.Controllers
             return RedirectToAction("CreatePackages", new { id = pickUp.Id });
         }
 
-    }
+}
+
 }
 

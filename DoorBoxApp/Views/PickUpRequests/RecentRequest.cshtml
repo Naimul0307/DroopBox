@@ -172,8 +172,10 @@
 
 
 @section Scripts {
+
     <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/jquery.dataTables.min.js"></script>
     <script asp-append-version="true" type="text/javascript" src="~/vendor/datatable/js/dataTables.bootstrap4.min.js"></script>
+
     <script type="text/javascript">
          $(document).ready(function () {
             $('.pickupButton').on('click', function () {
@@ -183,13 +185,11 @@
                 var url = '@Url.Action("GetDelivaryMen", "DeliveryMen")';
                 dmData += '<option selected value="0">Delivary Man</option>';
                 $.when(
-
                 $.ajax({
                     type: "POST",
                     dataType: 'json',
                     url: url,
                     data: {
-
                     },
                     cache: false,
                     success: function (objects) {
@@ -212,20 +212,21 @@
                     backgroundDismissAnimation: 'shake',
                     closeIcon: true,
                     content: '' +
+
                         '<form action="" class="formName">' +
                         '<div class="form-group">' +
                         '<label class="text-danger">Please select a Delivary Man</label>' +
-
                         '<select id = "delivaryManId" class="form-control sectionId js-single">' + dmData + '</select>'+
                         '</div>' +
                         '</form>',
+
                     buttons: {
                         formSubmit: {
                             text: 'Submit',
                             btnClass: 'btn-blue',
                             action: function () {
                                 var delivaryManId = this.$content.find('#delivaryManId').val();
-                                if ( delivaryManId == 0) {
+                                if (delivaryManId == 0) {
 
                                 } else
 
@@ -259,9 +260,10 @@
 
                 });
 
-                    });
+                });
             });
         });
     </script>
+
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

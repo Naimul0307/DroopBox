@@ -87,8 +87,6 @@ namespace DoorBoxApp.Controllers
 
         }
 
-
-
         public async Task<IActionResult> AdminAllPackageIndex(DateTime fromDate, DateTime toDate)
         {
             if (fromDate == default(DateTime))
@@ -177,7 +175,6 @@ namespace DoorBoxApp.Controllers
             ViewData["Locations"] = await _context.Locations.Where(m => m.Status == 1).ToListAsync();
             return View(packageReq);
         }
-
 
 
         [HttpPost]
@@ -347,7 +344,6 @@ namespace DoorBoxApp.Controllers
             }
 
         }
-
 
         public async Task<IActionResult> PartiallyDeleveredByAdmin(int? id)
         {
@@ -858,6 +854,7 @@ namespace DoorBoxApp.Controllers
             }
 
         }
+
         [HttpPost]
         public async Task<JsonResult> GetCatagoryType(int catagoryTypeId)
         {
@@ -871,6 +868,7 @@ namespace DoorBoxApp.Controllers
                 return Json(false);
             }
         }
+
         [HttpPost]
         public async Task<JsonResult> GetCatagoryByType(int catagoryTypeId)
         {
@@ -883,6 +881,15 @@ namespace DoorBoxApp.Controllers
             {
                 return Json(false);
             }
+        }
+
+
+        [HttpPost]
+        public async Task<JsonResult> GetPackages()
+        {
+            var packages = await _context.Packages.Where(m => m.Status == 2).ToListAsync();
+            return Json(packages);
+
         }
     }
 }

@@ -62,6 +62,7 @@ namespace DoorBoxApp.Controllers
         {
             if (ModelState.IsValid)
             {
+                vendor.Status = 1;
                 _context.Add(vendor);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -289,6 +290,28 @@ namespace DoorBoxApp.Controllers
                 return RedirectToAction("AssignedPackagesVendor", new { id = vendorId });
             }
 
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> GetVendor()
+        {
+            var vendor = await _context.DeliveryMans/*.Where(m => m.Status == 1)*/.ToListAsync();
+            return Json(vendor);
+
+        }
+
+        [HttpPost]
+        public async Task<JsonResult> AssignVendor(int vendorId, int packegsId)
+        {
+            var packegs = await _context.Packages.Where(m => m.Id == packegsId).FirstOrDefaultAsync();
+            packegs.VendorId = vendorId;
+            packegs.AssignDate = DateTime.Now;
+            packegs.Status = 3;
+            packegs.DeliveryManId = null;
+            _context.Update(packegs);
+            await _context.SaveChangesAsync();
+
+            return ViewBag("AsignDelever");
         }
 
     }
