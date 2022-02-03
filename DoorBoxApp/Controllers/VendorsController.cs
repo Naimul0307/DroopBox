@@ -62,7 +62,6 @@ namespace DoorBoxApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                vendor.Status = 1;
                 _context.Add(vendor);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -296,7 +295,6 @@ namespace DoorBoxApp.Controllers
         [HttpPost]
         public async Task<JsonResult> GetVendor()
         {
-            //var vendor = await _context.Vendors.Where(m => m.Status == 1).ToListAsync();
             var vendor = await _context.Vendors.ToListAsync();
             return Json(vendor);
 
