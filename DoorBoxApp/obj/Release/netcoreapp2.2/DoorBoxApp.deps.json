@@ -35,7 +35,8 @@
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.3",
-          "System.Data.OleDb": "5.0.0"
+          "System.Data.OleDb": "5.0.0",
+          "jQuery": "3.6.0"
         },
         "runtime": {
           "DoorBoxApp.dll": {}
@@ -55,6 +56,7 @@
           "lib/netstandard2.0/ExcelDataReader.dll": {}
         }
       },
+      "jQuery/3.6.0": {},
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
         "dependencies": {
           "Microsoft.CodeAnalysis.CSharp": "2.8.0",
@@ -3694,6 +3696,13 @@
       "sha512": "sha512-eXyxTwG7EEWpgQX3juZ2KcndqTqm/ydx9GXS2lUiMJU54U4h5eXdygRtVgINv0t60ezPWEb+lL7uM7Q+wm5BBA==",
       "path": "exceldatareader/3.6.0",
       "hashPath": "exceldatareader.3.6.0.nupkg.sha512"
+    },
+    "jQuery/3.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sSzCTDWn15waSMjDrP21jjgG1j1pwISLaKiVCClwU4XGAmuZt+FScLkdyRvh9ppoIxAW/tJtJBYei+3CAwFQ7g==",
+      "path": "jquery/3.6.0",
+      "hashPath": "jquery.3.6.0.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",

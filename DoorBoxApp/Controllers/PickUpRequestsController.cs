@@ -109,7 +109,6 @@ namespace DoorBoxApp.Controllers
         {
             var loggedInUser = await _userManager.FindByNameAsync(HttpContext.User.Identity.Name);
             var merchant = await _context.Merchants.Where(m => m.ApplicationUserId == loggedInUser.Id).FirstOrDefaultAsync();
-
             pickUpRequest.Status = 0;
             pickUpRequest.MerchantId = merchant.Id;
             pickUpRequest.RequestDate = DateTime.Now;
@@ -122,7 +121,9 @@ namespace DoorBoxApp.Controllers
                 pickUpRequest.RequestDate = pickUpRequest.RequestDate;
                 _context.Update(pickUpRequest);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(MarchantIndex));
+                var id = pickUpRequest.Id;
+                return RedirectToAction("CreatePackages", new { id});
+                //return RedirectToAction(nameof(MarchantIndex));
             }
             ViewData["LocationFromId"] = new SelectList(_context.Locations, "Id", "Name", pickUpRequest.LocationFromId);
             return View(pickUpRequest);

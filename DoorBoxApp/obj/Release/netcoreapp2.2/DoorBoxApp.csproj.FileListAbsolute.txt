@@ -312,7 +312,6 @@ D:\Project File\DroopBox\DoorBoxApp\obj\Release\netcoreapp2.2\Razor\Views\Packag
 D:\Project File\DroopBox\DoorBoxApp\obj\Release\netcoreapp2.2\Razor\Views\PackageTypes\Create.cshtml.g.cs
 D:\Project File\DroopBox\DoorBoxApp\obj\Release\netcoreapp2.2\Razor\Views\PackageTypes\Edit.cshtml.g.cs
 D:\Project File\DroopBox\DoorBoxApp\obj\Release\netcoreapp2.2\Razor\Views\PackageTypes\Index.cshtml.g.cs
-D:\Project File\DroopBox\DoorBoxApp\obj\Release\netcoreapp2.2\Razor\Views\PickUpRequests\AdminIndex.cshtml.g.cs
 D:\Project File\DroopBox\DoorBoxApp\obj\Release\netcoreapp2.2\Razor\Views\PickUpRequests\Create.cshtml.g.cs
 D:\Project File\DroopBox\DoorBoxApp\obj\Release\netcoreapp2.2\Razor\Views\PickUpRequests\CreatePackages.cshtml.g.cs
 D:\Project File\DroopBox\DoorBoxApp\obj\Release\netcoreapp2.2\Razor\Views\PickUpRequests\DeliveryManIndex.cshtml.g.cs
@@ -360,3 +359,5 @@ D:\Project File\DroopBox\DoorBoxApp\obj\Release\netcoreapp2.2\DoorBoxApp.pdb
 D:\Project File\DroopBox\DoorBoxApp\obj\Release\netcoreapp2.2\DoorBoxApp.genruntimeconfig.cache
 D:\Project File\DroopBox\DoorBoxApp\obj\Release\netcoreapp2.2\DoorBoxApp.csproj.CopyComplete
 D:\Project File\DroopBox\DoorBoxApp\obj\Release\netcoreapp2.2\Razor\Views\Shared\_Messanger.cshtml.g.cs
+D:\Project File\DroopBox\DoorBoxApp\obj\Release\netcoreapp2.2\Razor\Views\PickUpRequests\AsingnDelever.cshtml.g.cs
+D:\Project File\DroopBox\DoorBoxApp\obj\Release\netcoreapp2.2\Razor\Views\PickUpRequests\DeliveredPackeg.cshtml.g.cs
