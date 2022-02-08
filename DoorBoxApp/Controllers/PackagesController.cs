@@ -543,7 +543,6 @@ namespace DoorBoxApp.Controllers
 
         {
 
-
             Package package = await _context.Packages.Include(m => m.PickUpRequest).Where(m => m.Id == packageId).FirstOrDefaultAsync();
             package.PackageCatagoryId = catagoryId;
             package.LocationToId = locationToId;
@@ -589,6 +588,7 @@ namespace DoorBoxApp.Controllers
             }
 
         }
+
         [HttpPost]
         public async Task<JsonResult> UpdateWithDeliveryPrice(int catagoryId, int locationToId, int subLocationToId, int packageTypeId, double weight, int packageId, double delivaryPrice)
 

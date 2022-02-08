@@ -239,11 +239,13 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label class="form-control-label text-dark ls-1 text-uppercase">Remarks</label>
-                                <input id="remarks" class="form-control">
+                                <select class="form-control remarks" data-toggle="select">
+                                    <option value="0" selected disabled>------Select------</option>
+                                    <option value="1">New</option>
+                                    <option value="2">Exchange</option>
+                                </select>
                             </div>
                         </div>
-
-
 
                         <div class="col-12">
                             <div class="text-center">
@@ -628,21 +630,32 @@
 
 
                             <td class="p-0">
-                                <input disabled class="form-control delivaryPrice border-0 border-radius-0 text-center" type="text" value="@package.CodCharge" />
+                                <input disabled class="form-control  codCharge border-0 border-radius-0 text-center" type="text" value="@package.CodCharge" />
                             </td>
 
 
                             <td class="p-0">
-                                <input disabled class="form-control delivaryPrice border-0 border-radius-0 text-center" type="text" value="@package.DeliveryCodCharge" />
+                                <input disabled class="form-control deliveryCodCharge  border-0 border-radius-0 text-center" type="text" value="@package.DeliveryCodCharge" />
                             </td>
 
                             <td class="p-0">
-                                <input disabled class="form-control delivaryPrice border-0 border-radius-0 text-center" type="text" value="@package.SellingPrice" />
+                                <input disabled class="form-control sellingPrice border-0 border-radius-0 text-center" type="text" value="@package.SellingPrice" />
                             </td>
-                            <td class="p-0">
-                                <input disabled class="form-control remarks border-0 border-radius-0 text-center" type="text" value="@package.Remarks" />
-                                <input type="hidden" class="packageId" name="packageId" value="@package.Id" />
-                            </td>
+
+                            @if (package.Remarks == "1")
+                            {
+                                <td class="p-0">
+                                    <input disabled class="form-control remarks border-0 border-radius-0 text-center" type="text" value="New" />
+                                    <input type="hidden" class="packageId" name="packageId" value="@package.Id" />
+                                </td>
+                            }
+                            else
+                            {
+                                <td class="p-0">
+                                    <input disabled class="form-control remarks border-0 border-radius-0 text-center" type="text" value="Exchange" />
+                                    <input type="hidden" class="packageId" name="packageId" value="@package.Id" />
+                                </td>
+                            }
 
 
 
@@ -1185,6 +1198,28 @@
                 sellingPriceLabel.text(sellingPrice + " Taka");
             });
 
+            $(".remarks").on('change', function () {
+                var remarks = $('.remarks').val();
+                var deliveryPrice = $('#deliveryPrice').val();
+                var productPrice = $('#productPrice').val();
+                var codcharge = $('#codcharge').val();
+                var codChargeLabel = $('#codChargeLabel');
+                var deliveryChargeLabel = $('#deliveryChargeLabel');
+                if (remarks == 2) {
+                    deliveryPrice = 0;
+                    codcharge = 0;
+                    deliveryChargeLabel.text(deliveryPrice + " Taka");
+                    codChargeLabel.text(codcharge + " Taka ");
+                }
+                else {
+                    cod = productPrice * 0.01;
+                    codcharge = cod;
+                    deliveryChargeLabel.text(deliveryPrice + " Taka");
+                    codChargeLabel.text(codcharge + " Taka (Apply Only  Out Of Chittagong) ");
+                }
+            });
+
+
             $('#saveFormButton').on('click', function () {
                  var catagoryId = $('#catagoryId').val();
                 var locationToId = $('#locationToId').val();
@@ -1331,9 +1366,6 @@
 
                      $(this).val('Saved');
                      $(this).attr("disabled", true);
-
-
-
                      var url = '@Url.Action("UpdateEmptyPackage", "Packages")';
                      $.ajax({
                          type: "POST",
@@ -1357,13 +1389,12 @@
 
                  }
 
-             });
+            });
 
-            $(".weight , .locationToId , .catagoryId").on('change', function () {
+$(".weight , .locationToId , .catagoryId").on('change', function () {
 
                 var row = $(this).closest('tr');
                 var delivaryPrice = row.find(".delivaryPrice");
-                delivaryPrice.val("");
                 var weight = row.find(".weight").val();
                 var productPrice = row.find(".productPrice").val();
                 var locationFromId = $("#locationFromId").val();
@@ -1379,6 +1410,7 @@
                         url: url,
                         data: {
                             merchantId: merchantId,
+
                             catagoryId: catagoryId,
                             locationFromId: locationFromId,
                             locationToId: locationToId,
@@ -1387,17 +1419,28 @@
                         },
                         cache: false,
                         success: function (result) {
-
                             if (result != null) {
-
+                                if (locationToId == 1) {
+                                    codCharge = 0;
+                                    deliveryCodCharge = result.totalPrice + codCharge;
+                                    row.find(".codCharge").val(codCharge);
+                                    row.find(".deliveryCodCharge").val(deliveryCodCharge);
+                                }
+                                else {
+                                    codCharge = productPrice * 0.01;
+                                    deliveryCodCharge = result.totalPrice + codCharge;
+                                    row.find(".codCharge").val(codCharge);
+                                    row.find(".deliveryCodCharge").val(deliveryCodCharge);
+                                }
                                 delivaryPrice.val(result.totalPrice);
 
                             }
                             else{
-                                //deliveryChargeLabel.text(" No Tarrif Price Availabe, Contact Door box");
-                                //totalPriceLabel.text(" No Tarrif Price Availabe, Contact Door box");
+                                deliveryChargeLabel.text(" No Tarrif Price Availabe, Contact Door box");
+                                totalPriceLabel.text(" No Tarrif Price Availabe, Contact Door box");
                             }
                         }
+
                     });
 
 
@@ -1490,7 +1533,7 @@
                  });
 
             });
-            @*
+            
 
              $('.edit_button').on('click', function () {
                  var row = $(this).closest('tr');
@@ -1509,7 +1552,7 @@
                  row.find('.delete_button').attr("disabled", false);
                  row.find('.save_button').val('Save');
             });
-            *@
+            
 
         });
 
