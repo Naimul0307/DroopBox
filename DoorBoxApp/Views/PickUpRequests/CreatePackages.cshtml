@@ -1115,8 +1115,6 @@
             });
 
 
-
-
             $("#address").on('change', function () {
 
                 var address = $('#address').val();
@@ -1233,14 +1231,14 @@
                 var sellingPrice = $('#sellingPrice').val();
                 var productPrice = $('#productPrice').val();
                 var delivaryPrice = $('#deliveryPrice').val();
-                var remarks = $('#remarks').val();
+                var remarks = $('.remarks').val();
                 var codcharge = $("#codCharge").val();
                 var pickUpRequestId = $('#pickUpRequestId').val();
 
                 var phonenoReg = /(^(\88)?(01){1}[3456789]{1}(\d){8})$/
 
 
-                if (catagoryId == "" || catagoryId == null || locationToId == "" || locationToId == null || clientName == "" || address == "" || phoneNo == "" || details == "" || weight == "" || productPrice == "" || delivaryPrice == "" || sellingPrice == "" || codcharge=="") {
+                if (catagoryId == "" || catagoryId == null || locationToId == "" || locationToId == null || clientName == "" || address == "" || phoneNo == "" || details == "" || weight == "" || productPrice == "" || delivaryPrice == "" || sellingPrice == "" || codcharge==""||remarks=="") {
 
                          $.notify({
                              title: 'Prompt!',

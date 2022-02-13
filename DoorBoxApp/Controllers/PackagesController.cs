@@ -186,7 +186,6 @@ namespace DoorBoxApp.Controllers
             Package package = new Package();
             package.PackageCatagoryId = catagoryId;
             package.LocationToId = locationToId;
-
             if (subLocationToId != 0)
             {
                 package.SubLocationId = subLocationToId;
@@ -217,9 +216,17 @@ namespace DoorBoxApp.Controllers
                 package.DeliveryCodCharge = delivaryPrice;
                 package.CodCharge = 0;
             }
-
-            package.Price = delivaryPrice;
             package.Remarks = remarks;
+            if(remarks == "2")
+            {
+                package.Price = 0;
+                package.CodCharge = 0;
+                package.DeliveryCodCharge = 0;
+            }
+            else
+            {
+                package.Price = delivaryPrice;
+            }
             package.SellingPrice = sellingPrice;
             package.Status = 1;
             package.PickUpRequestId = pickUpRequestId;
@@ -738,6 +745,7 @@ namespace DoorBoxApp.Controllers
                 return Json(false);
             }
         }
+
         [HttpPost]
         public async Task<JsonResult> SavePackagePayment(int packageId, double paidAmount)
         {

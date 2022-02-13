@@ -246,18 +246,11 @@
                                             <input disabled class="btn btn-success btn-sm" type="button" value="Paid" />
                                         </div>
                                     </td>
-
                                 }
-
-
-
                             </tr>
                         }
                     </tbody>
                 </table>
-
-
-
             </div>
         </div>
     </div>
@@ -271,7 +264,6 @@
 
         $(document).ready(function () {
             $('.saveButton').on('click', function () {
-
                 var row = $(this).closest('tr');
                 var paidAmount = row.find('.paidAmount').val();
                 var dueAmount = row.find('.dueAmount').val();

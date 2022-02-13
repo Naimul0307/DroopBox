@@ -527,7 +527,7 @@ namespace DoorBoxApp.Controllers
                 .Include(p => p.SubLocation)
                 .Include(p => p.DeliveryMan)
                 .Include(p => p.PackageCatagory)
-                .Where(m => m.DeliveryManId == deliveryMan.Id && (m.Status == 3 || m.Status == 4 || m.Status == 5  ||  m.Status == 13)).ToListAsync();
+                .Where(m => m.DeliveryManId == deliveryMan.Id && (m.Status == 3 || m.Status == 4 || m.Status == 5  ||  m.Status == 13 || m.Status == 16)).ToListAsync();
             if (todaysPackages == null)
             {
                 return NotFound();
@@ -537,6 +537,7 @@ namespace DoorBoxApp.Controllers
             return View(todaysPackages);
         }
         [Authorize(Roles = "DeliveryMan")]
+        
         public async Task<IActionResult> SendOTP(int? id)
         {
             if (id == null)
@@ -558,7 +559,6 @@ namespace DoorBoxApp.Controllers
                     client.BaseAddress = new Uri("https://api.mobireach.com.bd/");
                     var responseTask = client.GetAsync("SendTextMessage?Username=Doorbox&Password=Rabbi@123&From=8801842871143&To=" + package.PhoneNumber + "&Message=Dear Customer, Your parcel is delivered successfully. Please share this code " + package.OTP + " with the agent for confirmation only after receiving the parcel - Doorbox");
                     responseTask.Wait();
-
                     var result = responseTask.Result;
 
                 }
@@ -570,6 +570,39 @@ namespace DoorBoxApp.Controllers
             }
 
         }
+
+        public async Task<IActionResult> PartialDelivered(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var package = await _context.Packages
+                .FirstOrDefaultAsync(m => m.Id == id && m.Status == 3);
+            if (package == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("https://api.mobireach.com.bd/");
+                    var responseTask = client.GetAsync("SendTextMessage?Username=Doorbox&Password=Rabbi@123&From=8801842871143&To=" + package.PhoneNumber + "&Message=Dear Customer, Your parcel is delivered successfully. Please share this code " + package.OTP + " with the agent for confirmation only after receiving the parcel - Doorbox");
+                    responseTask.Wait();
+                    var result = responseTask.Result;
+
+                }
+                package.Status = 16;
+                _context.Update(package);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(DeliveryPackages));
+            }
+
+        }
+
 
         [Authorize(Roles = "DeliveryMan")]
         public async Task<IActionResult> HoldPackage(int? id)
@@ -597,6 +630,7 @@ namespace DoorBoxApp.Controllers
             }
 
         }
+
         [Authorize(Roles = "DeliveryMan")]
         public async Task<JsonResult> ReturnedByDM(string reason, int? packageId)
         {
@@ -713,6 +747,7 @@ namespace DoorBoxApp.Controllers
             ViewData["ToDate"] = toDate.Date;
             return View();
         }
+
         [HttpPost]
         public IActionResult DeliveryReport(FromDateToDateViewModel datesVM)
         {
@@ -749,6 +784,7 @@ namespace DoorBoxApp.Controllers
             ViewData["ToDate"] = toDate.Date;
             return View();
         }
+
         [HttpPost]
         public IActionResult PendingReport(FromDateToDateViewModel datesVM)
         {
@@ -785,6 +821,7 @@ namespace DoorBoxApp.Controllers
             ViewData["ToDate"] = toDate.Date;
             return View();
         }
+
         [HttpPost]
         public IActionResult ReturnReport(FromDateToDateViewModel datesVM)
         {
@@ -824,6 +861,7 @@ namespace DoorBoxApp.Controllers
             ViewData["ToDate"] = toDate.Date;
             return View();
         }
+
         [HttpPost]
         public IActionResult PickUpReportDM(FromDateToDateViewModel datesVM)
         {
@@ -862,6 +900,7 @@ namespace DoorBoxApp.Controllers
             ViewData["ToDate"] = toDate.Date;
             return View();
         }
+
         [HttpPost]
         public IActionResult DeliveryReportDM(FromDateToDateViewModel datesVM)
         {

@@ -146,9 +146,10 @@
                                             <input type="hidden" name="name" class="packageId" value=" @item.Id" />
                                             <a class="btn btn-warning btn-sm" asp-action="HoldPackage" asp-route-id="@item.Id">Hold</a>
                                             <a class="btn btn-success btn-sm" asp-action="SendOTP" asp-route-id="@item.Id">Send OTP</a>
+                                            <a class="btn btn-success btn-sm" asp-action="PartialDelivered" asp-route-id="@item.Id">Partial Delivered</a>
                                             <input type="button" class="btn btn-success btn-sm returnButton" value="Return" />
-
                                         }
+
                                         else if (item.Status == 4)
                                         {
                                             <input type="button" class="btn btn-success btn-sm deliverButton" value="Deliver" />
@@ -156,10 +157,19 @@
                                             <input type="hidden" name="name" class="packageId" value=" @item.Id" />
 
                                         }
+
+                                        else if (item.Status == 16)
+                                        {
+                                            <input type="button" class="btn btn-success btn-sm deliverButton" value="Partial Deliver" />
+
+                                            <input type="hidden" name="name" class="packageId" value=" @item.Id" />
+                                        }
+
                                         else if (item.Status == 5)
                                         {
                                             <a class="btn btn-success btn-sm text-white">Delivered</a>
                                         }
+
                                         else if (item.Status == 13)
                                         {
                                             <a class="btn btn-warning btn-sm text-white">Returned</a>
@@ -170,9 +180,6 @@
                         }
                     </tbody>
                 </table>
-
-
-
             </div>
         </div>
     </div>
@@ -267,6 +274,7 @@
                 });
 
             });
+
             $('.returnButton').on('click', function () {
                 var row = $(this).closest('tr');
                 var packageId = row.find('.packageId').val();

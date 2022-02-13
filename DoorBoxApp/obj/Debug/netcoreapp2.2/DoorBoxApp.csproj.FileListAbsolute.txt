@@ -736,7 +736,6 @@ D:\Project File\DroopBox\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.dll
 D:\Project File\DroopBox\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.pdb
 D:\Project File\DroopBox\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.Views.dll
 D:\Project File\DroopBox\DoorBoxApp\bin\Debug\netcoreapp2.2\DoorBoxApp.Views.pdb
-D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.AssemblyReference.cache
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.GeneratedMSBuildEditorConfig.editorconfig
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.AssemblyInfoInputs.cache
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.AssemblyInfo.cs
@@ -855,3 +854,4 @@ D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.dll
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.pdb
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.genruntimeconfig.cache
 D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.CopyComplete
+D:\Project File\DroopBox\DoorBoxApp\obj\Debug\netcoreapp2.2\DoorBoxApp.csproj.AssemblyReference.cache

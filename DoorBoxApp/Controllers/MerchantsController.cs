@@ -149,8 +149,6 @@ namespace DoorBoxApp.Controllers
                 .OrderByDescending(m => m.Id)
                 .OrderBy(m => m.Id)
                 .ToListAsync();
-
-
             return View(packagers);
         }
 
@@ -167,8 +165,6 @@ namespace DoorBoxApp.Controllers
                 .OrderByDescending(m => m.Id)
                 .OrderBy(m => m.Id)
                 .ToListAsync();
-
-
             return View(packagers);
         }
         [Authorize(Roles = "Finance")]
@@ -184,7 +180,6 @@ namespace DoorBoxApp.Controllers
                 .OrderByDescending(m => m.Id)
                 .Where(m => m.PickUpRequest.MerchantId == merchantId)
                 .ToListAsync();
-
 
             return View(packagers);
         }
