@@ -167,12 +167,16 @@
 
                                         else if (item.Status == 5)
                                         {
-                                            <a class="btn btn-success btn-sm text-white">Delivered</a>
+                                        <a class="btn btn-success btn-sm text-white">Delivered</a>
                                         }
 
                                         else if (item.Status == 13)
                                         {
-                                            <a class="btn btn-warning btn-sm text-white">Returned</a>
+                                        <a class="btn btn-warning btn-sm text-white">Returned</a>
+                                        }
+                                        else if(item.Status == 17 || item.Status == 18)
+                                        {
+                                         <a class="btn btn-success btn-sm text-white">Partial Delivered</a>
                                         }
                                     </div>
                                 </td>

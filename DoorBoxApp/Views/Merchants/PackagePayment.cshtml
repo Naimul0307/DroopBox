@@ -127,12 +127,21 @@
                                         No Data
                                     </td>
                                 }
-                                @if (item.ProductPrice != null)
+                                @if (item.ProductPrice != null )
                                 {
-
-                                    <td>
-                                        @item.ProductPrice
+                                  @if(item.Status == 17)
+                                    { 
+                                     <td>
+                                        <input class="form-control border-0 border-radius-0 text-center  text-danger productPrice" type="text" value="@item.ProductPrice" />
                                     </td>
+                                     }
+                                    else
+                                    {
+                                    <td >
+                                       <input disabled class="border-0 border-radius-0 text-center text-wrap productPrice" type="text" value="@item.ProductPrice" />
+                                    </td>  
+                                    }
+                                   
                                 }
                                 else
                                 {
@@ -189,12 +198,23 @@
                                     <td>
                                         N/A
                                     </td>
+                                    @if(item.Status == 17 || item.Status == 18)
+                                    {
                                     <td class="text-center">
+                                        <div class="btn-group">
+                                            <input disabled class="btn btn-success btn-sm" type="button" value="Partial Paid" />
+                                        </div>
+                                    </td>
+                                    }
+                                    else
+                                    {
+                                   <td class="text-center">
                                         <div class="btn-group">
                                             <input disabled class="btn btn-success btn-sm" type="button" value="Paid" />
                                         </div>
                                     </td>
-                                }
+                                    }
+                            }
                                 else if (item.PaidAmount == 0 || item.PaidAmount == null)
                                 {
 
@@ -211,8 +231,6 @@
                                             <input class="btn btn-success btn-sm saveButton" type="button" value="Save" />
                                         </div>
                                     </td>
-
-
                                 }
                                 else if (item.PaidAmount < payable)
                                 {
@@ -241,12 +259,23 @@
                                     <td>
                                         N/A
                                     </td>
+                                    @if(item.Status == 18 || item.Status == 17)
+                                    {
+                                    <td class="text-center">
+                                        <div class="btn-group">
+                                            <input disabled class="btn btn-success btn-sm" type="button" value="Partial Paid" />
+                                        </div>
+                                    </td>
+                                    }
+                                    else
+                                    {
                                     <td class="text-center">
                                         <div class="btn-group">
                                             <input disabled class="btn btn-success btn-sm" type="button" value="Paid" />
                                         </div>
                                     </td>
-                                }
+                                    }
+                            }
                             </tr>
                         }
                     </tbody>
@@ -268,8 +297,8 @@
                 var paidAmount = row.find('.paidAmount').val();
                 var dueAmount = row.find('.dueAmount').val();
                 var packageId = row.find('.packageId').val();
-
-                if (paidAmount == "" || paidAmount == null || (eval(dueAmount) < eval(paidAmount))) {
+                var productPrice = row.find('.productPrice').val();
+                if (paidAmount == "" || paidAmount == null || productPrice == "" || (eval(dueAmount) < eval(paidAmount))) {
 
                          $.notify({
                              title: 'Prompt!',
@@ -301,6 +330,7 @@
                          data: {
                              packageId: packageId,
                              paidAmount: paidAmount,
+                             productPrice:productPrice,
                          },
                          cache: false,
                          success: function (result) {

@@ -527,7 +527,7 @@ namespace DoorBoxApp.Controllers
                 .Include(p => p.SubLocation)
                 .Include(p => p.DeliveryMan)
                 .Include(p => p.PackageCatagory)
-                .Where(m => m.DeliveryManId == deliveryMan.Id && (m.Status == 3 || m.Status == 4 || m.Status == 5  ||  m.Status == 13 || m.Status == 16)).ToListAsync();
+                .Where(m => m.DeliveryManId == deliveryMan.Id && (m.Status == 3 || m.Status == 4 || m.Status == 5  ||  m.Status == 13 || m.Status == 16 || m.Status ==17)).ToListAsync();
             if (todaysPackages == null)
             {
                 return NotFound();

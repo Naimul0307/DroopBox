@@ -747,13 +747,19 @@ namespace DoorBoxApp.Controllers
         }
 
         [HttpPost]
-        public async Task<JsonResult> SavePackagePayment(int packageId, double paidAmount)
+        public async Task<JsonResult> SavePackagePayment(int packageId, double paidAmount, double productPrice)
         {
             var package = await _context.Packages.Where(m => m.Id == packageId).FirstOrDefaultAsync();
+            if( package.Status == 17)
+            {
+                package.Status = 18;
+                package.ProductPrice = productPrice;
+                _context.Update(package);
+                await _context.SaveChangesAsync();
+            }
             if (package != null)
             {
                 double totalPaid = 0;
-
                 if (package.PaidAmount != null)
                 {
                     totalPaid = (double)(package.PaidAmount) + paidAmount;
@@ -791,6 +797,7 @@ namespace DoorBoxApp.Controllers
                 return Json(false);
             }
         }
+
         [HttpPost]
         public async Task<JsonResult> DelivrByDM(string otp, int packageId)
         {
@@ -799,8 +806,14 @@ namespace DoorBoxApp.Controllers
             {
 
                 if (package.OTP == otp)
-                {
-                    package.Status = 5;
+                {   if(package.Status == 16)
+                    {
+                        package.Status = 17;
+                    }
+                    else
+                    {
+                        package.Status = 5;
+                    }
                     package.DeliveryDate = DateTime.Now;
                     _context.Update(package);
                     int res1 = await _context.SaveChangesAsync();

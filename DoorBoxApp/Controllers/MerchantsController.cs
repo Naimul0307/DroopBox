@@ -155,7 +155,7 @@ namespace DoorBoxApp.Controllers
         [Authorize(Roles = "Finance")]
         public async Task<IActionResult> PackagePayment()
         {
-            var packagers = await _context.Packages.Where(m => m.Status == 5 || m.Status == 13 || m.Status == 14)
+            var packagers = await _context.Packages.Where(m => m.Status == 5 || m.Status == 13 || m.Status == 14 || m.Status==17 || m.Status == 18)
                 .Include(m => m.SubLocation)
                 .Include(m => m.LocationTo)
                 .Include(m => m.PickUpRequest)
@@ -167,10 +167,11 @@ namespace DoorBoxApp.Controllers
                 .ToListAsync();
             return View(packagers);
         }
+
         [Authorize(Roles = "Finance")]
         public async Task<IActionResult> PackagePaymentMerchant(int merchantId)
         {
-            var packagers = await _context.Packages.Where(m => m.Status == 5 || m.Status == 13 || m.Status == 14)
+            var packagers = await _context.Packages.Where(m => m.Status == 5 || m.Status == 13 || m.Status == 14 || m.Status == 17 || m.Status == 18)
                 .Include(m => m.SubLocation)
                 .Include(m => m.LocationTo)
                 .Include(m => m.PickUpRequest)
@@ -180,7 +181,6 @@ namespace DoorBoxApp.Controllers
                 .OrderByDescending(m => m.Id)
                 .Where(m => m.PickUpRequest.MerchantId == merchantId)
                 .ToListAsync();
-
             return View(packagers);
         }
 
@@ -196,8 +196,6 @@ namespace DoorBoxApp.Controllers
                  .Include(m => m.MerchantTarrifs)
                 .ThenInclude(m => m.PackageCatagory)
                 .FirstOrDefaultAsync();
-
-
             return View(merhcant);
         }
 
