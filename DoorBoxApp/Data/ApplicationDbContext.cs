@@ -64,8 +64,5 @@ namespace DoorBoxApp.Data
         public DbSet<Vendor> Vendors { get; set; }
         public DbSet<CatagoryType> CatagoryTypes { get; set; }
 
-
-
-
     }
 }
